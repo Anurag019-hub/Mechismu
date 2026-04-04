@@ -1,4 +1,7 @@
+
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
+
+import Preloader from './components/Preloader/Preloader.jsx';
 import './App.css';
 
 import Contact from './pages/Contact.jsx'
@@ -12,6 +15,7 @@ function App() {
                 <Route path='/Contact' element={<Contact />} />
             </Routes>
         </BrowserRouter>
+        <Preloader />
     );
 }
 
