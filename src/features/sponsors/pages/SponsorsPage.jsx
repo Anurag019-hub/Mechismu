@@ -1,15 +1,15 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback, memo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { sponsors, tierOrder, whyPartner, supportMethods } from '../../data/sponsors';
-import SponsorFilters from './SponsorFilters';
-import SponsorCard from './SponsorCard';
-import SponsorTiers from './SponsorTiers';
-import './SponsorPage.css';
+import { sponsors, tierOrder, whyPartner, supportMethods } from '@/data/sponsors';
+import SponsorFilters from '../components/SponsorFilters/SponsorFilters';
+import SponsorCard from '../components/SponsorCard/SponsorCard';
+import SponsorTiers from '../components/SponsorTiers/SponsorTiers';
+import './SponsorsPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SponsorPage = memo(function SponsorPage() {
+const SponsorsPage = memo(function SponsorsPage() {
   const [activeStatus, setActiveStatus] = useState('all');
   const [activeYear, setActiveYear] = useState(null);
 
@@ -190,6 +190,6 @@ const SponsorPage = memo(function SponsorPage() {
   );
 });
 
-SponsorPage.displayName = 'SponsorPage';
+SponsorsPage.displayName = 'SponsorsPage';
 
-export default SponsorPage;
+export default SponsorsPage;

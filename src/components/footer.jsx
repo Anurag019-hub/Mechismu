@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 // Internal
 import Logo from '@/assets/images/logo.png';
-import { InstagramIcon, LinkedInIcon, YouTubeIcon } from '@/assets/svj.jsx';
+import { InstagramIcon, LinkedInIcon, YouTubeIcon } from '@/assets/icons/SocialIcons.jsx';
 import './Footer.css';
 // ===== COMPONENT =====
 export default function Footer() {

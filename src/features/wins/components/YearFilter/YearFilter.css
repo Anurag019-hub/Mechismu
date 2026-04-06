@@ -1,0 +1,48 @@
+/* ── YEAR FILTER CONTROL ── */
+.wins-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 60px;
+  justify-content: center;
+}
+
+.wins-filter__pill {
+  background: rgba(28, 27, 27, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(229, 226, 225, 0.5);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.wins-filter__pill:hover {
+  border-color: rgba(255, 84, 73, 0.4);
+  color: #fff;
+  background: rgba(40, 40, 40, 0.8);
+}
+
+.wins-filter__pill--active {
+  background: rgba(255, 84, 73, 0.15) !important;
+  border-color: #ff5449 !important;
+  color: #ff5449 !important;
+  box-shadow: 0 0 15px rgba(255, 84, 73, 0.2);
+}
+
+@media (max-width: 480px) {
+  .wins-filter {
+    gap: 8px;
+  }
+
+  .wins-filter__pill {
+    padding: 8px 12px;
+    font-size: 0.65rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactPage from '../components/Contact/ContactPage';
+import { ContactPage } from '@/features/contact';
 
 export default function Contact() {
   return <ContactPage />;

@@ -1,6 +1,6 @@
 import React from 'react';
-import SponsorPage from '../components/Sponsors/SponsorPage';
+import { SponsorsPage } from '@/features/sponsors';
 
 export default function Sponsors() {
-  return <SponsorPage />;
+  return <SponsorsPage />;
 }

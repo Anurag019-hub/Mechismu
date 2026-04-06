@@ -1,0 +1,333 @@
+/* ===== WINS PAGE — ENGINEERING DASHBOARD UI ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── PAGE SHELL ── */
+.wins-page {
+  position: relative;
+  min-height: 100vh;
+  background: #131313;
+  color: #e5e2e1;
+  overflow: hidden;
+  margin-top: 10px;
+  padding-bottom: 80px;
+}
+
+.wins-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wins-bg__carbon {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px);
+  opacity: 0.6;
+}
+
+.wins-bg__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 84, 73, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 84, 73, 0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 70% 50% at 50% 35%, black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 35%, black 0%, transparent 100%);
+}
+
+.wins-bg__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
+}
+
+.wins-bg__glow--1 {
+  width: 500px;
+  height: 500px;
+  top: -150px;
+  left: -150px;
+  background: radial-gradient(circle, rgba(255, 84, 73, 0.1) 0%, transparent 60%);
+}
+
+.wins-bg__glow--2 {
+  width: 600px;
+  height: 600px;
+  bottom: 0;
+  right: -200px;
+  background: radial-gradient(circle, rgba(255, 42, 42, 0.08) 0%, transparent 60%);
+}
+
+.wins-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ── HERO SECTION ── */
+.wins-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.wins-hero__tag {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(229, 226, 225, 0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 24px;
+}
+
+.wins-hero__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.8rem, 7.5vw, 6rem);
+  font-weight: 700;
+  color: #E5E2E1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 0.95;
+  margin: 0 0 18px;
+  text-shadow:
+    0 0 40px rgba(255, 84, 73, 0.3),
+    0 0 80px rgba(255, 84, 73, 0.15),
+    0 0 120px rgba(255, 84, 73, 0.1);
+}
+
+.wins-hero__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(229, 226, 225, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin: 0 0 28px;
+}
+
+.wins-hero__line {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff5449, transparent);
+  margin: 0 auto;
+  box-shadow: 0 0 12px rgba(255, 84, 73, 0.5);
+}
+
+/* ── YEAR SECTION ── */
+.wins-list {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.wins-year {
+  transition: opacity 0.5s ease;
+}
+
+/* Removed status opacities */
+.wins-year:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.wins-year__header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.wins-year__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.wins-year__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgba(255, 84, 73, 0.8);
+  letter-spacing: 0.2em;
+}
+
+.wins-year__line {
+  height: 2px;
+  background: linear-gradient(90deg, #ff5449 0%, rgba(255, 84, 73, 0) 100%);
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.wins-year__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ── COMPETITION CARD ── */
+.wins-comp-card {
+  background: rgba(20, 20, 20, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.wins-comp-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 84, 73, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 84, 73, 0.1);
+}
+
+.wins-comp-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.wins-comp-card__name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e5e2e1;
+  margin: 0;
+}
+
+.wins-comp-card__id {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  color: rgba(229, 226, 225, 0.3);
+  letter-spacing: 0.1em;
+}
+
+.wins-comp-card__results {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wins-comp-card__result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wins-comp-card__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgba(229, 226, 225, 0.4);
+  letter-spacing: 0.15em;
+}
+
+.wins-comp-card__value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #ff5449;
+}
+
+/* ── HIGHLIGHT STRIP ── */
+.wins-highlight-strip {
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 24px;
+  background: rgba(20, 20, 20, 0.6);
+  flex-wrap: wrap;
+  /* allows responsive stacking */
+}
+
+.wins-highlight-strip__primary {
+  background: #ff2a2a;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-width: 250px;
+}
+
+.wins-highlight-strip__primary-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.2em;
+  margin-bottom: 4px;
+}
+
+.wins-highlight-strip__primary-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+.wins-highlight-strip__milestones {
+  display: flex;
+  flex: 2;
+  flex-wrap: wrap;
+}
+
+.wins-highlight-strip__milestone-block {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wins-highlight-strip__bullet {
+  width: 6px;
+  height: 6px;
+  background: #ff5449;
+}
+
+.wins-highlight-strip__milestone-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(229, 226, 225, 0.6);
+}
+
+/* ── RESPONSIVENESS ── */
+@media (max-width: 768px) {
+  .wins-year__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wins-highlight-strip {
+    flex-direction: column;
+  }
+
+  .wins-highlight-strip__milestones {
+    flex-direction: column;
+  }
+
+  .wins-highlight-strip__milestone-block {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+@media (max-width: 480px) {
+  .wins-year__title {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,172 @@
+/* ===== SPONSOR CARD — KINETIC MONOLITH ===== */
+
+.sponsor-card {
+  --tier-color: #FF544A;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: rgba(28, 27, 27, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+}
+
+.sponsor-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 84, 74, 0.15),
+              0 0 60px rgba(255, 84, 74, 0.06);
+  border-color: var(--tier-color, rgba(255, 84, 74, 0.25));
+}
+
+/* ---- Tier Badge ---- */
+.sponsor-card__tier-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--tier-color);
+  border-radius: 3px;
+}
+
+.sponsor-card__tier-badge span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--tier-color);
+}
+
+/* ---- Logo ---- */
+.sponsor-card__logo-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.sponsor-card__logo {
+  max-width: 65%;
+  max-height: 55%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.7);
+  transition: filter 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+}
+
+.sponsor-card__logo--loaded {
+  opacity: 1;
+}
+
+.sponsor-card:hover .sponsor-card__logo {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
+
+.sponsor-card__logo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1c1b1b 0%, #0a0a0a 100%);
+}
+
+.sponsor-card__logo-placeholder--error {
+  z-index: 2;
+}
+
+.sponsor-card__logo-placeholder span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255, 84, 74, 0.25);
+  letter-spacing: 0.15em;
+  user-select: none;
+}
+
+/* ---- Body ---- */
+.sponsor-card__body {
+  flex: 1;
+  padding: 16px 18px 12px;
+}
+
+.sponsor-card__name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #E5E2E1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.sponsor-card__desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(229, 226, 225, 0.4);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---- Footer ---- */
+.sponsor-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.sponsor-card__year {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(229, 226, 225, 0.25);
+  letter-spacing: 0.1em;
+}
+
+.sponsor-card__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(229, 226, 225, 0.45);
+  text-decoration: none;
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.25s ease;
+}
+
+.sponsor-card__link:hover {
+  color: #FF544A;
+  border-color: rgba(255, 84, 74, 0.35);
+  background: rgba(255, 84, 74, 0.08);
+  box-shadow: 0 0 12px rgba(255, 84, 74, 0.15);
+}

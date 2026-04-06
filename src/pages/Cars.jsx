@@ -1,6 +1,6 @@
 import React from 'react';
-import CarPage from '../components/Cars/CarPage';
+import { CarsPage } from '../features/cars';
 
 export default function Cars() {
-  return <CarPage />;
+  return <CarsPage />;
 }
