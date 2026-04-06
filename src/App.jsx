@@ -8,6 +8,7 @@ import Preloader from "./components/Preloader/Preloader.jsx";
 import Home from "./pages/Home.jsx";
 import Contact from "./pages/Contact.jsx";
 import About from "./pages/about/About.jsx";
+import Team from "./pages/Team.jsx";
 
 import "./App.css";
 
@@ -21,6 +22,7 @@ function AnimatedRoutes() {
                     <Route path="/" element={<Home />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/team" element={<Team />} />
                 </Routes>
             </Layout>
         </AnimatePresence>

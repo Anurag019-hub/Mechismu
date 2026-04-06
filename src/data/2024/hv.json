@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Deepak Nair",
+    "role": "HV Lead",
+    "image": "/images/2024/deepak-nair.jpg",
+    "email": "mailto:deepak.nair@mechismu.com",
+    "linkedin": "https://linkedin.com/in/deepaknair",
+    "instagram": "https://instagram.com/deepaknair"
+  },
+  {
+    "name": "Simran Kaur",
+    "role": "Battery Engineer",
+    "image": "/images/2024/simran-kaur.jpg",
+    "email": "mailto:simran.kaur@mechismu.com",
+    "linkedin": "https://linkedin.com/in/simrankaur",
+    "instagram": "https://instagram.com/simrankaur"
+  },
+  {
+    "name": "Akash Menon",
+    "role": "Motor Controller",
+    "image": "/images/2024/akash-menon.jpg",
+    "email": "mailto:akash.menon@mechismu.com",
+    "linkedin": "https://linkedin.com/in/akashmenon",
+    "instagram": "https://instagram.com/akashmenon"
+  }
+]

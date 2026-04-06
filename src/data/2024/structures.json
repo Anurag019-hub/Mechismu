@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Rohit Bhardwaj",
+    "role": "Structures Lead",
+    "image": "/images/2024/rohit-bhardwaj.jpg",
+    "email": "mailto:rohit.bhardwaj@mechismu.com",
+    "linkedin": "https://linkedin.com/in/rohitbhardwaj",
+    "instagram": "https://instagram.com/rohitbhardwaj"
+  },
+  {
+    "name": "Aparna Das",
+    "role": "FEA Engineer",
+    "image": "/images/2024/aparna-das.jpg",
+    "email": "mailto:aparna.das@mechismu.com",
+    "linkedin": "https://linkedin.com/in/aparnadass",
+    "instagram": "https://instagram.com/aparnadass"
+  },
+  {
+    "name": "Nikhil Pandey",
+    "role": "Fabrication Head",
+    "image": "/images/2024/nikhil-pandey.jpg",
+    "email": "mailto:nikhil.pandey@mechismu.com",
+    "linkedin": "https://linkedin.com/in/nikhilpandey",
+    "instagram": "https://instagram.com/nikhilpandey"
+  }
+]

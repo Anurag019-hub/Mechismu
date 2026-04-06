@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Karthik Sundaram",
+    "role": "LV Lead",
+    "image": "/images/2025/karthik-sundaram.jpg",
+    "email": "mailto:karthik.sundaram@mechismu.com",
+    "linkedin": "https://linkedin.com/in/karthiksundaram",
+    "instagram": "https://instagram.com/karthiksundaram"
+  },
+  {
+    "name": "Divya Rao",
+    "role": "ECU Engineer",
+    "image": "/images/2025/divya-rao.jpg",
+    "email": "mailto:divya.rao@mechismu.com",
+    "linkedin": "https://linkedin.com/in/divyarao",
+    "instagram": "https://instagram.com/divyarao"
+  },
+  {
+    "name": "Aman Singh",
+    "role": "Telemetry Engineer",
+    "image": "/images/2025/aman-singh.jpg",
+    "email": "mailto:aman.singh@mechismu.com",
+    "linkedin": "https://linkedin.com/in/amansingh",
+    "instagram": "https://instagram.com/amansingh"
+  },
+  {
+    "name": "Ritu Agarwal",
+    "role": "Embedded Systems",
+    "image": "/images/2025/ritu-agarwal.jpg",
+    "email": "mailto:ritu.agarwal@mechismu.com",
+    "linkedin": "https://linkedin.com/in/rituagarwal",
+    "instagram": "https://instagram.com/rituagarwal"
+  }
+]

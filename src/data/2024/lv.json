@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Pranav Joshi",
+    "role": "LV Lead",
+    "image": "/images/2024/pranav-joshi.jpg",
+    "email": "mailto:pranav.joshi@mechismu.com",
+    "linkedin": "https://linkedin.com/in/pranavjoshi",
+    "instagram": "https://instagram.com/pranavjoshi"
+  },
+  {
+    "name": "Swati Bansal",
+    "role": "PCB Designer",
+    "image": "/images/2024/swati-bansal.jpg",
+    "email": "mailto:swati.bansal@mechismu.com",
+    "linkedin": "https://linkedin.com/in/swatibansal",
+    "instagram": "https://instagram.com/swatibansal"
+  },
+  {
+    "name": "Gaurav Sharma",
+    "role": "Firmware Dev",
+    "image": "/images/2024/gaurav-sharma.jpg",
+    "email": "mailto:gaurav.sharma@mechismu.com",
+    "linkedin": "https://linkedin.com/in/gauravsharma",
+    "instagram": "https://instagram.com/gauravsharma"
+  }
+]
