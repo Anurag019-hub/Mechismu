@@ -1,5 +1,5 @@
 import React, { memo, useRef, useState } from 'react';
-import '@/features/team/components/teamcard/TeamCard.css';
+import '@/features/team/components/TeamCard/TeamCard.css';
 
 // ===== COMPONENT =====
 const TeamCard = memo(({ member }) => {
