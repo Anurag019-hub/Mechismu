@@ -1,8 +1,8 @@
 import React, { memo, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { tierBenefits, tierColors } from '../../data/sponsors';
-import './SponsorTiers.css';
+import { tierBenefits, tierColors } from '@/data/sponsors';
+import '@/components/sponsors/SponsorTiers.css';
 
 gsap.registerPlugin(ScrollTrigger);
 

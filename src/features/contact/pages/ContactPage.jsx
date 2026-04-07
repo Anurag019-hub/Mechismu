@@ -3,9 +3,8 @@ import { LINKS } from '@/config/links';
 import React, { useEffect, useRef, memo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ContactForm from '../components/ContactForm/ContactForm';
-import './ContactPage.css';
-
+import ContactForm from '@/features/contact/components/contactform/ContactForm';
+import '@/features/contact/pages/ContactPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
 

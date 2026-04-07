@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
-import { tierColors } from '../../data/sponsors';
-import './SponsorCard.css';
+import { tierColors } from '@/data/sponsors';
+import '@/components/sponsors/SponsorCard.css';
 
 const SponsorCard = memo(({ sponsor }) => {
   const [imgLoaded, setImgLoaded] = useState(false);

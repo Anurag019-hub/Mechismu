@@ -1,7 +1,7 @@
-import React from 'react';
-import SectionWrapper from '../common/SectionWrapper';
-import CTAButton from '../common/CTAButton';
-import './about.css';
+
+import SectionWrapper from '@/components/home/common/SectionWrapper';
+import CTAButton from '@/components/home/common/CTAButton';
+import '@/components/home/about/about.css';
 
 export default function AboutPreview() {
   return (

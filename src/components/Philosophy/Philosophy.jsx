@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import './Philosophy.css';
+import '@/components/philosophy/Philosophy.css';
 import logoImg from '@/assets/images/team_photo.png';
 
 export default function Philosophy() {

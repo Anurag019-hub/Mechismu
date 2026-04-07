@@ -16,7 +16,6 @@ export const car_template = {
     // keep it consistent across all cars
     tag: "",
 
-
     stats: {
         // ⚠️ keep units consistent across ALL cars
         // don’t mix HP and kW randomly
@@ -28,13 +27,11 @@ export const car_template = {
         lateralG: ""        // e.g. "2.4G"
     },
 
-
     overview: {
         // ⚠️ keep it short (2–4 lines max)
         // no filler, no quotes spam
         description: ""
     },
-
 
     domains: {
         // ⚠️ STRICT: max 3 sections only (UI depends on this)
@@ -55,7 +52,6 @@ export const car_template = {
             text: ""
         }
     },
-
 
     specs: {
         // ⚠️ FLEXIBLE SECTION
@@ -86,7 +82,6 @@ export const car_template = {
         // ❌ don’t change label/value keys (UI depends on it)
     },
 
-
     images: {
         // ⚠️ MUST be from /public folder
         // example: "/images/cars/mrx01.png"
@@ -99,7 +94,6 @@ export const car_template = {
             ""
         ]
     },
-
 
     timeline: [
         // 🟡 OPTIONAL but highly recommended

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import CompetitionCard from '../CompetitionCard/CompetitionCard';
-import HighlightStrip from '../HighlightStrip/HighlightStrip';
+import CompetitionCard from '@/features/wins/components/competitioncard/CompetitionCard';
+import HighlightStrip from '@/features/wins/components/highlightstrip/HighlightStrip';
 
 // Memoized to prevent re-render of year sections when sibling sections don't change
 const YearSection = memo(function YearSection({ data }) {

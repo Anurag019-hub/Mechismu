@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import './YearSelector.css';
+import '@/features/team/components/yearselector/YearSelector.css';
 
 // ===== COMPONENT =====
 const YearSelector = memo(({ years, activeYear, onYearChange }) => {

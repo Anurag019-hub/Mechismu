@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
-import '../../styles/base.css';
+import '@/styles/base.css';
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 

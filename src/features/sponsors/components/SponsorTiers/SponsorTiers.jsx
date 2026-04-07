@@ -2,7 +2,7 @@ import React, { memo, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { tierBenefits, tierColors } from '@/data/sponsors';
-import './SponsorTiers.css';
+import '@/features/sponsors/components/sponsortiers/SponsorTiers.css';
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,14 +1,14 @@
-import React from 'react';
-import './home.css';
+
+import '@/components/home/home.css';
 
 // ===== HOME SECTIONS =====
-import HeroSection from './Hero/HeroSection';
-import AboutPreview from './About/AboutPreview';
-import CarsPreview from './Cars/CarsPreview';
-import TeamPreview from './Team/TeamPreview';
-import Achievements from './Achievements/Achievements';
-import SponsorsPreview from './Sponsors/SponsorsPreview';
-import ContactPreview from './Contact/ContactPreview';
+import HeroSection from '@/components/home/hero/HeroSection';
+import AboutPreview from '@/components/home/about/AboutPreview';
+import CarsPreview from '@/components/home/cars/CarsPreview';
+import TeamPreview from '@/components/home/team/TeamPreview';
+import Achievements from '@/components/home/achievements/Achievements';
+import SponsorsPreview from '@/components/home/sponsors/SponsorsPreview';
+import ContactPreview from '@/components/home/contact/ContactPreview';
 
 export default function Home() {
   return (

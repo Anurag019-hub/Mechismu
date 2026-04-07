@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import SectionWrapper from '../common/SectionWrapper';
-import CTAButton from '../common/CTAButton';
-import './contact.css';
+import SectionWrapper from '@/components/home/common/SectionWrapper';
+import CTAButton from '@/components/home/common/CTAButton';
+import '@/components/home/contact/contact.css';
 import { LINKS } from '@/config/links';
 
 const CONTACT_INFO = [

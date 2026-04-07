@@ -1,4 +1,4 @@
-import { MRX01 } from "./MRX01.js";
-import { MRX02 } from "./MRX02.js";
+import { MRX01 } from "@/data/cars/MRX01";
+import { MRX02 } from "@/data/cars/MRX02";
 
 export const cars = [MRX01, MRX02];

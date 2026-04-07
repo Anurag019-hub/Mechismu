@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { NavLink } from 'react-router-dom';
-import './common.css';
+import '@/components/home/common/common.css';
 
 export default function CTAButton({ text, to, href, variant = 'primary', external }) {
   const className = `cta-button cta-${variant}`;

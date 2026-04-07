@@ -14,5 +14,4 @@ const CarStats = ({ stats }) => {
   );
 }
 
-
 export default React.memo(CarStats);

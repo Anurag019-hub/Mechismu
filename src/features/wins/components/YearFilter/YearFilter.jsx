@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import './YearFilter.css';
+import '@/features/wins/components/yearfilter/YearFilter.css';
 
 // Memoized to prevent re-render of filter buttons on every parent state change
 const YearFilter = memo(function YearFilter({ years, activeYear, onSelect }) {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "motion/react";
-import "./Achievements.css";
+import "@/components/achievements/Achievements.css";
 
 function Counter({ from = 0, to, duration = 2 }) {
   const ref = useRef(null);

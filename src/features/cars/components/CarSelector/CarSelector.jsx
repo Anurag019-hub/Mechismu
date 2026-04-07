@@ -23,5 +23,4 @@ const CarSelector = ({ cars, activeCar, onSelect }) => {
   );
 }
 
-
 export default React.memo(CarSelector);

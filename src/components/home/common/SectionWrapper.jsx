@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './common.css';
+import '@/components/home/common/common.css';
 
 export default function SectionWrapper({ children, className = '' }) {
   const wrapperRef = useRef(null);

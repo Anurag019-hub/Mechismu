@@ -30,5 +30,4 @@ const CarSpecs = ({ specs }) => {
   );
 }
 
-
 export default React.memo(CarSpecs);

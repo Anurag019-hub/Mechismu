@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import gsap from 'gsap';
-import { cars } from '../../../data/cars';
-import './CarsPage.css';
+import { cars } from '@/data/cars';
+import '@/features/cars/pages/CarsPage.css';
 
 // ===== LAZY-LOADED CAR SECTIONS (code-split heavy components) =====
 const CarSelector = React.lazy(() => import('../components/CarSelector/CarSelector'));

@@ -23,5 +23,4 @@ const CarDomains = ({ domains }) => {
   );
 }
 
-
 export default React.memo(CarDomains);

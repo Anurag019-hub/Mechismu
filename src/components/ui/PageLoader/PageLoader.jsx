@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import './PageLoader.css';
+import '@/components/ui/pageloader/PageLoader.css';
 
 const STATUS_MESSAGES = [
   'INITIALIZING SYSTEMS',

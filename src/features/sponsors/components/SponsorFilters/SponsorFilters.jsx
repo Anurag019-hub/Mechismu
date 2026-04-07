@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import './SponsorFilters.css';
+import '@/features/sponsors/components/sponsorfilters/SponsorFilters.css';
 
 const STATUS_OPTIONS = [
   { key: 'all', label: 'ALL' },

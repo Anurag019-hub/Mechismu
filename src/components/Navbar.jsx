@@ -13,7 +13,7 @@ import { NavLink } from 'react-router-dom';
 
 // Internal
 import logo from '@/assets/images/logo.png';
-import './Navbar.css';
+import '@/components/navbar.css';
 
 // ===== COMPONENT =====
 function Navbar() {

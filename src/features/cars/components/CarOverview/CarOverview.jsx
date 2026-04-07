@@ -11,5 +11,4 @@ const CarOverview = ({ overview }) => {
   );
 }
 
-
 export default React.memo(CarOverview);

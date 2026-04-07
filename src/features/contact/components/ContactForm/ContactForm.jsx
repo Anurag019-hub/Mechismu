@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, memo } from 'react';
-import './ContactForm.css';
+import '@/features/contact/components/contactform/ContactForm.css';
 
 const SUBJECTS = [
   { value: '', label: 'SELECT SUBJECT PROTOCOL' },

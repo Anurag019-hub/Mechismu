@@ -2,8 +2,8 @@
 import React, { memo, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import TeamCard from '../TeamCard/TeamCard';
-import './TeamSection.css';
+import TeamCard from '@/features/team/components/teamcard/TeamCard';
+import '@/features/team/components/teamsection/TeamSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,6 +79,5 @@ const TeamSection = ({ title, members, id }) => {
 };
 
 TeamSection.displayName = 'TeamSection';
-
 
 export default React.memo(TeamSection);

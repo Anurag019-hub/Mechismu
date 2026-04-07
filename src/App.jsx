@@ -2,11 +2,11 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
 import React, { useEffect, useState, Suspense } from "react";
 
-import Layout from "./layout/Layout";
+import Layout from "@/layout/Layout";
 
-import PageLoader from "./components/ui/PageLoader/PageLoader.jsx";
+import PageLoader from "@/components/ui/pageloader/PageLoader";
 
-import "./App.css";
+import "@/App.css";
 
 // ===== LAZY ROUTES (code-split per page) =====
 const Home = React.lazy(() => import("./pages/Home.jsx"));

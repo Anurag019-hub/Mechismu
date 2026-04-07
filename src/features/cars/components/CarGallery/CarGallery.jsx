@@ -43,5 +43,4 @@ function GalleryItem({ src, alt }) {
   );
 }
 
-
 export default React.memo(CarGallery);

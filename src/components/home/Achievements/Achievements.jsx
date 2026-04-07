@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
-import SectionWrapper from '../common/SectionWrapper';
-import CTAButton from '../common/CTAButton';
-import './achievements.css';
+import SectionWrapper from '@/components/home/common/SectionWrapper';
+import CTAButton from '@/components/home/common/CTAButton';
+import '@/components/home/achievements/achievements.css';
 
 function useCounter(to, duration = 2, startFrom = 0) {
   const ref = useRef(null);

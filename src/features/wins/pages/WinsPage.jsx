@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { winsData } from '@/data/wins';
-import YearFilter from '../components/YearFilter/YearFilter';
-import YearSection from '../components/YearSection/YearSection';
-import './WinsPage.css';
+import YearFilter from '@/features/wins/components/yearfilter/YearFilter';
+import YearSection from '@/features/wins/components/yearsection/YearSection';
+import '@/features/wins/pages/WinsPage.css';
 
 export default function WinsPage() {
   const [activeYear, setActiveYear] = useState('ALL_RECORDS');

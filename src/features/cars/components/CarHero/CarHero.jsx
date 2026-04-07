@@ -33,5 +33,4 @@ const CarHero = ({ car }) => {
   );
 }
 
-
 export default React.memo(CarHero);

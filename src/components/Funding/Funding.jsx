@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import './Funding.css';
+import '@/components/funding/Funding.css';
 
 export default function Funding() {
   const funds = [

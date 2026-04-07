@@ -1,7 +1,7 @@
-import React from 'react';
-import SectionWrapper from '../common/SectionWrapper';
-import CTAButton from '../common/CTAButton';
-import './team.css';
+
+import SectionWrapper from '@/components/home/common/SectionWrapper';
+import CTAButton from '@/components/home/common/CTAButton';
+import '@/components/home/team/team.css';
 
 const LEADERS = [
   {

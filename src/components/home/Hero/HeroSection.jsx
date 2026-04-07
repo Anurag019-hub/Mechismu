@@ -1,6 +1,6 @@
-import React from 'react';
-import CTAButton from '../common/CTAButton';
-import './hero.css';
+
+import CTAButton from '@/components/home/common/CTAButton';
+import '@/components/home/hero/hero.css';
 
 export default function HeroSection() {
   return (

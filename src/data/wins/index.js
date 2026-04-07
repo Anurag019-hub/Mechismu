@@ -9,14 +9,13 @@
  * - competitions: Array of { name, id, results: [ { label, value } ] }
  */
 
-import { year2025 } from "./2025";
-import { year2023 } from "./2023";
-import { year2019 } from "./2019";
-import { year2015 } from "./2015";
-import { year2012 } from "./2012";
-import { year2011 } from "./2011";
-import { year2010 } from "./2010";
-
+import { year2025 } from "@/data/wins/2025";
+import { year2023 } from "@/data/wins/2023";
+import { year2019 } from "@/data/wins/2019";
+import { year2015 } from "@/data/wins/2015";
+import { year2012 } from "@/data/wins/2012";
+import { year2011 } from "@/data/wins/2011";
+import { year2010 } from "@/data/wins/2010";
 
 export const winsData = [
   year2025,

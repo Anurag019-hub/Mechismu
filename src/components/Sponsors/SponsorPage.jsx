@@ -1,11 +1,11 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback, memo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { sponsors, tierOrder, whyPartner, supportMethods } from '../../data/sponsors';
-import SponsorFilters from './SponsorFilters';
-import SponsorCard from './SponsorCard';
-import SponsorTiers from './SponsorTiers';
-import './SponsorPage.css';
+import { sponsors, tierOrder, whyPartner, supportMethods } from '@/data/sponsors';
+import SponsorFilters from '@/components/sponsors/SponsorFilters';
+import SponsorCard from '@/components/sponsors/SponsorCard';
+import SponsorTiers from '@/components/sponsors/SponsorTiers';
+import '@/components/sponsors/SponsorPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
 

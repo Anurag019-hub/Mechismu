@@ -1,5 +1,5 @@
 import React, { memo, useState, useRef, useEffect } from 'react';
-import './FilterBar.css';
+import '@/features/team/components/filterbar/FilterBar.css';
 
 // ===== COMPONENT =====
 const FILTERS = [

@@ -23,5 +23,4 @@ const CarTimeline = ({ timeline }) => {
   );
 }
 
-
 export default React.memo(CarTimeline);

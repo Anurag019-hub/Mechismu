@@ -1,7 +1,7 @@
-import React from 'react';
-import SectionWrapper from '../common/SectionWrapper';
-import CTAButton from '../common/CTAButton';
-import './cars.css';
+
+import SectionWrapper from '@/components/home/common/SectionWrapper';
+import CTAButton from '@/components/home/common/CTAButton';
+import '@/components/home/cars/cars.css';
 
 import { cars as CARS_DATA } from '@/data/cars';
 
