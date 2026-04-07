@@ -1,6 +1,6 @@
 
 import { motion } from "motion/react";
-import "@/components/intro/Intro.css";
+import "./Intro.css";
 
 export default function Intro() {
   return (
