@@ -1,78 +1,68 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence } from "motion/react";
+
 import ScrollToTop from "./ScrollToTop.jsx";
-
-// Layout
 import Layout from "./layout/Layout.jsx";
-
-// UI
 import PageLoader from "./components/ui/PageLoader/PageLoader.jsx";
 
-import "../src/App.css";
+import "./App.css";
 
 // ===== LAZY ROUTES =====
-const Home = React.lazy(() => import("../src/pages/Home.jsx"));
-const Contact = React.lazy(() => import("../src/pages/Contact.jsx"));
-const About = React.lazy(() => import("../src/pages/about/About.jsx"));
-const TeamPage = React.lazy(() => import("../src/features/team/pages/TeamPage.jsx"));
-const Sponsors = React.lazy(() => import("../src/pages/Sponsors.jsx"));
-const Cars = React.lazy(() => import("../src/pages/Cars.jsx"));
-const Wins = React.lazy(() => import("../src/pages/Wins.jsx"));
+const Home = React.lazy(() => import("./pages/Home.jsx"));
+const Contact = React.lazy(() => import("./pages/Contact.jsx"));
+const About = React.lazy(() => import("./pages/about/About.jsx"));
+const TeamPage = React.lazy(() => import("./features/team/pages/TeamPage.jsx"));
+const Sponsors = React.lazy(() => import("./pages/Sponsors.jsx"));
+const Cars = React.lazy(() => import("./pages/Cars.jsx"));
+const Wins = React.lazy(() => import("./pages/Wins.jsx"));
 
+
+// ===== MIN LOADER WRAPPER (optional smoothness) =====
+function DelayedRender({ children, delay = 500 }) {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setShow(true), delay);
+        return () => clearTimeout(timer);
+    }, [delay]);
+
+    return show ? children : <PageLoader />;
+}
+
+
+// ===== ROUTES WITH ANIMATION =====
 function AnimatedRoutes() {
     const location = useLocation();
 
-    const [displayLocation, setDisplayLocation] = useState(location);
-    const [isTransitioning, setIsTransitioning] = useState(false);
-
-    useEffect(() => {
-        if (location.pathname !== displayLocation.pathname) {
-            setIsTransitioning(true);
-
-            const timer = setTimeout(() => {
-                setDisplayLocation(location);
-                setIsTransitioning(false);
-            }, 600); // 🔥 smooth timing (500–700 ideal)
-
-            return () => clearTimeout(timer);
-        }
-    }, [location, displayLocation]);
-
     return (
-        <>
-            {/* SINGLE loader */}
-            <AnimatePresence mode="wait">
-                {isTransitioning && <PageLoader key="route-loader" />}
-            </AnimatePresence>
-
-            {/* Page content */}
-            <AnimatePresence mode="wait">
-                {!isTransitioning && (
-                    <Layout key={displayLocation.pathname}>
-                        <Suspense fallback={null}>
-                            <Routes location={displayLocation}>
-                                <Route path="/" element={<Home />} />
-                                <Route path="/contact" element={<Contact />} />
-                                <Route path="/about" element={<About />} />
-                                <Route path="/team" element={<TeamPage />} />
-                                <Route path="/sponsors" element={<Sponsors />} />
-                                <Route path="/cars" element={<Cars />} />
-                                <Route path="/wins" element={<Wins />} />
-                            </Routes>
-                        </Suspense>
-                    </Layout>
-                )}
-            </AnimatePresence>
-        </>
+        <AnimatePresence mode="wait">
+            <Layout key={location.pathname}>
+                <Suspense fallback={<PageLoader />}>
+                    <DelayedRender delay={500}>
+                        <Routes location={location}>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/team" element={<TeamPage />} />
+                            <Route path="/sponsors" element={<Sponsors />} />
+                            <Route path="/cars" element={<Cars />} />
+                            <Route path="/wins" element={<Wins />} />
+                        </Routes>
+                    </DelayedRender>
+                </Suspense>
+            </Layout>
+        </AnimatePresence>
     );
 }
 
+
+// ===== MAIN APP =====
 function App() {
-    const [loading, setLoading] = useState(true);
+    const [initialLoading, setInitialLoading] = useState(true);
 
     useEffect(() => {
-        const timer = setTimeout(() => setLoading(false), 3000); // initial load
+        const timer = setTimeout(() => setInitialLoading(false), 1500);
         return () => clearTimeout(timer);
     }, []);
 
@@ -80,13 +70,13 @@ function App() {
         <BrowserRouter>
             <ScrollToTop />
 
-            {/* Initial app loader */}
             <AnimatePresence mode="wait">
-                {loading && <PageLoader key="initial-loader" />}
+                {initialLoading ? (
+                    <PageLoader key="initial-loader" />
+                ) : (
+                    <AnimatedRoutes />
+                )}
             </AnimatePresence>
-
-            {/* App */}
-            {!loading && <AnimatedRoutes />}
         </BrowserRouter>
     );
 }
