@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from 'motion/react';
+import ScrollToTop from "./ScrollToTop.jsx";
 
 // Layout
 import Layout from "./layout/Layout.jsx";
@@ -24,8 +25,9 @@ function AnimatedRoutes() {
 
     return (
         <AnimatePresence mode="wait">
-            <Layout key={location.pathname}>
-                <Suspense fallback={<PageLoader />}>
+            <Suspense fallback={<PageLoader />}>
+                <Layout key={location.pathname}>
+
                     <Routes location={location}>
                         <Route path="/" element={<Home />} />
                         <Route path="/contact" element={<Contact />} />
@@ -35,8 +37,9 @@ function AnimatedRoutes() {
                         <Route path="/cars" element={<Cars />} />
                         <Route path="/wins" element={<Wins />} />
                     </Routes>
-                </Suspense>
-            </Layout>
+                </Layout>
+            </Suspense>
+
         </AnimatePresence>
     );
 }
@@ -51,6 +54,7 @@ function App() {
 
     return (
         <BrowserRouter>
+            <ScrollToTop />
             <AnimatePresence mode="wait">
                 {loading && <PageLoader key="initial-loader" />}
             </AnimatePresence>
