@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
 import gsap from 'gsap';
 import { cars } from '@/data/cars';
+
+// Components & Styles
+import PageLoader from "../../components/ui/PageLoader/PageLoader.jsx";
 import '@/features/cars/pages/CarsPage.css';
 
-// ===== LAZY-LOADED CAR SECTIONS (code-split heavy components) =====
+// ===== LAZY-LOADED CAR SECTIONS =====
 const CarSelector = React.lazy(() => import('../components/CarSelector/CarSelector'));
 const CarHero = React.lazy(() => import('../components/CarHero/CarHero'));
 const CarStats = React.lazy(() => import('../components/CarStats/CarStats'));
@@ -20,12 +23,12 @@ const CarsPage = () => {
   useEffect(() => {
     // Scroll to top and animate in the new content whenever the car changes
     window.scrollTo(0, 0);
-    
+
     if (contentRef.current) {
       gsap.fromTo(
         contentRef.current,
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', clearProps: "all" }
       );
     }
   }, [activeCar]);
@@ -34,16 +37,14 @@ const CarsPage = () => {
   const getCleanedData = (car) => {
     if (!car) return null;
 
-    // Clean stats: keep only valid scalar values
     const cleanedStats = car.stats
       ? Object.fromEntries(
-          Object.entries(car.stats).filter(
-            ([_, v]) => v !== null && v !== undefined && v !== ''
-          )
+        Object.entries(car.stats).filter(
+          ([_, v]) => v !== null && v !== undefined && v !== ''
         )
+      )
       : null;
 
-    // Clean specs: keep only arrays with items having both label and value
     const cleanedSpecs = car.specs ? {} : null;
     if (car.specs) {
       Object.keys(car.specs).forEach((group) => {
@@ -56,7 +57,6 @@ const CarsPage = () => {
       });
     }
 
-    // Clean domains: keep only domains with valid text
     const cleanedDomains = car.domains ? {} : null;
     if (car.domains) {
       Object.keys(car.domains).forEach((key) => {
@@ -66,7 +66,6 @@ const CarsPage = () => {
       });
     }
 
-    // Clean images: filter out empty elements in gallery
     const cleanedImages = { ...car.images };
     if (car.images?.gallery) {
       cleanedImages.gallery = car.images.gallery.filter(Boolean);
@@ -93,33 +92,36 @@ const CarsPage = () => {
       </div>
 
       <div className="cars-container">
-        <Suspense fallback={null}>
-          {/* Horizontal Scrollable Selector */}
-          <CarSelector 
-            cars={cars} 
-            activeCar={activeCar} 
-            onSelect={setActiveCar} 
+        {/* Suspense handles the initial load of all lazy components */}
+        <Suspense fallback={<PageLoader />}>
+
+          <CarSelector
+            cars={cars}
+            activeCar={activeCar}
+            onSelect={setActiveCar}
           />
-          
-          {/* Main Content Area (Animated on change) */}
+
+          {/* Main Content Area (Animated on car change) */}
           <div ref={contentRef}>
             <CarHero car={activeCar} />
-            
+
             {cleanedCar.stats && <CarStats stats={cleanedCar.stats} />}
-            
+
             {activeCar?.overview && <CarOverview overview={activeCar.overview} />}
-            
+
             {cleanedCar.domains && <CarDomains domains={cleanedCar.domains} />}
-            
+
             {cleanedCar.specs && <CarSpecs specs={cleanedCar.specs} />}
-            
+
             {cleanedCar.images && <CarGallery images={cleanedCar.images} />}
-            
-            {activeCar?.timeline && activeCar.timeline.length > 0 && <CarTimeline timeline={activeCar.timeline} />}
+
+            {activeCar?.timeline && activeCar.timeline.length > 0 && (
+              <CarTimeline timeline={activeCar.timeline} />
+            )}
           </div>
+
         </Suspense>
       </div>
-
     </div>
   );
 }
