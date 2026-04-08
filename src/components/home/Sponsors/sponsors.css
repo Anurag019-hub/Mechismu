@@ -1,7 +1,8 @@
 /* Sponsors Section Container */
 .sponsors-section {
   background: linear-gradient(to bottom, #131313, #0a0a0a);
-  padding: 30px 0;
+  padding: 60px 0;
+  /* Increased padding for better breathing room */
 }
 
 /* Header Accent & Label */
@@ -15,59 +16,63 @@
 .sponsors-header-line {
   width: 4px;
   height: 28px;
-  background-color: var(--primary);
+  background-color: var(--primary, #ff544a);
   box-shadow: 0 0 12px rgba(255, 84, 73, 0.45);
 }
 
 .sponsors-header-label {
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(229, 226, 225, 0.25);
+  color: rgba(229, 226, 225, 0.35);
 }
 
 /* Typography */
 .sponsors-title {
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
-  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  /* Fluid sizing */
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 16px;
   color: #fff;
+  line-height: 1.1;
 }
 
 .sponsors-title-accent {
-  color: var(--primary);
+  color: var(--primary, #ff544a);
   font-style: italic;
-  text-shadow: 0 0 20px rgba(255, 84, 73, 0.4), 0 0 50px rgba(255, 84, 73, 0.2);
+  text-shadow: 0 0 20px rgba(255, 84, 73, 0.4);
 }
 
 .sponsors-desc {
-  color: rgba(229, 226, 225, 0.4);
-  font-size: 0.85rem;
-  line-height: 1.7;
-  max-width: 550px;
-  margin-bottom: 48px;
+  color: rgba(229, 226, 225, 0.5);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 40px;
 }
 
-/* Grid System */
+/* Grid System - Intelligent Auto-Scaling */
 .sponsors-grid {
   display: grid;
+  /* Mobile: 2 columns */
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  /* Slightly increased gap for thicker borders */
+  gap: 12px;
   margin-bottom: 48px;
 }
 
 @media (min-width: 640px) {
   .sponsors-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .sponsors-grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
   }
 }
 
@@ -78,22 +83,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 4 / 3;
-  padding: 24px;
-  /* Increased padding for larger logos */
-  background: rgba(28, 27, 27, 0.5);
+  aspect-ratio: 1 / 1;
+  /* Keeps cards square and uniform */
+  padding: 15%;
+  /* Responsive padding based on card size */
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
-
-  /* UPDATED: Increased border thickness and visibility */
-  border: 2px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  /* Subtle rounding for a modern feel */
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
 }
 
 .sponsor-logo-box:hover {
-  background: rgba(28, 27, 27, 0.7);
-  /* UPDATED: Thicker, more vibrant border on hover */
-  border-color: rgba(255, 84, 73, 0.3);
-  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 84, 73, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Tier Indicator */
@@ -104,66 +111,77 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  opacity: 0.4;
-  transition: opacity 0.3s;
+  opacity: 0.5;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 .sponsor-logo-box:hover .sponsor-tier-dot {
-  opacity: 0.8;
+  opacity: 1;
+  transform: scale(1.2);
 }
 
-/* Logo Sizing */
+/* Logo Sizing - Using Max-Dimensions instead of fixed PX */
 .sponsor-img-container {
-  /* UPDATED: Increased mobile size */
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 70%;
+  /* Leaves room for the name below */
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .sponsor-img-container {
-    /* UPDATED: Increased desktop size */
-    width: 130px;
-    height: 130px;
-  }
+  transition: transform 0.4s ease;
 }
 
 .sponsor-img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
   object-fit: contain;
-  opacity: 1;
-  /* Slight fade by default for a sleek look */
+  filter: grayscale(1) brightness(0.9);
+  /* Unified look */
   transition: all 0.4s ease;
 }
 
 .sponsor-logo-box:hover .sponsor-img {
-  opacity: 1;
-  transform: scale(1.05);
-  /* Subtle zoom when hovering */
+  filter: grayscale(0) brightness(1);
+  /* Pop of color on hover */
+  transform: scale(1.08);
 }
 
-/* Fallback Text & Names */
+/* Fallback Text */
 .sponsor-fallback {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.4rem;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
   font-weight: 900;
-  color: rgba(255, 84, 73, 0.2);
+  color: rgba(255, 84, 73, 0.3);
 }
 
+/* Names */
 .sponsor-name {
-  margin-top: 12px;
-  font-size: 1rem;
+  margin-top: 10px;
+  font-size: clamp(0.65rem, 2vw, 0.85rem);
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(229, 226, 225, 1);
+  color: rgba(229, 226, 225, 0.8);
   text-align: center;
-  transition: color 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
 }
 
 .sponsor-logo-box:hover .sponsor-name {
-  color: rgba(229, 226, 225, 0.6);
+  color: #fff;
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 380px) {
+  .sponsors-grid {
+    grid-template-columns: 1fr;
+    /* Stack on tiny phones */
+  }
+
+  .sponsor-logo-box {
+    aspect-ratio: 16 / 9;
+    /* Wider cards when stacked */
+  }
 }
