@@ -3,12 +3,14 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 
-import '@/styles/base.css';
+// Assets & Styles
+import PageLoader from "../../components/ui/PageLoader/PageLoader.jsx";
 
 // Register GSAP Plugins
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 // ===== LAZY-LOADED SECTIONS =====
+// Using dynamic imports to optimize initial bundle size
 const Intro = React.lazy(() => import('../../components/Intro/Intro.jsx'));
 const Philosophy = React.lazy(() => import('../../components/Philosophy/Philosophy.jsx'));
 const Timeline = React.lazy(() => import('../../components/Timeline/Timeline.jsx'));
@@ -17,62 +19,46 @@ const Achievements = React.lazy(() => import('../../components/Achievements/Achi
 const Funding = React.lazy(() => import('../../components/Funding/Funding.jsx'));
 
 /**
- * Loading Component (The "Roater")
- * You can style this in your CSS file
+ * About Page Component
+ * Handles layout for the About section and global GSAP scroll refreshes.
  */
-const Loader = () => (
-  <div className="loader-wrapper">
-    <div className="spinner"></div>
-    <style jsx>{`
-      .loader-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100%;
-        background-color: #000; /* Match your site background */
-      }
-      .spinner {
-        width: 50px;
-        height: 50px;
-        border: 4px solid rgba(255, 255, 255, 0.1);
-        border-left-color: #ffffff; /* Spinner color */
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
-    `}</style>
-  </div>
-);
-
 export default function About() {
+
   useEffect(() => {
-    // gsap.context makes cleanup easy
+    // gsap.context handles scoping and makes cleanup simple
     const ctx = gsap.context(() => {
 
-      // Refresh ScrollTrigger once components are likely rendered
-      // This prevents "jumpy" scroll markers caused by lazy loading
+      /**
+       * ScrollTrigger Refresh Logic
+       * Because sections are lazy-loaded, their height might change after 
+       * the initial page load. This ensures GSAP markers and triggers 
+       * are calculated correctly.
+       */
       const timer = setTimeout(() => {
         ScrollTrigger.refresh();
-      }, 500);
+      }, 800); // 800ms gives the lazy components a bit more time to mount
 
       return () => clearTimeout(timer);
     });
 
-    return () => ctx.revert(); // Cleanup GSAP on unmount
+    // Cleanup: Revert all GSAP animations when the component unmounts
+    return () => ctx.revert();
   }, []);
 
   return (
     <div className="about-page-container">
-      <Suspense fallback={<Loader />}>
-        <Intro />
-        <Philosophy />
-        <Timeline />
-        <Domains />
-        <Achievements />
-        <Funding />
+      {/* Suspense catches the "promise" of the lazy components 
+        and displays your PageLoader until they are ready.
+      */}
+      <Suspense fallback={<PageLoader />}>
+        <main>
+          <Intro />
+          <Philosophy />
+          <Timeline />
+          <Domains />
+          <Achievements />
+          <Funding />
+        </main>
       </Suspense>
     </div>
   );
