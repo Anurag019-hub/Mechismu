@@ -24,12 +24,12 @@ function Navbar() {
 
   const links = [
     { path: "/", label: "Home" },
-    { path: "/About", label: "About" },
-    { path: "/Cars", label: "Cars" },
-    { path: "/Team", label: "Team" },
+    { path: "/about", label: "About" },
+    { path: "/cars", label: "Cars" },
+    { path: "/team", label: "Team" },
     { path: "/wins", label: "Wins" },
-    { path: "/Sponsors", label: "Sponsors" },
-    { path: "/Contact", label: "Contact" }
+    { path: "/sponsors", label: "Sponsors" },
+    { path: "/contact", label: "Contact" }
   ];
 
   // ===== RENDER =====

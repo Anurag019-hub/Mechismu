@@ -1,12 +1,12 @@
 
 import { motion } from 'motion/react';
-import { Zap, CPU, Settings, Wrench, Search } from 'lucide-react';
+import { Zap, Cpu, Settings, Wrench, Search } from 'lucide-react';
 import './Domains.css';
 
 const domains = [
   { title: "Powertrain", desc: "Motor control & battery systems.", icon: <Zap /> },
   { title: "Vehicle Dynamics", desc: "Suspension & braking.", icon: <Settings /> },
-  { title: "LV Electronics", desc: "Telemetry & control systems.", icon: <CPU /> },
+  { title: "LV Electronics", desc: "Telemetry & control systems.", icon: <Cpu /> },
   { title: "Structural", desc: "Chassis & aero.", icon: <Wrench /> },
   { title: "R&D", desc: "Future tech & autonomy.", icon: <Search /> },
 ];

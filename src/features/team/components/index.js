@@ -1,4 +1,4 @@
-export { default as FilterBar } from './FilterBar/FilterBar';
-export { default as TeamSection } from './TeamSection/TeamSection';
-export { default as TeamCard } from './TeamCard/TeamCard';
-export { default as YearSelector } from './YearSelector/YearSelector';
+export { default as FilterBar } from './filterbar/FilterBar';
+export { default as TeamSection } from './teamsection/TeamSection';
+export { default as TeamCard } from './teamcard/TeamCard';
+export { default as YearSelector } from './yearselector/YearSelector';
