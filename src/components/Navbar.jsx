@@ -71,12 +71,20 @@ function Navbar() {
 
       {/* MOBILE */}
       <div className={`mobile-glass ${isMenuOpen ? 'open' : ''}`}>
+
+        <button
+          className="close-btn"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          ✕
+        </button>
+
         {links.map((item, i) => (
           <NavLink
             key={i}
             to={item.path}
             className="mob-item"
-            onClick={() => setIsMenuOpen(false)} // <-- FIX: Close menu on click
+            onClick={() => setIsMenuOpen(false)}
           >
             {item.label}
           </NavLink>
