@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ContactForm from '@/features/contact/components/contactform/ContactForm';
 import '@/features/contact/pages/ContactPage.css';
+import Img from "../../../assets/images/contact.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -197,7 +198,11 @@ const ContactPage = memo(function ContactPage() {
             {/* Image block */}
             <div className="ctp-info-img">
               <div className="ctp-info-img__overlay">
-                <span className="ctp-info-img__label">ENGINEERING_BAY_04</span>
+                <img
+                  src={Img}
+                  alt="Engineering Bay"
+                  className="ctp-info-img__src"
+                />
               </div>
             </div>
 
@@ -206,7 +211,7 @@ const ContactPage = memo(function ContactPage() {
               <div className="ctp-info-panel__row">
                 <span className="ctp-info-panel__key">ADDRESS</span>
                 <span className="ctp-info-panel__val">
-                  SAC Building, IIT (ISM) Dhanbad,<br />
+                  IRH Building, IIT (ISM) Dhanbad,<br />
                   Jharkhand — 826004, India
                 </span>
               </div>
@@ -257,33 +262,7 @@ const ContactPage = memo(function ContactPage() {
       </section>
 
       {/* ═══ 5. FINAL CTA ═══ */}
-      <section className="ctp-cta" ref={ctaRef}>
-        <div className="ctp-cta__inner">
-          <div className="ctp-cta__glow" />
-          <span className="ctp-cta__tag">// TRANSMISSION READY</span>
-          <h2 className="ctp-cta__title">
-            READY TO BUILD THE FUTURE<br />OF ELECTRIC MOBILITY?
-          </h2>
-          <a href="mailto:mechismu@iitism.ac.in" className="ctp-cta__btn">
-            <span>INITIATE CONTACT</span>
-            <div className="ctp-cta__btn-fill" />
-          </a>
-          <div className="ctp-cta__status">
-            <span className="ctp-cta__status-item">
-              <span className="ctp-cta__status-dot ctp-cta__status-dot--green" />
-              SYSTEM_STATUS: NOMINAL
-            </span>
-            <span className="ctp-cta__status-item">
-              <span className="ctp-cta__status-dot ctp-cta__status-dot--green" />
-              CORE_TEMP: OPTIMAL
-            </span>
-            <span className="ctp-cta__status-item">
-              <span className="ctp-cta__status-dot" />
-              LINK_QUALITY: 98.7%
-            </span>
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 });

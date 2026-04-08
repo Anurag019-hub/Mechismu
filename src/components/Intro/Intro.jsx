@@ -24,9 +24,9 @@ export default function Intro() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
+          WHERE <br />
           ENGINEERING <br />
-          THE <span>FUTURE</span> <br />
-          OF ELECTRIC RACING
+          MEETS <span>ELECTRIC POWER</span>
         </motion.h1>
 
         <motion.p

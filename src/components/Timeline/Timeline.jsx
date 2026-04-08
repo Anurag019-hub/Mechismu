@@ -36,12 +36,54 @@ export default function Timeline() {
   const sectionRef = useRef(null);
 
   const timelineData = [
-    { year: "2010", title: "BAJA SAE", description: "2nd overall placement", top: "15%", left: "50%", alignRight: true },
-    { year: "2011", title: "SUPRA SAE", description: "5th overall, 1st autocross", top: "32%", left: "50%", alignRight: false },
-    { year: "2017", title: "Formula Bharat", description: "17th place finish", top: "48%", left: "50%", alignRight: true },
-    { year: "2019", title: "Business Plan", description: "Top rank achievement", top: "65%", left: "50%", alignRight: false },
-    { year: "2023", title: "PI-EV", description: "3rd overall placement", top: "82%", left: "50%", alignRight: true },
-    { year: "2025", title: "First EV Build", description: "Transition to fully electric platform", top: "95%", left: "50%", alignRight: true, center: true },
+    {
+      year: "2010",
+      title: "BAJA SAE INDIA",
+      description: "2nd overall among top 200 teams of India",
+      top: "10%", left: "50%", alignRight: true
+    },
+    {
+      year: "2011",
+      title: "SUPRA SAE INDIA",
+      description: "5th overall among 100 teams 1st in autocross event",
+      top: "20%", left: "50%", alignRight: false
+    },
+    {
+      year: "2012",
+      title: "SUPRA SAE INDIA",
+      description: "Overall among top 20. 3rd in this cut-throat competition",
+      top: "30%", left: "50%", alignRight: true
+    },
+    {
+      year: "2015",
+      title: "FDC INDIA",
+      description: "6th overall among top universities",
+      top: "40%", left: "50%", alignRight: false
+    },
+    {
+      year: "2017",
+      title: "FORMULA BHARAT",
+      description: "Overall 17th position 2nd among all IITs",
+      top: "50%", left: "50%", alignRight: true
+    },
+    {
+      year: "2019",
+      title: "FORMULA BHARAT",
+      description: "9th in business plan 2nd among all IITs",
+      top: "62%", left: "50%", alignRight: false
+    },
+    {
+      year: "2023",
+      title: "PI-EV FORMULA BHARAT",
+      description: "• 3rd overall in the competition\n• 1st in the FMEA Report category\n• 3rd in the Procurement Strategy category\n• 3rd in the Engineering Design Presentation category",
+      top: "75%", left: "50%", alignRight: true
+    },
+    {
+      year: "2025",
+      title: "FORMULA BHARAT - ELECTRIC CATEGORY",
+      description: "• First Ever EV Build\n• 12th In Engineering Design Presentation among 48 Teams\n• 6th IIT to build a succesful EV",
+      top: "90%", left: "50%", alignRight: false
+    }
   ];
 
   useGSAP(() => {

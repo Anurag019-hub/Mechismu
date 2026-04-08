@@ -11,34 +11,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SponsorsPage = memo(function SponsorsPage() {
   const [activeStatus, setActiveStatus] = useState('all');
-  const [activeYear, setActiveYear] = useState(null);
 
-  // Stable callbacks for memoized child components
+  // Stable callback
   const handleStatusChange = useCallback((status) => setActiveStatus(status), []);
-  const handleYearChange = useCallback((year) => setActiveYear(year), []);
+
   const heroRef = useRef(null);
   const gridRef = useRef(null);
   const whyRef = useRef(null);
   const howRef = useRef(null);
   const ctaRef = useRef(null);
 
-  // ── Filter logic ──
+  // ── Filter logic (YEAR REMOVED) ──
   const filtered = useMemo(() => {
     let list = [...sponsors];
+
     if (activeStatus !== 'all') {
       list = list.filter((s) => s.status === activeStatus);
     }
-    if (activeYear !== null) {
-      list = list.filter((s) => s.year === activeYear);
-    }
+
     // Sort by tier hierarchy
     list.sort((a, b) => tierOrder.indexOf(a.tier) - tierOrder.indexOf(b.tier));
+
     return list;
-  }, [activeStatus, activeYear]);
+  }, [activeStatus]);
 
   // ── Hero GSAP ──
   useEffect(() => {
     if (!heroRef.current) return;
+
     const ctx = gsap.context(() => {
       gsap.fromTo('.sp-hero__tag', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', delay: 0.1 });
       gsap.fromTo('.sp-hero__title', { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power4.out', delay: 0.2 });
@@ -46,36 +46,60 @@ const SponsorsPage = memo(function SponsorsPage() {
       gsap.fromTo('.sp-hero__line', { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: 'power3.inOut', delay: 0.75 });
       gsap.fromTo('.sp-hero__actions', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', delay: 0.95 });
     }, heroRef);
+
     return () => ctx.revert();
   }, []);
 
   // ── Section reveals ──
   useEffect(() => {
     const sections = [whyRef.current, howRef.current, ctaRef.current].filter(Boolean);
+
     const ctx = gsap.context(() => {
       sections.forEach((el) => {
-        gsap.fromTo(el, { opacity: 0, y: 40 }, {
-          opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
-          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
-        });
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 85%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
       });
     });
+
     return () => ctx.revert();
   }, []);
 
-  // ── Grid card stagger on filter change ──
+  // ── Grid animation on filter change ──
   useEffect(() => {
     if (!gridRef.current) return;
+
     const cards = gridRef.current.querySelectorAll('.sponsor-card');
     if (!cards.length) return;
-    gsap.fromTo(cards, { opacity: 0, y: 30 }, {
-      opacity: 1, y: 0, duration: 0.5, stagger: 0.06, ease: 'power3.out',
-    });
+
+    gsap.fromTo(
+      cards,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.06,
+        ease: 'power3.out',
+      }
+    );
   }, [filtered]);
 
   return (
     <div className="sp-page">
-      {/* ── Atmospheric BG ── */}
+      {/* Background */}
       <div className="sp-page__bg">
         <div className="sp-page__bg-glow sp-page__bg-glow--1" />
         <div className="sp-page__bg-glow sp-page__bg-glow--2" />
@@ -84,7 +108,7 @@ const SponsorsPage = memo(function SponsorsPage() {
 
       <div className="sp-page__container" ref={heroRef}>
 
-        {/* ══════ 1. HERO ══════ */}
+        {/* HERO */}
         <header className="sp-hero">
           <span className="sp-hero__tag">// MECHISMU RACING — PARTNERSHIPS</span>
           <h1 className="sp-hero__title">SUPPORT OUR TEAM</h1>
@@ -102,23 +126,23 @@ const SponsorsPage = memo(function SponsorsPage() {
           </div>
         </header>
 
-        {/* ══════ 2. FILTERS ══════ */}
+        {/* FILTERS */}
         <section className="sp-section" id="sponsors">
           <div className="sp-section__header">
             <div className="sp-section__accent" />
             <h2 className="sp-section__title">OUR SPONSORS</h2>
-            <span className="sp-section__count">{String(filtered.length).padStart(2, '0')} SPONSORS</span>
+            <span className="sp-section__count">
+              {String(filtered.length).padStart(2, '0')} SPONSORS
+            </span>
           </div>
 
           <SponsorFilters
             activeStatus={activeStatus}
             onStatusChange={handleStatusChange}
-            activeYear={activeYear}
-            onYearChange={handleYearChange}
           />
         </section>
 
-        {/* ══════ 3. SPONSOR GRID ══════ */}
+        {/* GRID */}
         <div className="sp-grid" ref={gridRef}>
           {filtered.length === 0 ? (
             <div className="sp-empty">
@@ -128,22 +152,23 @@ const SponsorsPage = memo(function SponsorsPage() {
             </div>
           ) : (
             filtered.map((s, i) => (
-              <SponsorCard key={`${s.name}-${s.year}-${i}`} sponsor={s} />
+              <SponsorCard key={`${s.name}-${i}`} sponsor={s} />
             ))
           )}
         </div>
 
-        {/* ══════ 4. TIERS ══════ */}
+        {/* TIERS */}
         <div id="tiers">
           <SponsorTiers />
         </div>
 
-        {/* ══════ 5. WHY PARTNER ══════ */}
+        {/* WHY */}
         <section className="sp-why" ref={whyRef}>
           <div className="sp-section__header">
             <div className="sp-section__accent" />
             <h2 className="sp-section__title">WHY PARTNER WITH US</h2>
           </div>
+
           <div className="sp-why__grid">
             {whyPartner.map((item, i) => (
               <div className="sp-why__card" key={i}>
@@ -154,12 +179,13 @@ const SponsorsPage = memo(function SponsorsPage() {
           </div>
         </section>
 
-        {/* ══════ 6. HOW TO SUPPORT ══════ */}
+        {/* HOW */}
         <section className="sp-how" ref={howRef}>
           <div className="sp-section__header">
             <div className="sp-section__accent" />
             <h2 className="sp-section__title">HOW TO SUPPORT</h2>
           </div>
+
           <div className="sp-how__grid">
             {supportMethods.map((method, i) => (
               <div className="sp-how__block" key={i}>
@@ -171,7 +197,7 @@ const SponsorsPage = memo(function SponsorsPage() {
           </div>
         </section>
 
-        {/* ══════ 7. FINAL CTA ══════ */}
+        {/* CTA */}
         <section className="sp-cta" id="contact-cta" ref={ctaRef}>
           <div className="sp-cta__inner">
             <span className="sp-cta__tag">// READY TO MAKE AN IMPACT?</span>

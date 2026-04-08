@@ -139,7 +139,7 @@ export default function Achievements() {
       </div>
 
       <h2 className="achievements-title fade-up">
-        ENGINEERING <span className="achievements-title-accent">RESULTS</span>
+        System Performance <span className="achievements-title-accent">Matrix</span>
       </h2>
 
       <p className="achievements-desc fade-up">

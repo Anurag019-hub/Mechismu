@@ -29,7 +29,7 @@ function CarCard({ car }) {
           {car.accel && (
             <div className="car-stat-item">
               <div className="car-stat-val">{car.accel}</div>
-              <div className="car-stat-label">0-100</div>
+              <div className="car-stat-label">0-60</div>
             </div>
           )}
           {car.mass && (

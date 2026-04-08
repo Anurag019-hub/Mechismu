@@ -1,4 +1,3 @@
-// ===== IMPORTS =====
 import React, { memo, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -7,15 +6,13 @@ import '@/features/team/components/teamsection/TeamSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// ===== COMPONENT =====
-
-const TeamSection = ({ title, members, id }) => {
+const TeamSection = ({ title, members, id, activeYear, deptKey }) => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const gridRef = useRef(null);
 
   useEffect(() => {
-    if (!sectionRef.current) return;
+    if (!sectionRef.current || !members?.length) return;
 
     const ctx = gsap.context(() => {
       // Section heading reveal
@@ -58,7 +55,7 @@ const TeamSection = ({ title, members, id }) => {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, [members]);
+  }, [members, activeYear]); // Added activeYear to dependency to refresh animations on year change
 
   if (!members || members.length === 0) return null;
 
@@ -67,11 +64,23 @@ const TeamSection = ({ title, members, id }) => {
       <div className="team-section__header" ref={headingRef}>
         <div className="team-section__accent" />
         <h2 className="team-section__title">{title}</h2>
-        <span className="team-section__count">{String(members.length).padStart(2, '0')}</span>
+        <span className="team-section__count">
+          {String(members.length).padStart(2, '0')}
+        </span>
       </div>
+
       <div className="team-section__grid" ref={gridRef}>
-        {members.map((member, index) => (
-          <TeamCard key={`${member.name}-${index}`} member={member} />
+        {members.map((member) => (
+          <TeamCard
+            /* CRITICAL FIX: Use a composite key. 
+               If Anurag is in 'lv' and 'ops', he needs a unique key for each 
+               to avoid React state conflicts.
+            */
+            key={`${deptKey}-${member.id || member.name}`}
+            member={member}
+            activeYear={activeYear}
+            sectionKey={deptKey} // This links back to r.dept in your JSON
+          />
         ))}
       </div>
     </section>
@@ -80,4 +89,4 @@ const TeamSection = ({ title, members, id }) => {
 
 TeamSection.displayName = 'TeamSection';
 
-export default React.memo(TeamSection);
+export default memo(TeamSection);

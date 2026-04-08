@@ -7,13 +7,9 @@ const STATUS_OPTIONS = [
   { key: 'past', label: 'PAST' },
 ];
 
-const YEAR_OPTIONS = [2025, 2024, 2023, 2022];
-
 const SponsorFilters = memo(({
   activeStatus,
   onStatusChange,
-  activeYear,
-  onYearChange,
 }) => {
   return (
     <div className="sponsor-filters">
@@ -25,34 +21,13 @@ const SponsorFilters = memo(({
             <button
               key={opt.key}
               type="button"
-              className={`sponsor-filters__pill ${opt.key === activeStatus ? 'sponsor-filters__pill--active' : ''}`}
+              className={`sponsor-filters__pill ${opt.key === activeStatus
+                ? 'sponsor-filters__pill--active'
+                : ''
+                }`}
               onClick={() => onStatusChange(opt.key)}
             >
               {opt.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Year Pills */}
-      <div className="sponsor-filters__group">
-        <span className="sponsor-filters__label">YEAR</span>
-        <div className="sponsor-filters__pills">
-          <button
-            type="button"
-            className={`sponsor-filters__pill ${activeYear === null ? 'sponsor-filters__pill--active' : ''}`}
-            onClick={() => onYearChange(null)}
-          >
-            ALL
-          </button>
-          {YEAR_OPTIONS.map((year) => (
-            <button
-              key={year}
-              type="button"
-              className={`sponsor-filters__pill ${year === activeYear ? 'sponsor-filters__pill--active' : ''}`}
-              onClick={() => onYearChange(year)}
-            >
-              {year}
             </button>
           ))}
         </div>

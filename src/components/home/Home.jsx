@@ -8,7 +8,7 @@ import CarsPreview from "./Cars/CarsPreview.jsx";
 import TeamPreview from "./Team/TeamPreview.jsx";
 import Achievements from "./Achievements/Achievements.jsx";
 import SponsorsPreview from "./Sponsors/SponsorsPreview.jsx";
-import ContactPreview from "./Contact/ContactPreview.jsx";
+
 
 export default function Home() {
   return (
@@ -19,7 +19,6 @@ export default function Home() {
       <TeamPreview />
       <Achievements />
       <SponsorsPreview />
-      <ContactPreview />
     </>
   );
 }

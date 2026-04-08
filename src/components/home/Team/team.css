@@ -47,15 +47,38 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 20px;
-  max-width: 600px;
   margin-bottom: 48px;
+
+  /* Mobile first */
+  grid-template-columns: 1fr;
 }
 
+/* Small tablets */
 @media (min-width: 640px) {
   .team-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Laptops */
+@media (min-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop (what you want) */
+@media (min-width: 1280px) {
+  .team-grid {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -96,7 +119,7 @@
 .team-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,0.95), rgba(10,10,10,0.3) 50%, transparent);
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.95), rgba(10, 10, 10, 0.3) 50%, transparent);
 }
 
 .team-role-badge {
@@ -125,6 +148,16 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 8px;
+}
+
+.team-tagline {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(229, 226, 225, 0.35);
+  text-align: left;
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 
 .team-social-link {

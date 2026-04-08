@@ -1,89 +1,78 @@
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback } from 'react';
+import teamDataRaw from '../data/team.json';
 
 const SECTION_CONFIG = [
-  { key: 'leadership', label: 'Leadership', file: 'leadership' },
-  { key: 'vd', label: 'Vehicle Dynamics', file: 'vd' },
-  { key: 'hv', label: 'High Voltage', file: 'hv' },
-  { key: 'lv', label: 'Low Voltage', file: 'lv' },
-  { key: 'ops', label: 'Operations', file: 'ops' },
-  { key: 'structures', label: 'Structures', file: 'structures' },
+  { key: 'leadership', label: 'Leadership' },
+  { key: 'vd', label: 'Vehicle Dynamics' },
+  { key: 'hv', label: 'High Voltage' },
+  { key: 'lv', label: 'Low Voltage' },
+  { key: 'ops', label: 'Operations' },
+  { key: 'structures', label: 'Structures' },
 ];
 
-/**
- * Team JSON Data Structure Expected
- * name: string
- * role: string
- * socials: obj
- */
-const loadYearData = async (year) => {
-  const results = {};
-  for (const section of SECTION_CONFIG) {
-    try {
-      const module = await import(`../data/${year}/${section.file}.json`);
-      results[section.key] = module.default || module;
-    } catch (e) {
-      results[section.key] = [];
-    }
-  }
-  return results;
-};
-
-export const useTeamFilter = (initialYear = 2025) => {
+export const useTeamFilter = (initialYear = 2024) => {
   const [activeYear, setActiveYear] = useState(initialYear);
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [teamData, setTeamData] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  useEffect(() => {
-    let cancelled = false;
-    setIsLoading(true);
-
-    loadYearData(activeYear).then((data) => {
-      if (!cancelled) {
-        setTeamData(data);
-        setIsLoading(false);
-      }
-    });
-
-    return () => { cancelled = true; };
-  }, [activeYear]);
+  const teamData = useMemo(() => teamDataRaw, []);
 
   const filteredSections = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
 
     return SECTION_CONFIG.map((section) => {
+      // 1. Hide section if a different specific filter is active
       if (activeFilter !== 'all' && activeFilter !== section.key) {
         return { ...section, members: [] };
       }
 
-      let members = teamData[section.key] || [];
+      const members = teamData
+        .filter((m) => {
+          // Find history entry with type-safe year comparison
+          const yearEntry = m.history?.find((h) => String(h.year) === String(activeYear));
+          if (!yearEntry) return false;
 
-      if (query) {
-        members = members.filter(
-          (m) =>
-            m.name.toLowerCase().includes(query) ||
-            m.role.toLowerCase().includes(query)
-        );
-      }
+          // Only include if the person is part of THIS department key this year
+          return yearEntry.departments.includes(section.key);
+        })
+        .map((m) => {
+          // Pass the specific year entry down for easy access in the card
+          const yearEntry = m.history.find((h) => String(h.year) === String(activeYear));
+          return { ...m, yearEntry };
+        })
+        .filter((m) => {
+          // 2. Search Logic
+          if (!query) return true;
+          const nameMatch = m.name.toLowerCase().includes(query);
+          const roleMatch = m.yearEntry.roles.some(r =>
+            r.title.toLowerCase().includes(query)
+          );
+          return nameMatch || roleMatch;
+        });
 
       return { ...section, members };
     }).filter((s) => s.members.length > 0);
-  }, [teamData, activeFilter, searchQuery]);
+  }, [teamData, activeFilter, searchQuery, activeYear]);
 
   const totalMembers = useMemo(() => {
-    return Object.values(teamData).reduce((sum, arr) => sum + (arr?.length || 0), 0);
-  }, [teamData]);
+    return teamData.filter(m =>
+      m.history?.some(h => String(h.year) === String(activeYear))
+    ).length;
+  }, [teamData, activeYear]);
 
+  // Restoring handlers for TeamPage animations
   const changeYear = useCallback((year) => {
-    if (year === activeYear) return false; // indicates no change
+    if (String(year) === String(activeYear)) return false;
     setIsTransitioning(true);
-    return true; // indicates transition start
+    return true;
   }, [activeYear]);
 
   const completeYearChange = useCallback((year) => {
     setActiveYear(year);
+    setActiveFilter('all');
+    setSearchQuery('');
     setIsTransitioning(false);
   }, []);
 
@@ -98,6 +87,7 @@ export const useTeamFilter = (initialYear = 2025) => {
     filteredSections,
     totalMembers,
     changeYear,
-    completeYearChange
+    completeYearChange,
+    setActiveYear // Keeping this as fallback if needed
   };
 };

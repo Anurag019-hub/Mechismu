@@ -14,7 +14,7 @@ export default function AboutPreview() {
       <div className="about-grid">
         <div className="about-left">
           <h2 className="about-title fade-up">
-            BORN TO <span className="about-title-accent">RACE</span>
+            RACING IS <span className="about-title-accent">RELIGION</span>
           </h2>
 
           <p className="about-text-primary fade-up">

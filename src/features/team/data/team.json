@@ -1,0 +1,703 @@
+[
+  {
+    "id": "sangeeth-m-ajith",
+    "name": "Sangeeth M Ajith",
+    "year": 2024,
+    "image": "/images/2026/sangeeth-m-ajith.jpg",
+    "email": "mailto:sangeeth.m.ajith@mechismu.com",
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "leadership",
+          "structures"
+        ],
+        "roles": [
+          {
+            "dept": "leadership",
+            "title": "Team Captain"
+          },
+          {
+            "dept": "structures",
+            "title": "Structures Head"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "maninder-singh",
+    "name": "Maninder Singh",
+    "year": 2024,
+    "image": "/images/2026/maninder-singh.jpg",
+    "email": "mailto:maninder.singh@mechismu.com",
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "leadership",
+          "lv"
+        ],
+        "roles": [
+          {
+            "dept": "leadership",
+            "title": "Vice Captain"
+          },
+          {
+            "dept": "lv",
+            "title": "LV Head"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sahil-kumar",
+    "name": "Sahil Kumar",
+    "year": 2024,
+    "image": "/images/2026/sahil-kumar.jpg",
+    "email": "mailto:sahil.kumar@mechismu.com",
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "hv",
+          "leadership"
+        ],
+        "roles": [
+          {
+            "dept": "hv",
+            "title": "HV Head"
+          },
+          {
+            "dept": "leadership",
+            "title": "HV Lead "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arindam-jha",
+    "name": "Arindam Jha",
+    "year": 2024,
+    "image": "/images/2026/arindam-jha.jpg",
+    "email": "mailto:arindam-jha@mechismu.com",
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd",
+          "leadership"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Vehicle Dynamics Head"
+          },
+          {
+            "dept": "leadership",
+            "title": "VD Lead"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "yash-rao",
+    "name": "Yash Rao",
+    "year": 2024,
+    "image": "/images/2026/yash-rao.jpg",
+    "email": "mailto:yash.rao@mechismu.com",
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd",
+          "leadership"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Manufacturing Head"
+          },
+          {
+            "dept": "leadership",
+            "title": "Manufacturing Lead"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "justin-george",
+    "name": "Justin George",
+    "year": 2024,
+    "image": "/images/2026/justin-george.jpg",
+    "email": "mailto:justin.george@mechismu.com",
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "ops",
+          "leadership"
+        ],
+        "roles": [
+          {
+            "dept": "ops",
+            "title": "Operations Head"
+          },
+          {
+            "dept": "leadership",
+            "title": "Operations Lead"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "debasish-das",
+    "name": "Debasish Das",
+    "image": "/images/2024/debasish-das.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Vehicle Dynamics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nithin-gowda",
+    "name": "Nithin Gowda",
+    "image": "/images/2024/nithin-gowda.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Vehicle Dynamics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sidharth-patel",
+    "name": "Sidharth Patel",
+    "image": "/images/2024/sidharth-patel.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Vehicle Dynamics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vanapalli-venkata-mani-sai-nandan",
+    "name": "Vanapalli Venkata Mani Sai Nandan",
+    "image": "/images/2024/vanapalli-venkata-mani-sai-nandan.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Vehicle Dynamics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ayush-kumar-verma",
+    "name": "Ayush Kumar Verma",
+    "image": "/images/2024/ayush-kumar-verma.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Vehicle Dynamics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vansh-motghare",
+    "name": "Vansh Motghare",
+    "image": "/images/2024/vansh-motghare.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Vehicle Dynamics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "priyam-ghosh",
+    "name": "Priyam Ghosh",
+    "image": "/images/2024/priyam-ghosh.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Vehicle Dynamics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "verma-aashu",
+    "name": "Verma Aashu",
+    "image": "/images/2024/verma-aashu.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Vehicle Dynamics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "saaketharam-kristipati",
+    "name": "Saaketharam Kristipati",
+    "image": "/images/2024/saaketharam-kristipati.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "vd"
+        ],
+        "roles": [
+          {
+            "dept": "vd",
+            "title": "Vehicle Dynamics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "subrat-panda",
+    "name": "Subrat Panda",
+    "image": "/images/2024/subrat-panda.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "hv"
+        ],
+        "roles": [
+          {
+            "dept": "hv",
+            "title": "HV Electronics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "debjyoti-banerjee",
+    "name": "Debjyoti Banerjee",
+    "image": "/images/2024/debjyoti-banerjee.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "hv"
+        ],
+        "roles": [
+          {
+            "dept": "hv",
+            "title": "HV Electronics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hemang-choubey",
+    "name": "Hemang Choubey",
+    "image": "/images/2024/hemang-choubey.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "hv"
+        ],
+        "roles": [
+          {
+            "dept": "hv",
+            "title": "HV Electronics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "asu-kumar",
+    "name": "Asu Kumar",
+    "image": "/images/2024/asu-kumar.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "hv"
+        ],
+        "roles": [
+          {
+            "dept": "hv",
+            "title": "HV Electronics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "abhimamyu-kumar",
+    "name": "Abhimamyu Kumar",
+    "image": "/images/2024/abhimamyu-kumar.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "hv"
+        ],
+        "roles": [
+          {
+            "dept": "hv",
+            "title": "HV Electronics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "anurag-patel",
+    "name": "Anurag Patel",
+    "image": "/images/2024/anurag-patel.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "lv",
+          "ops"
+        ],
+        "roles": [
+          {
+            "dept": "lv",
+            "title": "LV Electronics"
+          },
+          {
+            "dept": "ops",
+            "title": "Operations"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-v-saravanesh",
+    "name": "T.V.Saravanesh",
+    "image": "/images/2024/t-v-saravanesh.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "lv"
+        ],
+        "roles": [
+          {
+            "dept": "lv",
+            "title": "LV Electronics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sukanya",
+    "name": "Sukanya",
+    "image": "/images/2024/sukanya.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "lv"
+        ],
+        "roles": [
+          {
+            "dept": "lv",
+            "title": "LV Electronics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kartikey-shukla",
+    "name": "Kartikey Shukla",
+    "image": "/images/2024/kartikey-shukla.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "lv"
+        ],
+        "roles": [
+          {
+            "dept": "lv",
+            "title": "LV Electronics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "poladi-hamsini",
+    "name": "Poladi Hamsini",
+    "image": "/images/2024/poladi-hamsini.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "lv"
+        ],
+        "roles": [
+          {
+            "dept": "lv",
+            "title": "LV Electronics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aditya-kumar",
+    "name": "Aditya Kumar",
+    "image": "/images/2024/aditya-kumar.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "structures"
+        ],
+        "roles": [
+          {
+            "dept": "structures",
+            "title": "Structures"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "surup-kumar-singh",
+    "name": "Surup Kumar Singh",
+    "image": "/images/2024/surup-kumar-singh.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "structures"
+        ],
+        "roles": [
+          {
+            "dept": "structures",
+            "title": "Structures"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "manas-dubey",
+    "name": "Manas Dubey",
+    "image": "/images/2024/manas-dubey.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "structures"
+        ],
+        "roles": [
+          {
+            "dept": "structures",
+            "title": "Structures"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sudhanya-pati",
+    "name": "Sudhanya Pati",
+    "image": "/images/2024/sudhanya-pati.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "structures"
+        ],
+        "roles": [
+          {
+            "dept": "structures",
+            "title": "Structures"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mahi-rathore",
+    "name": "Mahi Rathore",
+    "image": "/images/2024/mahi-rathore.jpg",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "structures"
+        ],
+        "roles": [
+          {
+            "dept": "structures",
+            "title": "Structures"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -5,14 +5,37 @@ import '@/components/home/Team/team.css';
 
 const LEADERS = [
   {
-    name: 'Arjun Mehta',
+    name: 'Sangeet M. Ajith',
     role: 'Team Captain',
+    tagline: 'Drives vision, sets direction, owns every decision — defining the standard and pushing performance forward.',
     image: '/images/2025/arjun-mehta.jpg',
     linkedin: 'https://linkedin.com/in/arjunmehta',
   },
   {
-    name: 'Priya Sharma',
+    name: 'Maninder Singh',
     role: 'Vice Captain',
+    tagline: 'Drives execution alongside vision — keeping performance consistent across every system.',
+    image: '/images/2025/priya-sharma.jpg',
+    linkedin: 'https://linkedin.com/in/priyasharma',
+  },
+  {
+    name: 'Yash Rao',
+    role: 'Manufacturing head',
+    tagline: 'Builds what others only design — no shortcuts, only performance that holds under pressure.',
+    image: '/images/2025/priya-sharma.jpg',
+    linkedin: 'https://linkedin.com/in/priyasharma',
+  },
+  {
+    name: 'Sahil Kumar',
+    role: 'HV Head',
+    tagline: 'Powers every system. Controls every move — absolute precision in every signal, every response',
+    image: '/images/2025/priya-sharma.jpg',
+    linkedin: 'https://linkedin.com/in/priyasharma',
+  },
+  {
+    name: 'Arindam Jha',
+    role: 'VD Head',
+    tagline: 'Masters vehicle behavior — where precision handling meets raw performance.',
     image: '/images/2025/priya-sharma.jpg',
     linkedin: 'https://linkedin.com/in/priyasharma',
   },
@@ -35,6 +58,7 @@ function LeaderCard({ leader }) {
 
       <div className="team-info">
         <h3 className="team-name">{leader.name}</h3>
+        <p className="team-tagline">{leader.tagline}</p>
         <a
           href={leader.linkedin}
           target="_blank"

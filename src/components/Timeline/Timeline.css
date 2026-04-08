@@ -9,6 +9,12 @@
 }
 
 /* ===== RED AMBIENT BACKGROUND ===== */
+
+.timeline-node-desc {
+  white-space: pre-line;
+  /* or pre-wrap */
+}
+
 .timeline-section::before {
   content: "";
   position: absolute;
@@ -59,8 +65,7 @@
   fill: none;
   stroke-dasharray: 15 15;
   filter:
-    drop-shadow(0 0 6px rgba(255, 0, 0, 0.8))
-    drop-shadow(0 0 20px rgba(255, 0, 0, 0.4));
+    drop-shadow(0 0 6px rgba(255, 0, 0, 0.8)) drop-shadow(0 0 20px rgba(255, 0, 0, 0.4));
 }
 
 @media (min-width: 768px) {
@@ -223,6 +228,7 @@
   .timeline-node.right-align {
     transform: translate(1rem, -50%);
   }
+
   .timeline-node.left-align {
     transform: translate(calc(-100% - 1rem), -50%);
   }
@@ -233,6 +239,7 @@
   .timeline-node.right-align {
     transform: translate(3rem, -50%);
   }
+
   .timeline-node.left-align {
     transform: translate(calc(-100% - 3rem), -50%);
   }
@@ -243,6 +250,7 @@
   .timeline-node.right-align {
     transform: translate(6rem, -50%);
   }
+
   .timeline-node.left-align {
     transform: translate(calc(-100% - 6rem), -50%);
   }
@@ -253,6 +261,7 @@
   .timeline-node.right-align {
     transform: translate(8rem, -50%);
   }
+
   .timeline-node.left-align {
     transform: translate(calc(-100% - 8rem), -50%);
   }
@@ -275,6 +284,7 @@
   .timeline-node.active.right-align {
     transform: translate(1rem, -50%) scale(1.03);
   }
+
   .timeline-node.active.left-align {
     transform: translate(calc(-100% - 1rem), -50%) scale(1.03);
   }
@@ -284,9 +294,11 @@
   .timeline-node.active.center-align {
     transform: translate(-50%, -50%) scale(1.06);
   }
+
   .timeline-node.active.right-align {
     transform: translate(3rem, -50%) scale(1.06);
   }
+
   .timeline-node.active.left-align {
     transform: translate(calc(-100% - 3rem), -50%) scale(1.06);
   }
@@ -296,9 +308,11 @@
   .timeline-node.active.center-align {
     transform: translate(-50%, -50%) scale(1.08);
   }
+
   .timeline-node.active.right-align {
     transform: translate(6rem, -50%) scale(1.08);
   }
+
   .timeline-node.active.left-align {
     transform: translate(calc(-100% - 6rem), -50%) scale(1.08);
   }
@@ -308,6 +322,7 @@
   .timeline-node.active.right-align {
     transform: translate(8rem, -50%) scale(1.08);
   }
+
   .timeline-node.active.left-align {
     transform: translate(calc(-100% - 8rem), -50%) scale(1.08);
   }

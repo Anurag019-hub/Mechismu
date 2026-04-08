@@ -1,28 +1,17 @@
-
 import SectionWrapper from '@/components/home/common/SectionWrapper';
 import CTAButton from '@/components/home/common/CTAButton';
 import '@/components/home/Sponsors/sponsors.css';
 
-const SPONSORS = [
-  { name: 'Tata Motors', logo: '/sponser/tata.png', tier: 'PLATINUM' },
-  { name: 'Mahindra', logo: '/sponser/mahindra.png', tier: 'GOLD' },
-  { name: 'Bosch', logo: '/sponser/bosch.png', tier: 'GOLD' },
-  { name: 'SKF', logo: '/sponser/skf.png', tier: 'SILVER' },
-  { name: 'Ansys', logo: '/sponser/ansys.png', tier: 'SILVER' },
-  { name: 'Altair', logo: '/sponser/altair.png', tier: 'SILVER' },
-  { name: 'SolidWorks', logo: '/sponser/solidworks.png', tier: 'BRONZE' },
-  { name: 'MathWorks', logo: '/sponser/mathworks.png', tier: 'BRONZE' },
-];
-
-const tierColors = {
-  PLATINUM: '#C0C0C0',
-  GOLD: '#FFD700',
-  SILVER: '#A8A8A8',
-  BRONZE: '#CD7F32',
-};
+// Import the centralized data and config
+import { sponsors, tierColors } from '@/data/sponsors';
 
 function SponsorLogo({ sponsor }) {
-  const initials = sponsor.name.slice(0, 2).toUpperCase();
+  // Defensive check for initials
+  const initials = sponsor.name ? sponsor.name.slice(0, 2).toUpperCase() : '??';
+
+  /** * Note: If your imported tierColors use 'Title', 'Gold', etc. 
+   * ensure the sponsor.tier casing matches exactly.
+   */
   const color = tierColors[sponsor.tier] || '#ff544a';
 
   return (
@@ -36,7 +25,9 @@ function SponsorLogo({ sponsor }) {
           className="sponsor-img"
           onError={(e) => {
             e.target.style.display = 'none';
-            e.target.nextElementSibling.style.display = 'flex';
+            if (e.target.nextElementSibling) {
+              e.target.nextElementSibling.style.display = 'flex';
+            }
           }}
         />
         <div className="sponsor-fallback" style={{ display: 'none' }}>
@@ -49,6 +40,7 @@ function SponsorLogo({ sponsor }) {
 }
 
 export default function SponsorsPreview() {
+  const limitedSponsors = sponsors.slice(0, 8);
   return (
     <SectionWrapper className="sponsors-section">
       <div className="sponsors-header-accent fade-up">
@@ -66,7 +58,8 @@ export default function SponsorsPreview() {
       </p>
 
       <div className="sponsors-grid">
-        {SPONSORS.map((sponsor) => (
+        {/* Mapping over the imported 'sponsors' array instead of local constant */}
+        {limitedSponsors.map((sponsor) => (
           <SponsorLogo key={sponsor.name} sponsor={sponsor} />
         ))}
       </div>

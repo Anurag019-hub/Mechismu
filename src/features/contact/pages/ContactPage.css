@@ -26,21 +26,17 @@
 .ctp__bg-carbon {
   position: absolute;
   inset: 0;
-  background-image: 
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.012) 0px,
-      rgba(255,255,255,0.012) 1px,
+  background-image:
+    repeating-linear-gradient(0deg,
+      rgba(255, 255, 255, 0.012) 0px,
+      rgba(255, 255, 255, 0.012) 1px,
       transparent 1px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,0.012) 0px,
-      rgba(255,255,255,0.012) 1px,
+      transparent 4px),
+    repeating-linear-gradient(90deg,
+      rgba(255, 255, 255, 0.012) 0px,
+      rgba(255, 255, 255, 0.012) 1px,
       transparent 1px,
-      transparent 4px
-    );
+      transparent 4px);
   opacity: 0.6;
 }
 
@@ -81,13 +77,27 @@
 }
 
 @keyframes ctpGlow1 {
-  0% { opacity: 0.25; transform: translate(0,0) scale(1); }
-  100% { opacity: 0.4; transform: translate(-25px, 15px) scale(1.08); }
+  0% {
+    opacity: 0.25;
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: translate(-25px, 15px) scale(1.08);
+  }
 }
 
 @keyframes ctpGlow2 {
-  0% { opacity: 0.15; transform: translate(0,0) scale(1); }
-  100% { opacity: 0.25; transform: translate(20px,-20px) scale(1.12); }
+  0% {
+    opacity: 0.15;
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0.25;
+    transform: translate(20px, -20px) scale(1.12);
+  }
 }
 
 /* ═══════════════════════════════════════════
@@ -224,16 +234,16 @@
   border-radius: 0;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
-              box-shadow 0.35s ease,
-              border-color 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
   opacity: 0;
 }
 
 .ctp-cards__item:hover {
   transform: translateY(-4px);
   box-shadow: 0 0 28px rgba(255, 84, 73, 0.12),
-              0 8px 32px rgba(0,0,0,0.4);
+    0 8px 32px rgba(0, 0, 0, 0.4);
   border-color: rgba(255, 84, 73, 0.2);
 }
 
@@ -309,14 +319,18 @@
   margin-bottom: 20px;
 }
 
+.ctp-info-img__src {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .ctp-info-img__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 42, 42, 0.06) 0%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 42, 42, 0.06) 0%,
+      rgba(0, 0, 0, 0.7) 100%);
   display: flex;
   align-items: flex-end;
   padding: 16px 18px;
@@ -385,8 +399,15 @@
 }
 
 @keyframes dotPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .ctp-info-panel__divider {
@@ -524,7 +545,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.6rem;
   font-weight: 500;
-  color: rgba(229,226,225,0.25);
+  color: rgba(229, 226, 225, 0.25);
   text-transform: uppercase;
   letter-spacing: 0.25em;
   margin-bottom: 20px;
@@ -703,5 +724,7 @@
     align-items: center;
   }
 
-  .ctp-hero__wire { display: none; }
+  .ctp-hero__wire {
+    display: none;
+  }
 }

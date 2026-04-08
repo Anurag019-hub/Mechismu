@@ -45,13 +45,27 @@
 }
 
 @keyframes spGlow1 {
-  0% { opacity: 0.2; transform: translate(0, 0) scale(1); }
-  100% { opacity: 0.35; transform: translate(30px, 20px) scale(1.12); }
+  0% {
+    opacity: 0.2;
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0.35;
+    transform: translate(30px, 20px) scale(1.12);
+  }
 }
 
 @keyframes spGlow2 {
-  0% { opacity: 0.12; transform: translate(0, 0) scale(1); }
-  100% { opacity: 0.22; transform: translate(-20px, -30px) scale(1.15); }
+  0% {
+    opacity: 0.12;
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0.22;
+    transform: translate(-20px, -30px) scale(1.15);
+  }
 }
 
 .sp-page__bg-grid {
@@ -75,8 +89,8 @@
 }
 
 /* ═══════════════════════════════════════════
-   1. HERO
-   ═══════════════════════════════════════════ */
+   1. HERO
+   ═══════════════════════════════════════════ */
 
 .sp-hero {
   text-align: center;
@@ -163,12 +177,12 @@
   background: linear-gradient(135deg, #FF2A2A 0%, #b11217 100%);
   color: #fff;
   box-shadow: 0 0 24px rgba(255, 42, 42, 0.3),
-              0 4px 16px rgba(0, 0, 0, 0.4);
+    0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .sp-btn--primary:hover {
   box-shadow: 0 0 40px rgba(255, 42, 42, 0.45),
-              0 6px 24px rgba(0, 0, 0, 0.5);
+    0 6px 24px rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
 }
 
@@ -192,8 +206,8 @@
 }
 
 /* ═══════════════════════════════════════════
-   2. SECTION HEADERS (reusable)
-   ═══════════════════════════════════════════ */
+   2. SECTION HEADERS (reusable)
+   ═══════════════════════════════════════════ */
 
 .sp-section {
   margin-bottom: 28px;
@@ -235,8 +249,8 @@
 }
 
 /* ═══════════════════════════════════════════
-   3. SPONSOR GRID
-   ═══════════════════════════════════════════ */
+   3. SPONSOR GRID
+   ═══════════════════════════════════════════ */
 
 .sp-grid {
   display: grid;
@@ -282,8 +296,8 @@
 }
 
 /* ═══════════════════════════════════════════
-   5. WHY PARTNER
-   ═══════════════════════════════════════════ */
+   5. WHY PARTNER
+   ═══════════════════════════════════════════ */
 
 .sp-why {
   margin-bottom: 80px;
@@ -331,8 +345,8 @@
 }
 
 /* ═══════════════════════════════════════════
-   6. HOW TO SUPPORT
-   ═══════════════════════════════════════════ */
+   6. HOW TO SUPPORT
+   ═══════════════════════════════════════════ */
 
 .sp-how {
   margin-bottom: 80px;
@@ -387,8 +401,8 @@
 }
 
 /* ═══════════════════════════════════════════
-   7. FINAL CTA
-   ═══════════════════════════════════════════ */
+   7. FINAL CTA
+   ═══════════════════════════════════════════ */
 
 .sp-cta {
   margin-bottom: 30px;
@@ -456,8 +470,8 @@
 }
 
 /* ═══════════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════════ */
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
 
 @media (max-width: 1100px) {
   .sp-grid {

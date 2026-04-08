@@ -8,15 +8,15 @@
   border-radius: 6px;
   overflow: hidden;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 0.35s ease;
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
   cursor: default;
 }
 
 .team-card:hover {
   transform: scale(1.02);
   box-shadow: 0 0 30px rgba(255, 84, 74, 0.15),
-              0 0 60px rgba(255, 84, 74, 0.06);
+    0 0 60px rgba(255, 84, 74, 0.06);
   border-color: rgba(255, 84, 74, 0.25);
 }
 
@@ -49,11 +49,9 @@
 .team-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 50%,
-    rgba(0, 0, 0, 0.85) 100%
-  );
+  background: linear-gradient(180deg,
+      transparent 50%,
+      rgba(0, 0, 0, 0.85) 100%);
   pointer-events: none;
 }
 
@@ -82,7 +80,7 @@
 }
 
 .team-card__content {
-  padding: 16px 18px 12px;
+  padding: 16px 18px 10px;
 }
 
 .team-card__name {
@@ -92,18 +90,99 @@
   color: #E5E2E1;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin: 0 0 4px;
+  margin: 0 0 8px;
   line-height: 1.2;
 }
 
-.team-card__role {
+/* ── Role pills (active year) ── */
+.team-card__roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.team-card__role-pill {
+  display: inline-block;
   font-family: 'Inter', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.67rem;
   font-weight: 600;
   color: #FF544A;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
+  background: rgba(255, 84, 74, 0.1);
+  border: 1px solid rgba(255, 84, 74, 0.22);
+  border-radius: 2px;
+  padding: 2px 7px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.team-card__role-pill--none {
+  color: rgba(229, 226, 225, 0.3);
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ── History badge (top-right of image) ── */
+.team-card__history-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #FF544A;
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(255, 84, 74, 0.35);
+  border-radius: 3px;
+  padding: 2px 5px;
+  letter-spacing: 0.06em;
+  z-index: 3;
+  user-select: none;
+}
+
+/* ── Role history timeline ── */
+.team-card__history {
+  list-style: none;
   margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.team-card__history-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  opacity: 0.45;
+  transition: opacity 0.25s ease;
+}
+
+.team-card__history-item--active {
+  opacity: 1;
+}
+
+.team-card__history-year {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #FF544A;
+  letter-spacing: 0.06em;
+  min-width: 32px;
+  flex-shrink: 0;
+}
+
+.team-card__history-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(229, 226, 225, 0.75);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   line-height: 1.3;
 }
 
