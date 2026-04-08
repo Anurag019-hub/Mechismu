@@ -25,9 +25,8 @@ function AnimatedRoutes() {
 
     return (
         <AnimatePresence mode="wait">
-            <Suspense fallback={<PageLoader />}>
-                <Layout key={location.pathname}>
-
+            <Layout key={location.pathname}>
+                <Suspense fallback={<PageLoader />}>
                     <Routes location={location}>
                         <Route path="/" element={<Home />} />
                         <Route path="/contact" element={<Contact />} />
@@ -37,8 +36,9 @@ function AnimatedRoutes() {
                         <Route path="/cars" element={<Cars />} />
                         <Route path="/wins" element={<Wins />} />
                     </Routes>
-                </Layout>
-            </Suspense>
+                </Suspense>
+            </Layout>
+
 
         </AnimatePresence>
     );
