@@ -1,4 +1,4 @@
-
+import React from 'react';
 import SectionWrapper from '@/components/home/common/SectionWrapper';
 import CTAButton from '@/components/home/common/CTAButton';
 import '@/components/home/Team/team.css';
@@ -49,16 +49,37 @@ const LEADERS = [
 ];
 
 function LeaderCard({ leader }) {
+  const [imgLoaded, setImgLoaded] = React.useState(false);
+  const [imgError, setImgError] = React.useState(false);
+
+  const initials = leader.name
+    ? leader.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2)
+    : '??';
+
+  const showImage = leader.image && !imgError;
+
   return (
     <div className="team-card fade-up">
       <div className="team-image-wrapper">
-        <img
-          src={leader.image}
-          alt={leader.name}
-          loading="lazy"
-          className="team-image"
-          onError={(e) => { e.target.style.display = 'none'; }}
-        />
+        {/* Placeholder (initials) */}
+        {!imgLoaded && (
+          <div className="team-image-placeholder">
+            <span>{initials}</span>
+          </div>
+        )}
+
+        {/* Image */}
+        {showImage && (
+          <img
+            src={leader.image}
+            alt={leader.name}
+            loading="lazy"
+            className={`team-image ${imgLoaded ? 'loaded' : ''}`}
+            onLoad={() => setImgLoaded(true)}
+            onError={() => setImgError(true)}
+          />
+        )}
+
         <div className="team-image-overlay" />
         <div className="team-role-badge">{leader.role}</div>
       </div>
@@ -66,6 +87,7 @@ function LeaderCard({ leader }) {
       <div className="team-info">
         <h3 className="team-name">{leader.name}</h3>
         <p className="team-tagline">{leader.tagline}</p>
+
         <a
           href={leader.linkedin}
           target="_blank"

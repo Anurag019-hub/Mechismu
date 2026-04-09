@@ -189,3 +189,28 @@
 .team-card:hover .team-card-accent {
   width: 100%;
 }
+
+.team-image-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 0, 0, 0.15);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  z-index: 1;
+}
+
+.team-image {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-image.loaded {
+  opacity: 1;
+}
