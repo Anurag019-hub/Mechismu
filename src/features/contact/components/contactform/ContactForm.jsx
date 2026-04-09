@@ -1,5 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
 import React, { useState, useRef, useCallback, memo } from 'react';
 import emailjs from '@emailjs/browser';
 import '@/features/contact/components/contactform/ContactForm.css';
@@ -13,7 +11,13 @@ const SUBJECTS = [
 ];
 
 const ContactForm = memo(function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
   const [focused, setFocused] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const formRef = useRef(null);
@@ -23,30 +27,33 @@ const ContactForm = memo(function ContactForm() {
     setForm((prev) => ({ ...prev, [name]: value }));
   }, []);
 
-  const handleSubmit = useCallback((e) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
 
-    emailjs.send(
-      process.env.VITE_EMAILJS_SERVICE_ID,
-      process.env.VITE_EMAILJS_TEMPLATE_ID,
-      {
-        name: form.name,
-        email: form.email,
-        title: form.subject,
-        message: form.message,
-      },
-      process.env.VITE_EMAILJS_PUBLIC_KEY
-    )
-      .then(() => {
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 4000);
-        setForm({ name: '', email: '', subject: '', message: '' });
-      })
-      .catch((err) => {
-        console.error('FAILED...', err);
-      });
-
-  }, [form]);
+      emailjs
+        .send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            name: form.name,
+            email: form.email,
+            title: form.subject,
+            message: form.message,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        )
+        .then(() => {
+          setSubmitted(true);
+          setTimeout(() => setSubmitted(false), 4000);
+          setForm({ name: '', email: '', subject: '', message: '' });
+        })
+        .catch((err) => {
+          console.error('FAILED...', err);
+        });
+    },
+    [form]
+  );
 
   const handleFocus = useCallback((e) => setFocused(e.target.name), []);
   const handleBlur = useCallback(() => setFocused(''), []);
@@ -59,10 +66,17 @@ const ContactForm = memo(function ContactForm() {
         <div className="ct-form__title-line" />
       </div>
 
-      <form className="ct-form" ref={formRef} onSubmit={handleSubmit} autoComplete="off">
-
+      <form
+        className="ct-form"
+        ref={formRef}
+        onSubmit={handleSubmit}
+        autoComplete="off"
+      >
         {/* Name */}
-        <div className={`ct-field ${focused === 'name' ? 'ct-field--focused' : ''} ${form.name ? 'ct-field--filled' : ''}`}>
+        <div
+          className={`ct-field ${focused === 'name' ? 'ct-field--focused' : ''
+            } ${form.name ? 'ct-field--filled' : ''}`}
+        >
           <label className="ct-field__label">NOMINAL NAME</label>
           <input
             className="ct-field__input"
@@ -78,7 +92,10 @@ const ContactForm = memo(function ContactForm() {
         </div>
 
         {/* Email */}
-        <div className={`ct-field ${focused === 'email' ? 'ct-field--focused' : ''} ${form.email ? 'ct-field--filled' : ''}`}>
+        <div
+          className={`ct-field ${focused === 'email' ? 'ct-field--focused' : ''
+            } ${form.email ? 'ct-field--filled' : ''}`}
+        >
           <label className="ct-field__label">RETURN CHANNEL</label>
           <input
             className="ct-field__input"
@@ -94,7 +111,10 @@ const ContactForm = memo(function ContactForm() {
         </div>
 
         {/* Subject */}
-        <div className={`ct-field ${focused === 'subject' ? 'ct-field--focused' : ''} ${form.subject ? 'ct-field--filled' : ''}`}>
+        <div
+          className={`ct-field ${focused === 'subject' ? 'ct-field--focused' : ''
+            } ${form.subject ? 'ct-field--filled' : ''}`}
+        >
           <label className="ct-field__label">SUBJECT PROTOCOL</label>
           <select
             className="ct-field__input ct-field__select"
@@ -115,8 +135,13 @@ const ContactForm = memo(function ContactForm() {
         </div>
 
         {/* Message */}
-        <div className={`ct-field ct-field--textarea ${focused === 'message' ? 'ct-field--focused' : ''} ${form.message ? 'ct-field--filled' : ''}`}>
-          <label className="ct-field__label">ENCRYPTED MESSAGE BODY</label>
+        <div
+          className={`ct-field ct-field--textarea ${focused === 'message' ? 'ct-field--focused' : ''
+            } ${form.message ? 'ct-field--filled' : ''}`}
+        >
+          <label className="ct-field__label">
+            ENCRYPTED MESSAGE BODY
+          </label>
           <textarea
             className="ct-field__input ct-field__textarea"
             name="message"
@@ -131,12 +156,17 @@ const ContactForm = memo(function ContactForm() {
         </div>
 
         {/* Submit */}
-        <button className={`ct-submit ${submitted ? 'ct-submit--sent' : ''}`} type="submit">
+        <button
+          className={`ct-submit ${submitted ? 'ct-submit--sent' : ''
+            }`}
+          type="submit"
+        >
           <span className="ct-submit__text">
-            {submitted ? 'TRANSMISSION SENT ✓' : 'SEND MESSAGE'}
+            {submitted
+              ? 'TRANSMISSION SENT ✓'
+              : 'SEND MESSAGE'}
           </span>
         </button>
-
       </form>
     </div>
   );
