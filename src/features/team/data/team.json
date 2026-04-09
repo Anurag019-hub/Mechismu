@@ -1,9 +1,254 @@
 [
   {
+    "id": "kaushan-dey",
+    "name": "Kaushan Dey",
+    "year": 2024,
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aman-yadav",
+    "name": "Aman Yadav",
+    "year": 2024,
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aromal-s-ram",
+    "name": "Aromal S Ram",
+    "year": 2024,
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "former_leadership",
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "former_leadership",
+            "title": "Former Vice Captain"
+          },
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gudiwada-kartheek",
+    "name": "Gudiwada Kartheek",
+    "year": 2024,
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jonathan-thomas-john",
+    "name": "Jonathan Thomas John",
+    "year": 2024,
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "roma-singh",
+    "name": "Roma Singh",
+    "year": 2024,
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "joy-vithyathil",
+    "name": "Joy Vithyathil",
+    "year": 2024,
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shruti-sinha",
+    "name": "Shruti Sinha",
+    "year": 2024,
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nitish-kumar",
+    "name": "Nitish Kumar",
+    "year": 2024,
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "former_leadership",
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "former_leadership",
+            "title": "Former Operations Head"
+          },
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "om-shrivastava",
+    "name": "Om Shrivastava",
+    "year": 2024,
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "former_leadership",
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "former_leadership",
+            "title": "Former Captain"
+          },
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "sangeeth-m-ajith",
     "name": "Sangeeth M Ajith",
     "year": 2024,
-    "image": "/images/2026/sangeeth-m-ajith.jpg",
+    "image": null,
     "email": "mailto:sangeeth.m.ajith@mechismu.com",
     "linkedin": "https://www.linkedin.com/in/sangeethmajith/",
     "instagram": null,
@@ -31,7 +276,7 @@
     "id": "maninder-singh",
     "name": "Maninder Singh",
     "year": 2024,
-    "image": "/images/2026/maninder-singh.jpg",
+    "image": null,
     "email": "mailto:maninder.singh@mechismu.com",
     "linkedin": "https://www.linkedin.com/in/mrdimara/",
     "instagram": null,
@@ -59,7 +304,7 @@
     "id": "sahil-kumar",
     "name": "Sahil Kumar",
     "year": 2024,
-    "image": "/images/2026/sahil-kumar.jpg",
+    "image": null,
     "email": "mailto:sahil.kumar@mechismu.com",
     "linkedin": "https://www.linkedin.com/in/sahil-kumar-0b0784287/",
     "instagram": null,
@@ -87,7 +332,7 @@
     "id": "arindam-jha",
     "name": "Arindam Jha",
     "year": 2024,
-    "image": "/images/2026/arindam-jha.jpg",
+    "image": null,
     "email": "mailto:arindam-jha@mechismu.com",
     "linkedin": "https://www.linkedin.com/in/arindamjha/",
     "instagram": null,
@@ -115,7 +360,7 @@
     "id": "yash-rao",
     "name": "Yash Rao",
     "year": 2024,
-    "image": "/images/2026/yash-rao.jpg",
+    "image": null,
     "email": "mailto:yash.rao@mechismu.com",
     "linkedin": "https://www.linkedin.com/in/yash-rao-71820a287/",
     "instagram": null,
@@ -143,7 +388,7 @@
     "id": "justin-george",
     "name": "Justin George",
     "year": 2024,
-    "image": "/images/2026/justin-george.jpg",
+    "image": null,
     "email": "mailto:justin.george@mechismu.com",
     "linkedin": "https://www.linkedin.com/in/jstingeorg/",
     "instagram": null,
@@ -170,7 +415,7 @@
   {
     "id": "debasish-das",
     "name": "Debasish Das",
-    "image": "/images/2024/debasish-das.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -192,7 +437,7 @@
   {
     "id": "nithin-gowda",
     "name": "Nithin Gowda",
-    "image": "/images/2024/nithin-gowda.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -214,7 +459,7 @@
   {
     "id": "sidharth-patel",
     "name": "Sidharth Patel",
-    "image": "/images/2024/sidharth-patel.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -236,7 +481,7 @@
   {
     "id": "v.-v.-m.-sai-nandan",
     "name": "V.V.M.Sai Nandan",
-    "image": "/images/2024/vanapalli-venkata-mani-sai-nandan.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -258,7 +503,7 @@
   {
     "id": "ayush-kumar-verma",
     "name": "Ayush Kumar Verma",
-    "image": "/images/2024/ayush-kumar-verma.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -280,7 +525,7 @@
   {
     "id": "vansh-motghare",
     "name": "Vansh Motghare",
-    "image": "/images/2024/vansh-motghare.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -302,7 +547,7 @@
   {
     "id": "priyam-ghosh",
     "name": "Priyam Ghosh",
-    "image": "/images/2024/priyam-ghosh.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -324,7 +569,7 @@
   {
     "id": "verma-aashu",
     "name": "Verma Aashu",
-    "image": "/images/2024/verma-aashu.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -346,7 +591,7 @@
   {
     "id": "saaketharam-kristipati",
     "name": "Saaketharam Kristipati",
-    "image": "/images/2024/saaketharam-kristipati.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -366,31 +611,9 @@
     ]
   },
   {
-    "id": "subrat-panda",
-    "name": "Subrat Panda",
-    "image": "/images/2024/subrat-panda.jpg",
-    "email": null,
-    "linkedin": null,
-    "instagram": null,
-    "history": [
-      {
-        "year": 2024,
-        "departments": [
-          "hv"
-        ],
-        "roles": [
-          {
-            "dept": "hv",
-            "title": "HV Electronics"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "debjyoti-banerjee",
     "name": "Debjyoti Banerjee",
-    "image": "/images/2024/debjyoti-banerjee.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -403,7 +626,7 @@
         "roles": [
           {
             "dept": "hv",
-            "title": "HV Electronics"
+            "title": "HV Powertrain "
           }
         ]
       }
@@ -412,7 +635,7 @@
   {
     "id": "hemang-choubey",
     "name": "Hemang Choubey",
-    "image": "/images/2024/hemang-choubey.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -425,7 +648,7 @@
         "roles": [
           {
             "dept": "hv",
-            "title": "HV Electronics"
+            "title": "HV Powertrain "
           }
         ]
       }
@@ -434,7 +657,7 @@
   {
     "id": "asu-kumar",
     "name": "Asu Kumar",
-    "image": "/images/2024/asu-kumar.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -447,7 +670,7 @@
         "roles": [
           {
             "dept": "hv",
-            "title": "HV Electronics"
+            "title": "HV Powertrain "
           }
         ]
       }
@@ -456,7 +679,7 @@
   {
     "id": "abhimamyu-kumar",
     "name": "Abhimamyu Kumar",
-    "image": "/images/2024/abhimamyu-kumar.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -469,7 +692,7 @@
         "roles": [
           {
             "dept": "hv",
-            "title": "HV Electronics"
+            "title": "HV Powertrain "
           }
         ]
       }
@@ -478,7 +701,7 @@
   {
     "id": "anurag-patel",
     "name": "Anurag Patel",
-    "image": "/images/2024/anurag-patel.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -505,7 +728,7 @@
   {
     "id": "t-v-saravanesh",
     "name": "T.V.Saravanesh",
-    "image": "/images/2024/t-v-saravanesh.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -527,7 +750,7 @@
   {
     "id": "sukanya",
     "name": "Sukanya",
-    "image": "/images/2024/sukanya.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -549,7 +772,7 @@
   {
     "id": "kartikey-shukla",
     "name": "Kartikey Shukla",
-    "image": "/images/2024/kartikey-shukla.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -571,7 +794,29 @@
   {
     "id": "poladi-hamsini",
     "name": "Poladi Hamsini",
-    "image": "/images/2024/poladi-hamsini.jpg",
+    "image": null,
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2024,
+        "departments": [
+          "lv"
+        ],
+        "roles": [
+          {
+            "dept": "lv",
+            "title": "LV Electronics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "subrat-panda",
+    "name": "Subrat Panda",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -593,7 +838,7 @@
   {
     "id": "aditya-kumar",
     "name": "Aditya Kumar",
-    "image": "/images/2024/aditya-kumar.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -615,7 +860,7 @@
   {
     "id": "surup-kumar-singh",
     "name": "Surup Kumar Singh",
-    "image": "/images/2024/surup-kumar-singh.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -637,7 +882,7 @@
   {
     "id": "manas-dubey",
     "name": "Manas Dubey",
-    "image": "/images/2024/manas-dubey.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -659,7 +904,7 @@
   {
     "id": "sudhanya-pati",
     "name": "Sudhanya Pati",
-    "image": "/images/2024/sudhanya-pati.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,
@@ -681,7 +926,7 @@
   {
     "id": "mahi-rathore",
     "name": "Mahi Rathore",
-    "image": "/images/2024/mahi-rathore.jpg",
+    "image": null,
     "email": null,
     "linkedin": null,
     "instagram": null,

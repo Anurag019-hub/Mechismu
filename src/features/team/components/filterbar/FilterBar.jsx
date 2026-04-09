@@ -5,11 +5,13 @@ import '@/features/team/components/filterbar/FilterBar.css';
 const FILTERS = [
   { key: 'all', label: 'ALL' },
   { key: 'leadership', label: 'LEADERSHIP' },
+  { key: 'former_leadership', label: 'FORMER LEADERSHIP' },
+  { key: 'advisors', label: 'ADVISORS' },
+  { key: 'structures', label: 'STRUCTURES' },
+  { key: 'lv', label: 'LV' },
   { key: 'vd', label: 'VD' },
   { key: 'hv', label: 'HV' },
-  { key: 'lv', label: 'LV' },
   { key: 'ops', label: 'OPS' },
-  { key: 'structures', label: 'STRUCTURES' },
 ];
 
 const FilterBar = memo(({ activeFilter, onFilterChange, searchQuery, onSearchChange }) => {

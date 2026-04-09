@@ -3,11 +3,13 @@ import teamDataRaw from '../data/team.json';
 
 const SECTION_CONFIG = [
   { key: 'leadership', label: 'Leadership' },
-  { key: 'vd', label: 'Vehicle Dynamics' },
-  { key: 'hv', label: 'High Voltage' },
-  { key: 'lv', label: 'Low Voltage' },
-  { key: 'ops', label: 'Operations' },
+  { key: 'former_leadership', label: 'Former Leadership' },
+  { key: 'advisors', label: 'Advisors' },
   { key: 'structures', label: 'Structures' },
+  { key: 'lv', label: 'LV Electronics' },
+  { key: 'vd', label: 'Vehicle Dynamics' },
+  { key: 'hv', label: 'HV Powertrain' },
+  { key: 'ops', label: 'Operations' },
 ];
 
 export const useTeamFilter = (initialYear = 2024) => {
