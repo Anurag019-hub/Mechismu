@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { cars } from '@/data/cars';
 
 // Components & Styles
-import PageLoader from "@/components/ui/PageLoader/PageLoader.jsx";
+import PageLoader from "../../../components/ui/PageLoader/PageLoader.jsx";
 import '@/features/cars/pages/CarsPage.css';
 
 // ===== LAZY-LOADED CAR SECTIONS =====
