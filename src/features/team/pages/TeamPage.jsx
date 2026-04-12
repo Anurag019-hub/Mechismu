@@ -22,7 +22,7 @@ import '@/features/team/pages/TeamPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AVAILABLE_YEARS = [2024];
+const AVAILABLE_YEARS = [2026];
 
 // ===== COMPONENT =====
 const TeamPage = () => {
@@ -38,7 +38,7 @@ const TeamPage = () => {
     totalMembers,
     changeYear,
     completeYearChange
-  } = useTeamFilter(2024);
+  } = useTeamFilter(2026);
 
   const contentRef = useRef(null);
   const heroRef = useRef(null);

@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
-import { Analytics } from "@vercel/analytics/react";
+// import { Analytics } from "@vercel/analytics/react";
 
 import ScrollToTop from "./ScrollToTop.jsx";
 import Layout from "./layout/Layout.jsx";
@@ -46,7 +46,7 @@ function App() {
     return (
         <BrowserRouter>
             <ScrollToTop />
-            <Analytics />
+            {/* <Analytics /> */}
             <AnimatedRoutes />
         </BrowserRouter>
     );

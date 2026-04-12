@@ -70,11 +70,11 @@ export const MREX02 = {
         ]
     },
     images: {
-        hero: "/images/cars/MREX02_03.jpeg",
+        hero: "/images/cars/MREX02_03.webp",
         gallery: [
-            "/images/cars/MREX02_03.jpeg",
-            "/images/cars/MREX02_02.jpg",
-            "/images/cars/MREX02_01.png"
+            "/images/cars/MREX02_03.webp",
+            "/images/cars/MREX02_02.webp",
+            "/images/cars/MREX02_01.webp"
         ]
     },
 

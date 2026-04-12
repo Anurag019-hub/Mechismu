@@ -12,7 +12,7 @@ const SECTION_CONFIG = [
   { key: 'ops', label: 'Operations' },
 ];
 
-export const useTeamFilter = (initialYear = 2024) => {
+export const useTeamFilter = (initialYear = 2026) => {
   const [activeYear, setActiveYear] = useState(initialYear);
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');

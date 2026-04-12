@@ -1,5 +1,5 @@
 export const year2025 = {
-  year: "2024-25",
+  year: "2026-25",
 
   competitions: [
     {
