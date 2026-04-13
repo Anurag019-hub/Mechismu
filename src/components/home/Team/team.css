@@ -124,12 +124,13 @@
 
 .team-role-badge {
   position: absolute;
+  z-index: 2;
   top: 12px;
   left: 12px;
   padding: 4px 10px;
-  background: rgba(255, 84, 73, 0.12);
-  border: 1px solid rgba(255, 84, 73, 0.25);
-  backdrop-filter: blur(4px);
+  background: rgba(255, 134, 123, 0.05);
+  border: 1px solid rgba(255, 84, 73, 0.7);
+  backdrop-filter: blur(30px);
   font-size: 0.5rem;
   font-weight: 700;
   letter-spacing: 0.18em;

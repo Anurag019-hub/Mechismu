@@ -976,6 +976,33 @@
     ]
   },
   {
+    "id": "mahi-rathore",
+    "name": "Mahi Rathore",
+    "image": "/images/members/mahi-rathore.webp",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2026,
+        "departments": [
+          "structures",
+          "ops"
+        ],
+        "roles": [
+          {
+            "dept": "structures",
+            "title": "Structures"
+          },
+          {
+            "dept": "ops",
+            "title": "Operations"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "surup-kumar-singh",
     "name": "Surup Kumar Singh",
     "image": "/images/members/surup-kumar-singh.webp",
@@ -1036,33 +1063,6 @@
           {
             "dept": "structures",
             "title": "Structures"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "mahi-rathore",
-    "name": "Mahi Rathore",
-    "image": "/images/members/mahi-rathore.webp",
-    "email": null,
-    "linkedin": null,
-    "instagram": null,
-    "history": [
-      {
-        "year": 2026,
-        "departments": [
-          "structures",
-          "ops"
-        ],
-        "roles": [
-          {
-            "dept": "structures",
-            "title": "Structures"
-          },
-          {
-            "dept": "ops",
-            "title": "Operations"
           }
         ]
       }
