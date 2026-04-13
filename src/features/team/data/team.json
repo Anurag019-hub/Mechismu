@@ -397,7 +397,8 @@
         "year": 2026,
         "departments": [
           "ops",
-          "leadership"
+          "leadership",
+          "hv"
         ],
         "roles": [
           {
@@ -407,6 +408,10 @@
           {
             "dept": "leadership",
             "title": "Operations Lead"
+          },
+          {
+            "dept": "hv",
+            "title": "HV Powertrain"
           }
         ]
       }
@@ -555,12 +560,17 @@
       {
         "year": 2026,
         "departments": [
-          "vd"
+          "vd",
+          "ops"
         ],
         "roles": [
           {
             "dept": "vd",
             "title": "Vehicle Dynamics"
+          },
+          {
+            "dept": "ops",
+            "title": "Operations"
           }
         ]
       }
@@ -577,12 +587,17 @@
       {
         "year": 2026,
         "departments": [
-          "vd"
+          "vd",
+          "ops"
         ],
         "roles": [
           {
             "dept": "vd",
             "title": "Vehicle Dynamics"
+          },
+          {
+            "dept": "ops",
+            "title": "Operations"
           }
         ]
       }
@@ -687,12 +702,17 @@
       {
         "year": 2026,
         "departments": [
-          "vd"
+          "vd",
+          "ops"
         ],
         "roles": [
           {
             "dept": "vd",
             "title": "Vehicle Dynamics"
+          },
+          {
+            "dept": "ops",
+            "title": "Operations"
           }
         ]
       }
@@ -846,12 +866,17 @@
       {
         "year": 2026,
         "departments": [
-          "lv"
+          "lv",
+          "ops"
         ],
         "roles": [
           {
             "dept": "lv",
             "title": "LV Electronics"
+          },
+          {
+            "dept": "ops",
+            "title": "Operations"
           }
         ]
       }
@@ -890,12 +915,17 @@
       {
         "year": 2026,
         "departments": [
-          "lv"
+          "lv",
+          "ops"
         ],
         "roles": [
           {
             "dept": "lv",
             "title": "LV Electronics"
+          },
+          {
+            "dept": "ops",
+            "title": "Operations"
           }
         ]
       }
@@ -1022,12 +1052,17 @@
       {
         "year": 2026,
         "departments": [
-          "structures"
+          "structures",
+          "ops"
         ],
         "roles": [
           {
             "dept": "structures",
             "title": "Structures"
+          },
+          {
+            "dept": "ops",
+            "title": "Operations"
           }
         ]
       }
