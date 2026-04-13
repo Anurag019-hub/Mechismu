@@ -46,6 +46,34 @@
     ]
   },
   {
+    "id": "om-shrivastava",
+    "name": "Om Shrivastava",
+    "year": 2026,
+    "image": "/images/members/om-shrivastava.webp",
+    "email": null,
+    "linkedin": null,
+    "instagram": null,
+    "history": [
+      {
+        "year": 2026,
+        "departments": [
+          "former_leadership",
+          "advisors"
+        ],
+        "roles": [
+          {
+            "dept": "former_leadership",
+            "title": "Former Captain"
+          },
+          {
+            "dept": "advisors",
+            "title": "Advisor"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "aromal-s-ram",
     "name": "Aromal S Ram",
     "year": 2026,
@@ -207,34 +235,6 @@
           {
             "dept": "former_leadership",
             "title": "Former Operations Head"
-          },
-          {
-            "dept": "advisors",
-            "title": "Advisor"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "om-shrivastava",
-    "name": "Om Shrivastava",
-    "year": 2026,
-    "image": "/images/members/om-shrivastava.webp",
-    "email": null,
-    "linkedin": null,
-    "instagram": null,
-    "history": [
-      {
-        "year": 2026,
-        "departments": [
-          "former_leadership",
-          "advisors"
-        ],
-        "roles": [
-          {
-            "dept": "former_leadership",
-            "title": "Former Captain"
           },
           {
             "dept": "advisors",
