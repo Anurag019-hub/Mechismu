@@ -1,4 +1,4 @@
-export const year2024 = {
+export const year2026 = {
   year: "2023-24",
 
   competitions: [

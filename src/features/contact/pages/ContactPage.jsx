@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ContactForm from '@/features/contact/components/contactform/ContactForm';
 import '@/features/contact/pages/ContactPage.css';
-import Img from "../../../assets/images/contact.jpg";
+import Img from "../../../assets/images/contact.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

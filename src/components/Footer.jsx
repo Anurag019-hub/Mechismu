@@ -11,7 +11,7 @@
 import { Link } from 'react-router-dom';
 
 // Internal
-import Logo from '../assets/images/logo.png';
+import Logo from '../assets/images/logo.webp';
 import { InstagramIcon, LinkedInIcon, YouTubeIcon } from '../assets/icons/SocialIcons';
 import { LINKS } from '../config/links';
 import './Footer.css';

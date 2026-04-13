@@ -73,11 +73,11 @@ export const MRX02 = {
     },
 
     images: {
-        hero: "/images/cars/MRX02_01.jpeg",
+        hero: "/images/cars/MRX02_01.webp",
         gallery: [
-            "/images/cars/MRX02_01.jpeg",
-            "/images/cars/MRX02_02.png",
-            "/images/cars/MRX02_03.png"
+            "/images/cars/MRX02_01.webp",
+            "/images/cars/MRX02_02.webp",
+            "/images/cars/MRX02_03.webp"
         ]
     },
 

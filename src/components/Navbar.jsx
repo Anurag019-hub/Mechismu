@@ -12,7 +12,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // Internal
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo.webp';
 import './navbar.css';
 
 // ===== COMPONENT =====
