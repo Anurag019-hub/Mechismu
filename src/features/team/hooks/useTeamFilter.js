@@ -25,33 +25,68 @@ export const useTeamFilter = (initialYear = 2026) => {
     const query = searchQuery.toLowerCase().trim();
 
     return SECTION_CONFIG.map((section) => {
-      // 1. Hide section if a different specific filter is active
       if (activeFilter !== 'all' && activeFilter !== section.key) {
         return { ...section, members: [] };
       }
 
       const members = teamData
         .filter((m) => {
-          // Find history entry with type-safe year comparison
-          const yearEntry = m.history?.find((h) => String(h.year) === String(activeYear));
+          const yearEntry = m.history?.find(
+            (h) => String(h.year) === String(activeYear)
+          );
           if (!yearEntry) return false;
 
-          // Only include if the person is part of THIS department key this year
           return yearEntry.departments.includes(section.key);
         })
         .map((m) => {
-          // Pass the specific year entry down for easy access in the card
-          const yearEntry = m.history.find((h) => String(h.year) === String(activeYear));
+          const yearEntry = m.history.find(
+            (h) => String(h.year) === String(activeYear)
+          );
           return { ...m, yearEntry };
         })
         .filter((m) => {
-          // 2. Search Logic
           if (!query) return true;
+
           const nameMatch = m.name.toLowerCase().includes(query);
-          const roleMatch = m.yearEntry.roles.some(r =>
+          const roleMatch = m.yearEntry.roles.some((r) =>
             r.title.toLowerCase().includes(query)
           );
+
           return nameMatch || roleMatch;
+        })
+        // 🔥 SORTING LOGIC (LEADS FIRST)
+        .sort((a, b) => {
+          const getPriority = (member, sectionKey) => {
+            const titles = member.yearEntry.roles.map(r =>
+              r.title.toLowerCase()
+            );
+
+            // ===== SECTION-SPECIFIC RULES =====
+
+            if (sectionKey === 'leadership') {
+              if (titles.some(t => t.includes('captain'))) return 0;
+              if (titles.some(t => t.includes('vice captain'))) return 1;
+              if (titles.some(t => t.includes('head'))) return 2;
+              return 3;
+            }
+
+            // For all technical departments (structures, lv, vd, hv, ops)
+            if (
+              ['structures', 'lv', 'vd', 'hv', 'ops'].includes(sectionKey)
+            ) {
+              if (titles.some(t => t.includes('lead'))) return 0;
+              if (titles.some(t => t.includes('head'))) return 1;
+              if (titles.some(t => t.includes('senior'))) return 2;
+              return 3;
+            }
+
+            // fallback (advisors / others)
+            return 0;
+          };
+
+          return (
+            getPriority(a, section.key) - getPriority(b, section.key)
+          );
         });
 
       return { ...section, members };
@@ -59,17 +94,19 @@ export const useTeamFilter = (initialYear = 2026) => {
   }, [teamData, activeFilter, searchQuery, activeYear]);
 
   const totalMembers = useMemo(() => {
-    return teamData.filter(m =>
-      m.history?.some(h => String(h.year) === String(activeYear))
+    return teamData.filter((m) =>
+      m.history?.some((h) => String(h.year) === String(activeYear))
     ).length;
   }, [teamData, activeYear]);
 
-  // Restoring handlers for TeamPage animations
-  const changeYear = useCallback((year) => {
-    if (String(year) === String(activeYear)) return false;
-    setIsTransitioning(true);
-    return true;
-  }, [activeYear]);
+  const changeYear = useCallback(
+    (year) => {
+      if (String(year) === String(activeYear)) return false;
+      setIsTransitioning(true);
+      return true;
+    },
+    [activeYear]
+  );
 
   const completeYearChange = useCallback((year) => {
     setActiveYear(year);
@@ -90,6 +127,6 @@ export const useTeamFilter = (initialYear = 2026) => {
     totalMembers,
     changeYear,
     completeYearChange,
-    setActiveYear // Keeping this as fallback if needed
+    setActiveYear,
   };
 };

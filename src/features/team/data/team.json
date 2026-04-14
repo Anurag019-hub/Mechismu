@@ -266,7 +266,7 @@
           },
           {
             "dept": "structures",
-            "title": "Structures Head"
+            "title": "Structures"
           }
         ]
       }
@@ -368,17 +368,17 @@
       {
         "year": 2026,
         "departments": [
-          "vd",
+          "structures",
           "leadership"
         ],
         "roles": [
           {
-            "dept": "vd",
-            "title": "Manufacturing Head"
+            "dept": "structures",
+            "title": "Structures Head"
           },
           {
             "dept": "leadership",
-            "title": "Manufacturing Lead"
+            "title": "Structures Lead"
           }
         ]
       }
@@ -484,22 +484,27 @@
     ]
   },
   {
-    "id": "nandgopal-v",
-    "name": "Nandgopal V",
-    "image": "/images/members/nandgopal-v.webp",
+    "id": "nandagopal-v",
+    "name": "Nandagopal V",
+    "image": "/images/members/nandagopal-v.webp",
     "email": null,
-    "linkedin": null,
+    "linkedin": "https://www.linkedin.com/in/nandagopal-v-b39125280/",
     "instagram": null,
     "history": [
       {
         "year": 2026,
         "departments": [
-          "structures"
+          "vd",
+          "leadership"
         ],
         "roles": [
           {
-            "dept": "structures",
-            "title": "Structures"
+            "dept": "vd",
+            "title": "Manufacturing Lead"
+          },
+          {
+            "dept": "leadership",
+            "title": "Manufacturing Lead"
           }
         ]
       }
@@ -658,12 +663,17 @@
       {
         "year": 2026,
         "departments": [
-          "vd"
+          "vd",
+          "ops"
         ],
         "roles": [
           {
             "dept": "vd",
             "title": "Vehicle Dynamics"
+          },
+          {
+            "dept": "ops",
+            "title": "Operations"
           }
         ]
       }

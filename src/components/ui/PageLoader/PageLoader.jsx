@@ -19,7 +19,7 @@ export default function PageLoader() {
         if (prev === STATUS_MESSAGES.length - 1) return prev;
         return prev + 1;
       });
-    }, 500);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 

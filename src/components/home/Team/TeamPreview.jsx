@@ -20,10 +20,17 @@ const LEADERS = [
   },
   {
     name: 'Yash Rao',
-    role: 'Manufacturing head',
-    tagline: 'Builds what others only design — no shortcuts, only performance that holds under pressure.',
+    role: 'structures Head',
+    tagline: 'Turns designs into reality — no compromises, only structures that stand strong under pressure.',
     image: '/images/members/yash-rao.webp',
     linkedin: 'https://www.linkedin.com/in/yash-rao-71820a287/',
+  },
+  {
+    name: 'Nandagopal V',
+    role: 'Manufacturing Head',
+    tagline: 'Builds what others only design — no shortcuts, only performance that holds under pressure.',
+    image: '/images/members/nandagopal-v.webp',
+    linkedin: 'https://www.linkedin.com/in/nandagopal-v-b39125280/',
   },
   {
     name: 'Sahil Kumar',
