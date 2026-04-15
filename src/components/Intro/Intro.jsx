@@ -44,8 +44,12 @@ export default function Intro() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          <button className="btn primary">THE PROJECT</button>
-          <button className="btn secondary">SUPPORT US</button>
+          <a href="/cars">
+            <button className="btn primary">THE PROJECT</button>
+          </a>
+          <a href="/sponsors">
+            <button className="btn secondary">SUPPORT US</button>
+          </a>
         </motion.div>
 
       </div>
