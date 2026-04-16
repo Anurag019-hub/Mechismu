@@ -52,14 +52,15 @@ export default function Funding() {
             </div>
           ))}
         </motion.div>
-
-        <motion.button
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          className="funding-btn"
-        >
-          Partner With Us <ArrowRight size={18} />
-        </motion.button>
+          <a href="/sponsors">
+            <motion.button
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className="funding-btn"
+              >
+              Partner With Us <ArrowRight size={18} />
+            </motion.button>
+          </a>
       </div>
     </section>
   );

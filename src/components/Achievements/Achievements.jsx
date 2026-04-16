@@ -50,7 +50,7 @@ export default function Achievements() {
         <h2 className="main-heading">
           ENGINEERING
           <br />
-          <span className="glow">RESULTS</span>
+          <span className="ach-glow">RESULTS</span>
         </h2>
 
         <p className="sub-text">
