@@ -1,7 +1,6 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
-// import { Analytics } from "@vercel/analytics/react";
 
 import ScrollToTop from "./ScrollToTop.jsx";
 import Layout from "./layout/Layout.jsx";
@@ -18,41 +17,26 @@ const Sponsors = React.lazy(() => import("./pages/Sponsors.jsx"));
 const Cars = React.lazy(() => import("./pages/Cars.jsx"));
 const Wins = React.lazy(() => import("./pages/Wins.jsx"));
 
-// ===== ROUTES WITH FORCED LOADER =====
+// ===== ROUTES =====
 function AnimatedRoutes() {
     const location = useLocation();
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        setLoading(true);
-
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 800); // change time here (ms)
-
-        return () => clearTimeout(timer);
-    }, [location.pathname]);
 
     return (
-        <Layout>
-            <AnimatePresence mode="wait">
-                {loading ? (
-                    <PageLoader key="loader" />
-                ) : (
-                    <Suspense fallback={<PageLoader />}>
-                        <Routes location={location} key={location.pathname}>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/contact" element={<Contact />} />
-                            <Route path="/about" element={<About />} />
-                            <Route path="/team" element={<TeamPage />} />
-                            <Route path="/sponsors" element={<Sponsors />} />
-                            <Route path="/cars" element={<Cars />} />
-                            <Route path="/wins" element={<Wins />} />
-                        </Routes>
-                    </Suspense>
-                )}
-            </AnimatePresence>
-        </Layout>
+        <AnimatePresence mode="wait">
+            <Suspense fallback={<PageLoader />}>
+                <Layout>
+                    <Routes location={location} key={location.pathname}>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/team" element={<TeamPage />} />
+                        <Route path="/sponsors" element={<Sponsors />} />
+                        <Route path="/cars" element={<Cars />} />
+                        <Route path="/wins" element={<Wins />} />
+                    </Routes>
+                </Layout>
+            </Suspense>
+        </AnimatePresence>
     );
 }
 
@@ -61,7 +45,6 @@ function App() {
     return (
         <BrowserRouter>
             <ScrollToTop />
-            {/* <Analytics /> */}
             <AnimatedRoutes />
         </BrowserRouter>
     );

@@ -1,8 +1,8 @@
 export const CAR01 = {
     id: "car-01",
     name: "CAR01",
-    year: 2025,
-    tag: "COMBUSTION // CARa_EVOLUTION",
+    year: 2016,
+    tag: "COMBUSTION // CAR_EVOLUTION",
 
     stats: null,
 
@@ -14,11 +14,11 @@ export const CAR01 = {
     domains: {
         powertrain: {
             title: null,
-            text: null 
+            text: null
         },
         drivetrain: {
             title: null,
-            text: null 
+            text: null
         },
         chassis: {
             title: null,
