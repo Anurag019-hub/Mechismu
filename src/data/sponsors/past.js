@@ -81,7 +81,7 @@ export const past = [
     },
     {
         "name": "FMSCI",
-        "tier": "Partner",
+        "tier": "gold",
         "status": "past",
         "website": "https://fmsci.co.in",
         "logo": "/images/sponsors/fmsci.jpg",
