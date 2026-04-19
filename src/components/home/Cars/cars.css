@@ -79,7 +79,7 @@
 
 .car-image-container {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 8;
   overflow: hidden;
   background-color: #0a0a0a;
 }
@@ -99,7 +99,7 @@
 .car-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,0.9), transparent);
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.9), transparent);
 }
 
 .car-year-badge {
@@ -117,7 +117,7 @@
 }
 
 .car-info {
-  padding: 20px;
+  padding: 12px 14px;
 }
 
 .car-name {
@@ -125,13 +125,13 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .car-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 8px;
 }
 
 .car-stat-item {

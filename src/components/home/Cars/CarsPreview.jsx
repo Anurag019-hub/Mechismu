@@ -1,13 +1,14 @@
 
+import { useNavigate } from 'react-router-dom';
 import SectionWrapper from '@/components/home/common/SectionWrapper';
 import CTAButton from '@/components/home/common/CTAButton';
 import '@/components/home/Cars/cars.css';
 
 import { cars as CARS_DATA } from '@/data/cars';
 
-function CarCard({ car }) {
+function CarCard({ car, onClick }) {
   return (
-    <div className="car-card glass-card fade-up">
+    <div className="car-card glass-card fade-up" onClick={onClick} role="button" tabIndex={0}>
       {car.image && (
         <div className="car-image-container">
           <img
@@ -53,6 +54,8 @@ function CarCard({ car }) {
 }
 
 export default function CarsPreview() {
+  const navigate = useNavigate();
+
   return (
     <SectionWrapper className="cars-section">
       <div className="cars-header-accent fade-up">
@@ -81,7 +84,13 @@ export default function CarsPreview() {
             image: carData?.images?.hero || null,
           };
 
-          return <CarCard key={carData?.id || index} car={mappedCar} />;
+          return (
+            <CarCard
+              key={carData?.id || index}
+              car={mappedCar}
+              onClick={() => navigate(`/cars/${carData?.id}`)}
+            />
+          );
         })}
       </div>
 

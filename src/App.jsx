@@ -31,7 +31,7 @@ function AnimatedRoutes() {
                         <Route path="/about" element={<About />} />
                         <Route path="/team" element={<TeamPage />} />
                         <Route path="/sponsors" element={<Sponsors />} />
-                        <Route path="/cars" element={<Cars />} />
+                        <Route path="/cars/:carId?" element={<Cars />} />
                         <Route path="/wins" element={<Wins />} />
                     </Routes>
                 </Layout>

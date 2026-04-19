@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react';
+import { useParams } from 'react-router-dom';
 import gsap from 'gsap';
 import { cars } from '@/data/cars';
 
@@ -17,8 +18,25 @@ const CarGallery = React.lazy(() => import('../components/CarGallery/CarGallery'
 const CarTimeline = React.lazy(() => import('../components/CarTimeline/CarTimeline'));
 
 const CarsPage = () => {
-  const [activeCar, setActiveCar] = useState(cars[0]);
+  const { carId } = useParams();
+
+  // Find matching car from URL param, fallback to first car
+  const initialCar = carId
+    ? cars.find((c) => c.id === carId) || cars[0]
+    : cars[0];
+
+  const [activeCar, setActiveCar] = useState(initialCar);
   const contentRef = useRef(null);
+
+  // Sync activeCar when URL param changes (e.g. navigating from home)
+  useEffect(() => {
+    if (carId) {
+      const found = cars.find((c) => c.id === carId);
+      if (found && found.id !== activeCar.id) {
+        setActiveCar(found);
+      }
+    }
+  }, [carId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     // Scroll to top and animate in the new content whenever the car changes
