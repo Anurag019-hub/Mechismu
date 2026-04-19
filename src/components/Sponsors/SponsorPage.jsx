@@ -24,23 +24,35 @@ const SponsorPage = memo(function SponsorPage() {
 
   // ── Filter logic ──
   const filtered = useMemo(() => {
-    // Deduplicate by sponsor name (case-insensitive), keeping the first occurrence
-    const seen = new Set();
-    let list = sponsors.filter((s) => {
-      const key = s.name.trim().toLowerCase();
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
+    let list = [...sponsors];
 
+    // 1. Apply status & year filters first
     if (activeStatus !== 'all') {
       list = list.filter((s) => s.status === activeStatus);
     }
     if (activeYear !== null) {
       list = list.filter((s) => s.year === activeYear);
     }
-    // Sort by tier hierarchy
+
+    // 2. Deduplicate by name (case-insensitive), keeping first occurrence
+    const seen = new Set();
+    list = list.filter((s) => {
+      const key = s.name.trim().toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+
+    // 3. Sort by tier hierarchy
     list.sort((a, b) => tierOrder.indexOf(a.tier) - tierOrder.indexOf(b.tier));
+
+    // 4. Pin NVCTI to the top
+    const nvctiIdx = list.findIndex((s) => s.name.trim().toLowerCase() === 'nvcti');
+    if (nvctiIdx > 0) {
+      const [nvcti] = list.splice(nvctiIdx, 1);
+      list.unshift(nvcti);
+    }
+
     return list;
   }, [activeStatus, activeYear]);
 
