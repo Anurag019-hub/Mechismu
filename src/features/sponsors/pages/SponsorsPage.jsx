@@ -23,7 +23,14 @@ const SponsorsPage = memo(function SponsorsPage() {
 
   // ── Filter logic (YEAR REMOVED) ──
   const filtered = useMemo(() => {
-    let list = [...sponsors];
+    // Deduplicate by sponsor name (case-insensitive), keeping the first occurrence
+    const seen = new Set();
+    let list = sponsors.filter((s) => {
+      const key = s.name.trim().toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
 
     if (activeStatus !== 'all') {
       list = list.filter((s) => s.status === activeStatus);
