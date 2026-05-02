@@ -17,6 +17,7 @@ const TeamPage = React.lazy(() => import("./features/team/pages/TeamPage.jsx"));
 const Sponsors = React.lazy(() => import("./pages/Sponsors.jsx"));
 const Cars = React.lazy(() => import("./pages/Cars.jsx"));
 const Wins = React.lazy(() => import("./pages/Wins.jsx"));
+const Projects = React.lazy(() => import("./pages/Projects.jsx"));
 
 // ===== ROUTES WITH FORCED LOADER =====
 function AnimatedRoutes() {
@@ -48,6 +49,7 @@ function AnimatedRoutes() {
                             <Route path="/sponsors" element={<Sponsors />} />
                             <Route path="/cars" element={<Cars />} />
                             <Route path="/wins" element={<Wins />} />
+                            <Route path="/projects" element={<Projects />} />
                         </Routes>
                     </Suspense>
                 )}

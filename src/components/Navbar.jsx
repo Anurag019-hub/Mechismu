@@ -28,6 +28,7 @@ function Navbar() {
     { path: "/cars", label: "Cars" },
     { path: "/team", label: "Team" },
     { path: "/wins", label: "Wins" },
+    { path: "/projects", label: "Projects" },
     { path: "/sponsors", label: "Sponsors" },
     { path: "/contact", label: "Contact" }
   ];
