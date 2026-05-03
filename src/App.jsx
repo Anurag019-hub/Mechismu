@@ -16,27 +16,33 @@ const TeamPage = React.lazy(() => import("./features/team/pages/TeamPage.jsx"));
 const Sponsors = React.lazy(() => import("./pages/Sponsors.jsx"));
 const Cars = React.lazy(() => import("./pages/Cars.jsx"));
 const Wins = React.lazy(() => import("./pages/Wins.jsx"));
+const Projects = React.lazy(() => import("./pages/Projects.jsx"));
 
 // ===== ROUTES =====
 function AnimatedRoutes() {
     const location = useLocation();
 
     return (
-        <AnimatePresence mode="wait">
-            <Suspense fallback={<PageLoader />}>
-                <Layout>
-                    <Routes location={location} key={location.pathname}>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/team" element={<TeamPage />} />
-                        <Route path="/sponsors" element={<Sponsors />} />
-                        <Route path="/cars/:carId?" element={<Cars />} />
-                        <Route path="/wins" element={<Wins />} />
-                    </Routes>
-                </Layout>
-            </Suspense>
-        </AnimatePresence>
+        <Layout>
+            <AnimatePresence mode="wait">
+                {loading ? (
+                    <PageLoader key="loader" />
+                ) : (
+                    <Suspense fallback={<PageLoader />}>
+                        <Routes location={location} key={location.pathname}>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/team" element={<TeamPage />} />
+                            <Route path="/sponsors" element={<Sponsors />} />
+                            <Route path="/cars" element={<Cars />} />
+                            <Route path="/wins" element={<Wins />} />
+                            <Route path="/projects" element={<Projects />} />
+                        </Routes>
+                    </Suspense>
+                )}
+            </AnimatePresence>
+        </Layout>
     );
 }
 

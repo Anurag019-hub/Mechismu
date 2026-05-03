@@ -12,6 +12,7 @@ export const LINKS = {
     sponsors: "/sponsors",
     about: "/about",
     contact: "/contact",
-    wins: "/wins"
+    wins: "/wins",
+    projects: "/projects"
   }
 };

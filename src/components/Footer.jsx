@@ -43,6 +43,7 @@ export default function Footer() {
           <Link to={LINKS.routes.cars}>Cars</Link>
           <Link to={LINKS.routes.team}>Team</Link>
           <Link to={LINKS.routes.wins}>Wins</Link>
+          <Link to={LINKS.routes.projects}>Projects</Link>
           <Link to={LINKS.routes.sponsors}>Sponsors</Link>
           <Link to={LINKS.routes.contact}>Contact</Link>
         </div>
