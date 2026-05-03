@@ -45,7 +45,7 @@ export default function Intro() {
           transition={{ delay: 0.6 }}
         >
           <a href="/cars">
-            <button className="btn primary">THE PROJECT</button>
+            <button className="btn primary">CARS</button>
           </a>
           <a href="/sponsors">
             <button className="btn secondary">SUPPORT US</button>

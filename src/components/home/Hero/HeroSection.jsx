@@ -23,7 +23,7 @@ export default function HeroSection() {
           high-performance engineering.
         </p>
         <div className="hero-buttons">
-          <CTAButton text="THE PROJECT" to="/about" variant="primary" />
+          <CTAButton text="THE PROJECT" to="/projects" variant="primary" />
           <CTAButton text="SUPPORT US" to="/sponsors" variant="outline" />
         </div>
       </div>
