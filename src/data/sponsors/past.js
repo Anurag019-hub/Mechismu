@@ -1,5 +1,13 @@
 export const past = [
     {
+        "name": "NVCTI",
+        "tier": "Title",
+        "status": "past",
+        "website": "https://www.nvcti.in/",
+        "logo": "/images/sponsors/nvcti.webp",
+        "description": "The centre aims to provide a supportive environment where students can transform their ideas into real-world products and innovative solutions."
+    },
+    {
         "name": "Ansys",
         "tier": "Gold",
         "status": "past",
@@ -73,7 +81,7 @@ export const past = [
     },
     {
         "name": "FMSCI",
-        "tier": "Partner",
+        "tier": "gold",
         "status": "past",
         "website": "https://fmsci.co.in",
         "logo": "/images/sponsors/fmsci.jpg",

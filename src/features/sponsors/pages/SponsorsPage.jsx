@@ -25,12 +25,29 @@ const SponsorsPage = memo(function SponsorsPage() {
   const filtered = useMemo(() => {
     let list = [...sponsors];
 
+    // 1. Apply status filter first
     if (activeStatus !== 'all') {
       list = list.filter((s) => s.status === activeStatus);
     }
 
-    // Sort by tier hierarchy
+    // 2. Deduplicate by name (case-insensitive), keeping first occurrence
+    const seen = new Set();
+    list = list.filter((s) => {
+      const key = s.name.trim().toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+
+    // 3. Sort by tier hierarchy
     list.sort((a, b) => tierOrder.indexOf(a.tier) - tierOrder.indexOf(b.tier));
+
+    // 4. Pin NVCTI to the top
+    const nvctiIdx = list.findIndex((s) => s.name.trim().toLowerCase() === 'nvcti');
+    if (nvctiIdx > 0) {
+      const [nvcti] = list.splice(nvctiIdx, 1);
+      list.unshift(nvcti);
+    }
 
     return list;
   }, [activeStatus]);

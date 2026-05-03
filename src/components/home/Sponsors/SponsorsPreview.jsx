@@ -40,7 +40,15 @@ function SponsorLogo({ sponsor }) {
 }
 
 export default function SponsorsPreview() {
-  const limitedSponsors = sponsors.slice(0, 8);
+  // Deduplicate by name (case-insensitive), keeping the first occurrence
+  const seen = new Set();
+  const unique = sponsors.filter((s) => {
+    const key = s.name.trim().toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  const limitedSponsors = unique.slice(0, 8);
   return (
     <SectionWrapper className="sponsors-section">
       <div className="sponsors-header-accent fade-up">

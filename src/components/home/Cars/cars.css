@@ -50,6 +50,7 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 20px;
   margin-bottom: 48px;
+  align-items: stretch;
 }
 
 @media (min-width: 768px) {
@@ -64,11 +65,16 @@
   }
 }
 
-/* Car Card */
+/* Car Card — equal height via flex, contain prevents reflow leaking */
 .car-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  contain: content;
+  transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: pointer;
 }
 
@@ -77,19 +83,24 @@
   box-shadow: 0 0 40px rgba(255, 84, 73, 0.1);
 }
 
+/* Image container — explicit aspect-ratio with overflow:hidden isolates the scaled image */
 .car-image-container {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 8;
   overflow: hidden;
   background-color: #0a0a0a;
 }
 
+/* Image — will-change + contain isolates the transform from parent layout */
 .car-image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1);
-  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1.5);
+  transform-origin: center center;
+  will-change: transform;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .car-card:hover .car-image {
@@ -99,7 +110,7 @@
 .car-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,0.9), transparent);
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.9), transparent);
 }
 
 .car-year-badge {
@@ -117,7 +128,10 @@
 }
 
 .car-info {
-  padding: 20px;
+  padding: 12px 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .car-name {
@@ -125,13 +139,14 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .car-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 8px;
+  margin-top: auto;
 }
 
 .car-stat-item {
@@ -160,7 +175,7 @@
   width: 0;
   height: 2px;
   background-color: var(--primary);
-  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .car-card:hover .car-card-accent {
