@@ -25,22 +25,18 @@ function AnimatedRoutes() {
     return (
         <Layout>
             <AnimatePresence mode="wait">
-                {loading ? (
-                    <PageLoader key="loader" />
-                ) : (
-                    <Suspense fallback={<PageLoader />}>
-                        <Routes location={location} key={location.pathname}>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/contact" element={<Contact />} />
-                            <Route path="/about" element={<About />} />
-                            <Route path="/team" element={<TeamPage />} />
-                            <Route path="/sponsors" element={<Sponsors />} />
-                            <Route path="/cars" element={<Cars />} />
-                            <Route path="/wins" element={<Wins />} />
-                            <Route path="/projects" element={<Projects />} />
-                        </Routes>
-                    </Suspense>
-                )}
+                <Suspense fallback={<PageLoader />}>
+                    <Routes location={location} key={location.pathname}>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/team" element={<TeamPage />} />
+                        <Route path="/sponsors" element={<Sponsors />} />
+                        <Route path="/cars" element={<Cars />} />
+                        <Route path="/wins" element={<Wins />} />
+                        <Route path="/projects" element={<Projects />} />
+                    </Routes>
+                </Suspense>
             </AnimatePresence>
         </Layout>
     );

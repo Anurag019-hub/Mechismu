@@ -3,149 +3,174 @@
   "heroTitle": "PROJECTS",
   "heroSubtitle": "RESEARCH, PROTOTYPES, AND TEAM INITIATIVES BEYOND THE CAR",
   "projects": [
-      {
-    "id": "bms-development",
-    "title": "Development of BMS",
-    "category": "Electronics",
-    "status": "Completed",
-    "year": "2026",
-    "tags": ["BMS", "Embedded Systems", "Fault Detection", "Battery Safety"],
-    "image": "/images/projects/bms-development.webp",
-    "imageAlt": "In-house Battery Management System circuit and testing interface",
-    "sections": [
-      {
-        "heading": "Project Purpose & Objectives",
-        "text": "Developed a high-performance in-house BMS featuring adaptive balancing and predictive fault detection to enhance battery longevity, safety, and reliability under real-world operating conditions."
-      },
-      {
-        "heading": "Architectural Implementation",
-        "text": "Implemented a modular Master-Slave topology for scalable deployment, enabling high-precision cell monitoring, reduced wiring complexity, and seamless integration across applications."
-      },
-      {
-        "heading": "Testing & Diagnostic Validation",
-        "text": "Incorporated advanced diagnostic algorithms with rigorous stress, load, and thermal testing to ensure accurate fault detection and stable operation under dynamic conditions."
-      },
-      {
-        "heading": "Strategic Value & IP Potential",
-        "text": "Focuses on a cost-effective, innovation-driven design with strong potential for patentable diagnostic and safety IP, bridging research and deployable industrial solutions."
-      }
-    ]
-  },
-      {
-    "id": "motor-controller-development",
-    "title": "Development of Motor-Controller",
-    "category": "Powertrain",
-    "status": "Completed",
-    "year": "2026",
-    "tags": ["PMSM", "FOC", "SVPWM", "Motor Control"],
-    "image": "/images/projects/motor-controller-development.webp",
-    "imageAlt": "High-efficiency motor controller PCB and diagnostic interface",
-    "sections": [
-      {
-        "heading": "Project Purpose & Objectives",
-        "text": "Developed a high-efficiency PMSM controller using Field-Oriented Control (FOC) for smooth torque/speed and fast dynamic response."
-      },
-      {
-        "heading": "Architectural Implementation",
-        "text": "Uses high-speed current sensing and Space Vector Pulse Width Modulation (SVPWM) for precise control with reduced speed ripples and inverter noises."
-      },
-      {
-        "heading": "Testing & Diagnostic Validation",
-        "text": "PID-tuned current and speed control loops with validation under transients and various running conditions."
-      },
-      {
-        "heading": "Strategic Value & IP Potential",
-        "text": "Focus on efficiency and thermal optimization, enabling reliable, patentable motor control intellectual property."
-      }
-    ]
-  },
     {
-  "id": "vcu-development",
-  "title": "Development of VCU",
-  "category": "Electronics",
-  "status": "Completed",
-  "year": "2026",
-  "tags": ["VCU", "CAN-Bus", "HIL-Testing", "Vehicle Intelligence"],
-  "image": "/images/members/vcu-development.webp",
-  "imageAlt": "Vehicle Control Unit showing centralized communication and safety interlocks",
-  "sections": [
-    {
-      "heading": "Project Purpose & Objectives",
-      "text": "Developed a centralized VCU to act as the primary intelligence hub, coordinating communication between the BMS, motor controller, and sensors."
+      "id": "bms-development",
+      "title": "Development of BMS",
+      "category": "Electronics",
+      "status": "In progress",
+      "year": "2026",
+      "tags": [
+        "BMS",
+        "Embedded Systems",
+        "Fault Detection",
+        "Battery Safety"
+      ],
+      "image": "/images/projects/bms-development.webp",
+      "imageAlt": "In-house Battery Management System circuit and testing interface",
+      "sections": [
+        {
+          "heading": "Project Purpose & Objectives",
+          "text": "Developed a high-performance in-house BMS featuring adaptive balancing and predictive fault detection to enhance battery longevity, safety, and reliability under real-world operating conditions."
+        },
+        {
+          "heading": "Architectural Implementation",
+          "text": "Implemented a modular Master-Slave topology for scalable deployment, enabling high-precision cell monitoring, reduced wiring complexity, and seamless integration across applications."
+        },
+        {
+          "heading": "Testing & Diagnostic Validation",
+          "text": "Incorporated advanced diagnostic algorithms with rigorous stress, load, and thermal testing to ensure accurate fault detection and stable operation under dynamic conditions."
+        },
+        {
+          "heading": "Strategic Value & IP Potential",
+          "text": "Focuses on a cost-effective, innovation-driven design with strong potential for patentable diagnostic and safety IP, bridging research and deployable industrial solutions."
+        }
+      ]
     },
     {
-      "heading": "Architectural Implementation",
-      "text": "Integrates safety interlock logic with multi-protocol communication (e.g., CAN) to synchronize real-time data, managing seamless interaction between sensors, control units, and driver-facing systems."
+      "id": "motor-controller-development",
+      "title": "Development of Motor-Controller",
+      "category": "Powertrain",
+      "status": "In progress",
+      "year": "2026",
+      "tags": [
+        "PMSM",
+        "FOC",
+        "SVPWM",
+        "Motor Control"
+      ],
+      "image": "/images/projects/motor-controller-development.webp",
+      "imageAlt": "High-efficiency motor controller PCB and diagnostic interface",
+      "sections": [
+        {
+          "heading": "Project Purpose & Objectives",
+          "text": "Developed a high-efficiency PMSM controller using Field-Oriented Control (FOC) for smooth torque/speed and fast dynamic response."
+        },
+        {
+          "heading": "Architectural Implementation",
+          "text": "Uses high-speed current sensing and Space Vector Pulse Width Modulation (SVPWM) for precise control with reduced speed ripples and inverter noises."
+        },
+        {
+          "heading": "Testing & Diagnostic Validation",
+          "text": "PID-tuned current and speed control loops with validation under transients and various running conditions."
+        },
+        {
+          "heading": "Strategic Value & IP Potential",
+          "text": "Focus on efficiency and thermal optimization, enabling reliable, patentable motor control intellectual property."
+        }
+      ]
     },
     {
-      "heading": "Testing & Diagnostic Validation",
-      "text": "Utilizes Hardware-in-the-Loop (HIL) testing and edge-case simulations to validate safety mechanisms, ensuring robust handling of faults, communication delays, and subsystem failures."
+      "id": "vcu-development",
+      "title": "Development of VCU",
+      "category": "Electronics",
+      "status": "Work in progress",
+      "year": "2026",
+      "tags": [
+        "VCU",
+        "CAN-Bus",
+        "HIL-Testing",
+        "Vehicle Intelligence"
+      ],
+      "image": "/images/projects/vcu-development.webp",
+      "imageAlt": "Vehicle Control Unit showing centralized communication and safety interlocks",
+      "sections": [
+        {
+          "heading": "Project Purpose & Objectives",
+          "text": "Developed a centralized VCU to act as the primary intelligence hub, coordinating communication between the BMS, motor controller, and sensors."
+        },
+        {
+          "heading": "Architectural Implementation",
+          "text": "Integrates safety interlock logic with multi-protocol communication (e.g., CAN) to synchronize real-time data, managing seamless interaction between sensors, control units, and driver-facing systems."
+        },
+        {
+          "heading": "Testing & Diagnostic Validation",
+          "text": "Utilizes Hardware-in-the-Loop (HIL) testing and edge-case simulations to validate safety mechanisms, ensuring robust handling of faults, communication delays, and subsystem failures."
+        },
+        {
+          "heading": "Strategic Value & IP Potential",
+          "text": "Focuses on a modular, scalable software stack with proprietary energy management and fault-handling strategies, enabling advanced diagnostics and strong potential for patentable vehicle control IP."
+        }
+      ]
     },
     {
-      "heading": "Strategic Value & IP Potential",
-      "text": "Focuses on a modular, scalable software stack with proprietary energy management and fault-handling strategies, enabling advanced diagnostics and strong potential for patentable vehicle control IP."
+      "id": "h-cbm-vehicle-development",
+      "title": "Development of H-CBM Vehicle",
+      "category": "Fuels",
+      "status": "In progress",
+      "year": "2026",
+      "tags": [
+        "H-CNG",
+        "Emission Reduction",
+        "Alternative Fuels",
+        "Engine Calibration"
+      ],
+      "image": "/images/projects/h-cbm-vehicle-development.webp",
+      "imageAlt": "Hydrogen-enriched CNG engine test bench and emission monitoring setup",
+      "sections": [
+        {
+          "heading": "Overview",
+          "text": "Utilizes a 5% H2 and 95% Methane mixture to improve the thermal efficiency of the engine and optimize the combustion process."
+        },
+        {
+          "heading": "Project Purpose & Objectives",
+          "text": "Develop a hydrogen-enriched CNG powertrain to significantly reduce CO, THC, and NOx emissions while maintaining engine performance."
+        },
+        {
+          "heading": "Architectural Implementation",
+          "text": "Features a recalibrated ECU, specialized fuel delivery system, H2-compatible storage tanks, and a safety-certified retrofit kit compatible with existing CNG engines."
+        },
+        {
+          "heading": "Testing & Diagnostic Validation",
+          "text": "During emissions testing, a significant decrease in CO2 emissions relative to petrol and standard CNG was verified under varying load conditions."
+        },
+        {
+          "heading": "Strategic Value & IP Potential",
+          "text": "Provides a scalable, cost-effective transition to cleaner mobility by leveraging existing CNG infrastructure, offering high potential for proprietary retrofit technology."
+        }
+      ]
+    },
+    {
+      "id": "mrex-03-insights",
+      "title": "MREX-03 Key Insights",
+      "category": "Vehicle Integration",
+      "status": "In progress",
+      "year": "2026",
+      "tags": [
+        "DFM",
+        "System Validation",
+        "Modular Design",
+        "E-Race Car"
+      ],
+      "image": "/images/members/mrex-03-insights.webp",
+      "imageAlt": "MREX-03 vehicle chassis and modular component layout",
+      "sections": [
+        {
+          "heading": "Overview",
+          "text": "A comprehensive review of the MREX-03 development cycle, focusing on engineering refinement and manufacturing excellence."
+        },
+        {
+          "heading": "Key Insights",
+          "text": "Emphasized the importance of Design for Manufacturing (DFM) and realistic tolerance planning. Highlighted the critical need for early system-level validation and safety margin analysis to prevent integration bottlenecks."
+        },
+        {
+          "heading": "Design Philosophy",
+          "text": "Prioritized modular and serviceable designs, which proved essential for rapid iteration during testing and improved overall vehicle reliability."
+        },
+        {
+          "heading": "Targets for 2027",
+          "text": "Aims to clear all technical inspections and achieve top-tier performance in dynamic events. The primary goal is to deliver a fully furbished, modular E-Race car platform to serve as the foundation for future development cycles."
+        }
+      ]
     }
-  ]
-},
-{
-  "id": "h-cbm-vehicle-development",
-  "title": "Development of H-CBM Vehicle",
-  "category": "Powertrain",
-  "status": "Completed",
-  "year": "2026",
-  "tags": ["H-CNG", "Emission Reduction", "Alternative Fuels", "Engine Calibration"],
-  "image": "/images/members/h-cbm-vehicle-development.webp",
-  "imageAlt": "Hydrogen-enriched CNG engine test bench and emission monitoring setup",
-  "sections": [
-    {
-      "heading": "Overview",
-      "text": "Utilizes a 5% H2 and 95% Methane mixture to improve the thermal efficiency of the engine and optimize the combustion process."
-    },
-    {
-      "heading": "Project Purpose & Objectives",
-      "text": "Develop a hydrogen-enriched CNG powertrain to significantly reduce CO, THC, and NOx emissions while maintaining engine performance."
-    },
-    {
-      "heading": "Architectural Implementation",
-      "text": "Features a recalibrated ECU, specialized fuel delivery system, H2-compatible storage tanks, and a safety-certified retrofit kit compatible with existing CNG engines."
-    },
-    {
-      "heading": "Testing & Diagnostic Validation",
-      "text": "During emissions testing, a significant decrease in CO2 emissions relative to petrol and standard CNG was verified under varying load conditions."
-    },
-    {
-      "heading": "Strategic Value & IP Potential",
-      "text": "Provides a scalable, cost-effective transition to cleaner mobility by leveraging existing CNG infrastructure, offering high potential for proprietary retrofit technology."
-    }
-  ]
-},
-{
-  "id": "mrex-03-insights",
-  "title": "MREX-03 Key Insights",
-  "category": "Vehicle Integration",
-  "status": "In progress",
-  "year": "2026",
-  "tags": ["DFM", "System Validation", "Modular Design", "E-Race Car"],
-  "image": "/images/members/mrex-03-insights.webp",
-  "imageAlt": "MREX-03 vehicle chassis and modular component layout",
-  "sections": [
-    {
-      "heading": "Overview",
-      "text": "A comprehensive review of the MREX-03 development cycle, focusing on engineering refinement and manufacturing excellence."
-    },
-    {
-      "heading": "Key Insights",
-      "text": "Emphasized the importance of Design for Manufacturing (DFM) and realistic tolerance planning. Highlighted the critical need for early system-level validation and safety margin analysis to prevent integration bottlenecks."
-    },
-    {
-      "heading": "Design Philosophy",
-      "text": "Prioritized modular and serviceable designs, which proved essential for rapid iteration during testing and improved overall vehicle reliability."
-    },
-    {
-      "heading": "Targets for 2027",
-      "text": "Aims to clear all technical inspections and achieve top-tier performance in dynamic events. The primary goal is to deliver a fully furbished, modular E-Race car platform to serve as the foundation for future development cycles."
-    }
-  ]
-}
   ]
 }
