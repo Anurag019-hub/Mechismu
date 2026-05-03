@@ -1,0 +1,9 @@
+/* src/styles/base.css */
+body {
+  background: #131313;
+  color: #e5e5e5;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

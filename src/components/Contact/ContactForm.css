@@ -1,0 +1,210 @@
+/* ===== CONTACT FORM — ENGINEERING TELEMETRY ===== */
+
+.ct-form-wrapper {
+  flex: 1;
+}
+
+.ct-form__header {
+  margin-bottom: 36px;
+}
+
+.ct-form__ref {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 500;
+  color: rgba(255, 84, 73, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ct-form__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #E5E2E1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 12px;
+}
+
+.ct-form__title-line {
+  width: 50px;
+  height: 2px;
+  background: #ff5449;
+  box-shadow: 0 0 10px rgba(255, 84, 73, 0.5);
+}
+
+/* ── Form ── */
+.ct-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Field ── */
+.ct-field {
+  position: relative;
+}
+
+.ct-field__label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: rgba(229, 226, 225, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.ct-field--focused .ct-field__label {
+  color: #ff5449;
+}
+
+.ct-field__tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.5rem;
+  font-weight: 500;
+  color: rgba(229, 226, 225, 0.12);
+  letter-spacing: 0.15em;
+}
+
+.ct-field__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: #E5E2E1;
+  padding: 8px 0;
+  letter-spacing: 0.03em;
+}
+
+.ct-field__select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23ff5449' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 24px;
+}
+
+.ct-field__select option {
+  background: #131313;
+  color: #E5E2E1;
+  font-size: 0.82rem;
+}
+
+.ct-field__textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+.ct-field__line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.ct-field__line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #ff5449;
+  box-shadow: 0 0 8px rgba(255, 84, 73, 0.6);
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ct-field--focused .ct-field__line::after {
+  width: 100%;
+}
+
+.ct-field--filled .ct-field__line::after {
+  width: 30%;
+  background: rgba(255, 84, 73, 0.4);
+  box-shadow: none;
+}
+
+/* ── Submit Button ── */
+.ct-submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 48px;
+  background: linear-gradient(135deg, #ff2a2a 0%, #b11217 100%);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.35s ease, transform 0.25s ease;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.ct-submit:hover {
+  box-shadow: 0 0 36px rgba(255, 42, 42, 0.35),
+              0 6px 24px rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+.ct-submit--sent {
+  background: linear-gradient(135deg, #1a6b1a 0%, #0d3d0d 100%);
+}
+
+.ct-submit__text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  position: relative;
+  z-index: 1;
+}
+
+/* Corner accents */
+.ct-submit__corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: rgba(255, 255, 255, 0.4);
+  border-style: solid;
+  transition: all 0.3s ease;
+}
+
+.ct-submit__corner--tl { top: 4px; left: 4px; border-width: 1px 0 0 1px; }
+.ct-submit__corner--tr { top: 4px; right: 4px; border-width: 1px 1px 0 0; }
+.ct-submit__corner--bl { bottom: 4px; left: 4px; border-width: 0 0 1px 1px; }
+.ct-submit__corner--br { bottom: 4px; right: 4px; border-width: 0 1px 1px 0; }
+
+.ct-submit:hover .ct-submit__corner--tl { width: 14px; height: 14px; border-color: #fff; }
+.ct-submit:hover .ct-submit__corner--tr { width: 14px; height: 14px; border-color: #fff; }
+.ct-submit:hover .ct-submit__corner--bl { width: 14px; height: 14px; border-color: #fff; }
+.ct-submit:hover .ct-submit__corner--br { width: 14px; height: 14px; border-color: #fff; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .ct-form__title {
+    font-size: 1.2rem;
+  }
+
+  .ct-submit {
+    width: 100%;
+  }
+}

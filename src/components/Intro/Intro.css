@@ -1,0 +1,262 @@
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 30%, rgba(255, 30, 30, 0.05), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(255, 30, 30, 0.04), transparent 60%),
+    #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 80px 5vw 40px;
+}
+
+/* ===== SOFT GRID BACKGROUND ===== */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-size: 80px 80px;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  opacity: 0.2;
+}
+
+@media (min-width: 768px) {
+  .grid-bg {
+    background-size: 140px 140px;
+  }
+}
+
+/* ===== STATIC RED GLOW ===== */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 77, 77, 0.12), transparent 65%);
+  z-index: 0;
+}
+
+/* ===== PULSING RED EFFECT ===== */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 30, 30, 0.08), transparent 70%);
+  z-index: 0;
+  animation: redPulse 4s ease-in-out infinite;
+}
+
+/* ===== CONTENT ===== */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  padding: 0 4vw;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    max-width: 900px;
+    padding: 0 20px;
+  }
+}
+
+/* ===== TAG ===== */
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 77, 77, 0.08);
+  color: #ff4d4d;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 77, 77, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+@media (min-width: 480px) {
+  .tag {
+    font-size: 10px;
+    padding: 7px 14px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .tag {
+    font-size: 11px;
+    padding: 8px 16px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+}
+
+/* ===== TITLE ===== */
+.hero .hero-title {
+  font-size: clamp(1.8rem, 5vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+}
+
+@media (min-width: 768px) {
+  .hero .hero-title {
+    letter-spacing: -1.5px;
+  }
+}
+
+/* ===== FUTURE TEXT ===== */
+.hero .hero-title span {
+  color: #ff4d4d;
+  font-style: italic;
+  text-shadow: 0 0 30px rgba(255, 77, 77, 0.4);
+}
+
+/* ===== DESCRIPTION ===== */
+.hero-desc {
+  margin-top: 18px;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+@media (min-width: 480px) {
+  .hero-desc {
+    font-size: 0.95rem;
+    max-width: 550px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-desc {
+    margin-top: 25px;
+    font-size: 1.05rem;
+    max-width: 650px;
+  }
+}
+
+/* ===== BUTTON CONTAINER ===== */
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .hero-buttons {
+    margin-top: 45px;
+    gap: 18px;
+  }
+}
+
+/* ===== BUTTON BASE ===== */
+.btn {
+  padding: 12px 24px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 480px) {
+  .btn {
+    padding: 12px 28px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn {
+    padding: 14px 34px;
+    letter-spacing: 2px;
+  }
+}
+
+/* ===== PRIMARY BUTTON ===== */
+.btn.primary {
+  background: linear-gradient(135deg, #ff4d4d, #ff1e1e);
+  color: #000;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 77, 77, 0.35);
+}
+
+/* ===== SECONDARY BUTTON ===== */
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.btn.secondary:hover {
+  border-color: rgba(255, 77, 77, 0.5);
+  color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.08);
+}
+
+/* ===== BUTTON GLOW EFFECT ===== */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover::after {
+  opacity: 0.15;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes redPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}

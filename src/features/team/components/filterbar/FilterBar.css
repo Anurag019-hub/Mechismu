@@ -1,0 +1,109 @@
+/* ===== FILTER BAR ===== */
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+}
+
+.filter-bar__buttons {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding-bottom: 4px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.filter-bar__buttons::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-bar__btn {
+  flex-shrink: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0px;
+  background: rgba(28, 27, 27, 0.5);
+  color: rgba(229, 226, 225, 0.4);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.filter-bar__btn:hover {
+  color: #E5E2E1;
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.filter-bar__btn--active {
+  color: #FF544A;
+  border-color: rgba(255, 84, 74, 0.4);
+  background: rgba(255, 84, 74, 0.1);
+  box-shadow: 0 0 14px rgba(255, 84, 74, 0.1);
+}
+
+.filter-bar__search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: rgba(10, 10, 10, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0px;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-bar__search--focused {
+  border-color: rgba(255, 84, 74, 0.35);
+  box-shadow: 0 0 20px rgba(255, 84, 74, 0.1);
+}
+
+.filter-bar__search-icon {
+  color: rgba(229, 226, 225, 0.3);
+  flex-shrink: 0;
+}
+
+.filter-bar__search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #E5E2E1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.filter-bar__search-input::placeholder {
+  color: rgba(229, 226, 225, 0.25);
+}
+
+.filter-bar__search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: rgba(229, 226, 225, 0.3);
+  cursor: pointer;
+  padding: 2px;
+  transition: color 0.2s ease;
+}
+
+.filter-bar__search-clear:hover {
+  color: #FF544A;
+}

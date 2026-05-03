@@ -1,0 +1,188 @@
+├── .gitignore
+├── eslint.config.js
+├── generateTree.cjs
+├── index.html
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon
+│   ├── images
+│   └── sponser
+├── README.md
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   │   ├── images
+│   │   │   └── logo.png
+│   │   ├── logos
+│   │   ├── svj.jsx
+│   │   └── videos
+│   ├── components
+│   │   ├── about
+│   │   ├── Achievements
+│   │   │   ├── Achievements.css
+│   │   │   └── Achievements.jsx
+│   │   ├── Contact
+│   │   │   ├── ContactForm.css
+│   │   │   ├── ContactForm.jsx
+│   │   │   ├── ContactPage.css
+│   │   │   └── ContactPage.jsx
+│   │   ├── Domains
+│   │   │   ├── Domains.css
+│   │   │   └── Domains.jsx
+│   │   ├── footer.css
+│   │   ├── footer.jsx
+│   │   ├── Funding
+│   │   │   ├── Funding.css
+│   │   │   └── Funding.jsx
+│   │   ├── Intro
+│   │   │   ├── Intro.css
+│   │   │   └── Intro.jsx
+│   │   ├── navbar.css
+│   │   ├── Navbar.jsx
+│   │   ├── Philosophy
+│   │   │   ├── Philosophy.css
+│   │   │   └── Philosophy.jsx
+│   │   ├── Preloader
+│   │   │   ├── Preloader.css
+│   │   │   └── Preloader.jsx
+│   │   ├── Sponsors
+│   │   │   ├── SponsorCard.css
+│   │   │   ├── SponsorCard.jsx
+│   │   │   ├── SponsorFilters.css
+│   │   │   ├── SponsorFilters.jsx
+│   │   │   ├── SponsorPage.css
+│   │   │   ├── SponsorPage.jsx
+│   │   │   ├── SponsorTiers.css
+│   │   │   └── SponsorTiers.jsx
+│   │   ├── Timeline
+│   │   │   ├── Timeline.css
+│   │   │   └── Timeline.jsx
+│   │   ├── ui
+│   │   │   └── PageLoader
+│   │   │       ├── PageLoader.css
+│   │   │       └── PageLoader.jsx
+│   │   └── wins
+│   │       ├── CompetitionCard.jsx
+│   │       ├── HighlightStrip.jsx
+│   │       ├── Wins.css
+│   │       ├── WinsPage.jsx
+│   │       ├── YearFilter.jsx
+│   │       └── YearSection.jsx
+│   ├── context
+│   ├── data
+│   │   ├── cars
+│   │   │   ├── ignition_06.js
+│   │   │   ├── index.js
+│   │   │   ├── kinetic_x1.js
+│   │   │   └── vortex_05.js
+│   │   ├── sponsors
+│   │   │   ├── 2022.js
+│   │   │   ├── 2023.js
+│   │   │   ├── 2024.js
+│   │   │   ├── 2025.js
+│   │   │   ├── index.js
+│   │   │   ├── supportMethods.js
+│   │   │   ├── tierBenefits.js
+│   │   │   └── whyPartner.js
+│   │   └── wins
+│   │       ├── 2008.js
+│   │       ├── 2009.js
+│   │       ├── 2010.js
+│   │       ├── 2011.js
+│   │       ├── 2012.js
+│   │       ├── 2013.js
+│   │       ├── 2014.js
+│   │       ├── 2015.js
+│   │       ├── 2016.js
+│   │       ├── 2017.js
+│   │       ├── 2018.js
+│   │       ├── 2019.js
+│   │       ├── 2020.js
+│   │       ├── 2021.js
+│   │       ├── 2022.js
+│   │       ├── 2023.js
+│   │       ├── 2024.js
+│   │       ├── 2025.js
+│   │       └── index.js
+│   ├── features
+│   │   ├── cars
+│   │   │   ├── components
+│   │   │   │   ├── CarDomains
+│   │   │   │   │   └── CarDomains.jsx
+│   │   │   │   ├── CarGallery
+│   │   │   │   │   └── CarGallery.jsx
+│   │   │   │   ├── CarHero
+│   │   │   │   │   └── CarHero.jsx
+│   │   │   │   ├── CarOverview
+│   │   │   │   │   └── CarOverview.jsx
+│   │   │   │   ├── CarSelector
+│   │   │   │   │   └── CarSelector.jsx
+│   │   │   │   ├── CarSpecs
+│   │   │   │   │   └── CarSpecs.jsx
+│   │   │   │   ├── CarStats
+│   │   │   │   │   └── CarStats.jsx
+│   │   │   │   ├── CarTimeline
+│   │   │   │   │   └── CarTimeline.jsx
+│   │   │   │   └── index.js
+│   │   │   ├── index.js
+│   │   │   └── pages
+│   │   │       ├── CarsPage.css
+│   │   │       └── CarsPage.jsx
+│   │   └── team
+│   │       ├── components
+│   │       │   ├── FilterBar
+│   │       │   │   ├── FilterBar.css
+│   │       │   │   └── FilterBar.jsx
+│   │       │   ├── index.js
+│   │       │   ├── TeamCard
+│   │       │   │   ├── TeamCard.css
+│   │       │   │   └── TeamCard.jsx
+│   │       │   ├── TeamSection
+│   │       │   │   ├── TeamSection.css
+│   │       │   │   └── TeamSection.jsx
+│   │       │   └── YearSelector
+│   │       │       ├── YearSelector.css
+│   │       │       └── YearSelector.jsx
+│   │       ├── data
+│   │       │   ├── 2024
+│   │       │   │   ├── hv.json
+│   │       │   │   ├── leadership.json
+│   │       │   │   ├── lv.json
+│   │       │   │   ├── ops.json
+│   │       │   │   ├── structures.json
+│   │       │   │   └── vd.json
+│   │       │   └── 2025
+│   │       │       ├── hv.json
+│   │       │       ├── leadership.json
+│   │       │       ├── lv.json
+│   │       │       ├── ops.json
+│   │       │       ├── structures.json
+│   │       │       └── vd.json
+│   │       ├── hooks
+│   │       │   └── useTeamFilter.js
+│   │       ├── index.js
+│   │       ├── pages
+│   │       │   ├── TeamPage.css
+│   │       │   └── TeamPage.jsx
+│   │       └── styles
+│   ├── hooks
+│   ├── index.css
+│   ├── layout
+│   │   ├── Layout.css
+│   │   └── Layout.jsx
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── about
+│   │   │   └── About.jsx
+│   │   ├── Achievements.jsx
+│   │   ├── Cars.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Home.jsx
+│   │   ├── Sponsors.jsx
+│   │   └── Wins.jsx
+│   ├── routes
+│   └── styles
+│       └── base.css
+└── vite.config.js

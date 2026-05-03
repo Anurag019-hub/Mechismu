@@ -1,16 +1,51 @@
-import { BrowserRouter , Routes, Route } from 'react-router-dom';
-import './App.css';
+import React, { Suspense } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "motion/react";
 
-import Contact from './pages/Contact.jsx'
-import Home from './pages/Home.jsx'
+import ScrollToTop from "./ScrollToTop.jsx";
+import Layout from "./layout/Layout.jsx";
+import PageLoader from "./components/ui/PageLoader/PageLoader.jsx";
 
+import "./App.css";
+
+// ===== LAZY ROUTES =====
+const Home = React.lazy(() => import("./pages/Home.jsx"));
+const Contact = React.lazy(() => import("./pages/Contact.jsx"));
+const About = React.lazy(() => import("./pages/about/About.jsx"));
+const TeamPage = React.lazy(() => import("./features/team/pages/TeamPage.jsx"));
+const Sponsors = React.lazy(() => import("./pages/Sponsors.jsx"));
+const Cars = React.lazy(() => import("./pages/Cars.jsx"));
+const Wins = React.lazy(() => import("./pages/Wins.jsx"));
+
+// ===== ROUTES =====
+function AnimatedRoutes() {
+    const location = useLocation();
+
+    return (
+        <AnimatePresence mode="wait">
+            <Suspense fallback={<PageLoader />}>
+                <Layout>
+                    <Routes location={location} key={location.pathname}>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/team" element={<TeamPage />} />
+                        <Route path="/sponsors" element={<Sponsors />} />
+                        <Route path="/cars/:carId?" element={<Cars />} />
+                        <Route path="/wins" element={<Wins />} />
+                    </Routes>
+                </Layout>
+            </Suspense>
+        </AnimatePresence>
+    );
+}
+
+// ===== MAIN APP =====
 function App() {
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/Contact' element={<Contact />} />
-            </Routes>
+            <ScrollToTop />
+            <AnimatedRoutes />
         </BrowserRouter>
     );
 }

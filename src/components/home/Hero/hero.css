@@ -1,0 +1,118 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 80px 5vw;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(255, 30, 30, 0.05), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(255, 30, 30, 0.04), transparent 60%),
+    #0a0a0a;
+  z-index: 0;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.hero-glow-static {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,77,77,0.12), transparent 65%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-glow-pulse {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,30,30,0.08), transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+  animation: heroRedPulse 4s ease-in-out infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  width: 100%;
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 50px;
+  background: rgba(255, 77, 77, 0.08);
+  border: 1px solid rgba(255, 77, 77, 0.2);
+  backdrop-filter: blur(10px);
+  color: #ff4d4d;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5.5vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: #e5e5e5;
+  margin-bottom: 0;
+}
+
+.hero-title-accent {
+  color: #ff4d4d;
+  font-style: italic;
+  text-shadow: 0 0 30px rgba(255, 77, 77, 0.4);
+}
+
+.hero-desc {
+  margin-top: 28px;
+  margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 650px;
+  color: #9ca3af;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Animations */
+.hero-tag, .hero-title, .hero-desc, .hero-buttons {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-tag { animation-delay: 0.1s; }
+.hero-title { animation-delay: 0.25s; }
+.hero-desc { animation-delay: 0.5s; }
+.hero-buttons { animation-delay: 0.7s; }
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

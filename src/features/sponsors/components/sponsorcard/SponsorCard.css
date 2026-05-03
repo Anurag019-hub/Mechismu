@@ -1,0 +1,173 @@
+/* ===== SPONSOR CARD — KINETIC MONOLITH (CORRECTED) ===== */
+
+.sponsor-card {
+  /* Using a slightly warmer red for visibility */
+  --tier-color: #FF544A;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* Changed background to be less "muddy" */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-5px);
+  /* Changed from scale to translateY for a cleaner lift */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 84, 74, 0.1);
+  border-color: var(--tier-color);
+}
+
+/* ---- Tier Badge ---- */
+.sponsor-card__tier-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.8);
+  /* Darker for contrast against the logo */
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--tier-color);
+  border-radius: 3px;
+}
+
+.sponsor-card__tier-badge span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--tier-color);
+}
+
+/* ---- Logo Wrapper ---- */
+.sponsor-card__logo-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Changed from #0a0a0a to a translucent dark-grey 
+     This prevents dark logos from vanishing into pure black */
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 20px;
+}
+
+.sponsor-card__logo {
+  max-width: 85%;
+  /* Increased from 65% */
+  max-height: 75%;
+  /* Increased from 55% */
+  object-fit: contain;
+  /* REMOVED: grayscale(100%) and brightness(0.7) */
+  /* ADDED: brightness(1) and opacity: 1 to ensure full color and visibility */
+  filter: brightness(1);
+  opacity: 0;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.sponsor-card__logo--loaded {
+  opacity: 1;
+  /* Pure 100% visibility when loaded */
+}
+
+.sponsor-card:hover .sponsor-card__logo {
+  /* Subtle pop on hover */
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* ---- Placeholder/Error ---- */
+.sponsor-card__logo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1c1b1b 0%, #0a0a0a 100%);
+}
+
+.sponsor-card__logo-placeholder span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255, 84, 74, 0.25);
+  letter-spacing: 0.15em;
+}
+
+/* ---- Body ---- */
+.sponsor-card__body {
+  flex: 1;
+  padding: 16px 18px 12px;
+}
+
+.sponsor-card__name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #E5E2E1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.sponsor-card__desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: rgba(229, 226, 225, 0.5);
+  /* Slightly brighter for readability */
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---- Footer ---- */
+.sponsor-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.sponsor-card__year {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(229, 226, 225, 0.3);
+}
+
+.sponsor-card__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(229, 226, 225, 0.7);
+  text-decoration: none;
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  transition: all 0.25s ease;
+}
+
+.sponsor-card__link:hover {
+  color: #fff;
+  border-color: var(--tier-color);
+  background: var(--tier-color);
+}

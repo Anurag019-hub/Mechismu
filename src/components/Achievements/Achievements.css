@@ -1,0 +1,238 @@
+/* =========================================
+   GLOBAL & VARIABLES
+   ========================================= */
+:root {
+  --red: #b11217;
+  --red-glow: rgba(177, 18, 23, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-strong: rgba(255, 255, 255, 0.12);
+  --border: rgba(255, 255, 255, 0.14);
+}
+
+/* =========================================
+   ACHIEVEMENTS SECTION
+   ========================================= */
+.achievements {
+  position: relative;
+  padding: 60px 16px;
+  background: #050505;
+  overflow: hidden;
+}
+
+@media (min-width: 480px) {
+  .achievements {
+    padding: 80px 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .achievements {
+    padding: 100px 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .achievements {
+    padding: 120px 20px;
+  }
+}
+
+.achievements-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 0, 0, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 0, 0, 0.15), transparent 50%);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.glass-card {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  padding: 32px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.02);
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .glass-card {
+    padding: 40px 20px;
+    border-radius: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .glass-card {
+    padding: 50px 32px;
+    border-radius: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .glass-card {
+    padding: 60px 40px;
+  }
+}
+
+.mini-tag {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 60, 60, 0.8);
+  margin-bottom: 16px;
+}
+
+@media (min-width: 480px) {
+  .mini-tag {
+    font-size: 11px;
+    margin-bottom: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mini-tag {
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    margin-bottom: 20px;
+  }
+}
+
+.main-heading {
+  font-size: clamp(28px, 6vw, 70px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #e5e5e5;
+  margin: 0;
+}
+
+.ach-glow {
+  color: #ff2e2e;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8),
+    0 0 25px rgba(255, 0, 0, 0.6),
+    0 0 50px rgba(255, 0, 0, 0.4);
+}
+
+.sub-text {
+  margin-top: 16px;
+  color: #9ca3af;
+  max-width: 100%;
+  margin-inline: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (min-width: 480px) {
+  .sub-text {
+    max-width: 500px;
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sub-text {
+    margin-top: 20px;
+    max-width: 600px;
+    font-size: 14px;
+  }
+}
+
+.highlight-block {
+  margin-top: 36px;
+}
+
+@media (min-width: 768px) {
+  .highlight-block {
+    margin-top: 50px;
+  }
+}
+
+.highlight-block h3 {
+  font-size: clamp(24px, 5vw, 60px);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+.event {
+  display: inline-block;
+  margin-top: 8px;
+  color: #ff3b3b;
+  letter-spacing: 0.15em;
+  font-size: 11px;
+}
+
+@media (min-width: 768px) {
+  .event {
+    margin-top: 10px;
+    letter-spacing: 0.2em;
+    font-size: 12px;
+  }
+}
+
+/* ===== STATS ===== */
+.stats {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 32px;
+}
+
+@media (min-width: 480px) {
+  .stats {
+    flex-direction: row;
+    gap: clamp(40px, 10vw, 120px);
+  }
+}
+
+@media (min-width: 768px) {
+  .stats {
+    margin-top: 60px;
+    padding-top: 40px;
+    gap: clamp(60px, 15vw, 200px);
+  }
+}
+
+.stat h4 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+@media (min-width: 480px) {
+  .stat h4 {
+    font-size: 42px;
+  }
+}
+
+@media (min-width: 768px) {
+  .stat h4 {
+    font-size: 48px;
+  }
+}
+
+.stat p {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #6b7280;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .stat p {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    margin-top: 8px;
+  }
+}

@@ -1,0 +1,271 @@
+/* ===== FONTS ===== */
+/* Add in index.html:
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+*/
+
+:root {
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-bg: #000;
+  --color-text: #f3f4f6;
+  --color-muted: #9ca3af;
+  --color-accent: #ff1e1e;
+}
+
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* ===== FULL WIDTH SECTION ===== */
+.philosophy-section {
+  width: 100%;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #140000 0%, #000 70%);
+}
+
+@media (min-width: 480px) {
+  .philosophy-section {
+    padding: 80px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .philosophy-section {
+    padding: 100px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .philosophy-section {
+    padding: 140px 0;
+  }
+}
+
+/* GRID BACKGROUND */
+.philosophy-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 30, 30, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 30, 30, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* RED GLOW */
+.philosophy-section::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 30, 30, 0.2), transparent);
+  filter: blur(120px);
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
+  .philosophy-section::before {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .philosophy-section::before {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+/* ===== CONTAINER ===== */
+.philosophy-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 5vw;
+}
+
+@media (min-width: 768px) {
+  .philosophy-container {
+    padding: 0 24px;
+  }
+}
+
+/* ===== GRID ===== */
+.philosophy-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .philosophy-grid {
+    gap: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .philosophy-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+/* ===== TEXT ===== */
+.philosophy-text {
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .philosophy-text {
+    max-width: 600px;
+  }
+}
+
+/* TITLE */
+.philosophy-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+@media (min-width: 768px) {
+  .philosophy-title {
+    letter-spacing: -2px;
+  }
+}
+
+/* RED WORD */
+.philosophy-title span {
+  color: var(--color-accent);
+  text-shadow: 0 0 25px rgba(255, 30, 30, 0.6);
+}
+
+/* LINE */
+.philosophy-line {
+  width: 40px;
+  height: 3px;
+  background: var(--color-accent);
+  margin: 20px 0 28px;
+}
+
+@media (min-width: 768px) {
+  .philosophy-line {
+    width: 60px;
+    margin: 28px 0 40px;
+  }
+}
+
+/* BODY */
+.philosophy-text p {
+  font-size: 0.92rem;
+  line-height: 1.9;
+  color: var(--color-muted);
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+@media (min-width: 480px) {
+  .philosophy-text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .philosophy-text p {
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    max-width: 520px;
+  }
+}
+
+/* ===== IMAGE ===== */
+.img-container {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #111;
+  transform: none;
+  transition: transform 0.6s ease;
+}
+
+@media (min-width: 768px) {
+  .img-container {
+    border-radius: 18px;
+    transform: perspective(1000px) rotateY(10deg);
+  }
+}
+
+.img-container:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.03);
+}
+
+/* IMAGE */
+.img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  filter: grayscale(1) brightness(0.6);
+  transition: all 1s ease;
+}
+
+.img-container.active img {
+  filter: grayscale(0) brightness(1);
+  transform: scale(1.1);
+}
+
+/* OVERLAY */
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+/* GLOW */
+.img-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  background: linear-gradient(120deg, transparent, var(--color-accent), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+@media (min-width: 768px) {
+  .img-glow {
+    border-radius: 18px;
+  }
+}
+
+.img-container:hover .img-glow {
+  opacity: 0.7;
+}
+
+/* BORDER */
+.img-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}
+
+@media (min-width: 768px) {
+  .img-border {
+    border-radius: 18px;
+  }
+}

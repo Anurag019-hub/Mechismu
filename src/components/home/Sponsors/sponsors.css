@@ -1,0 +1,193 @@
+/* --- CSS Variables & Foundation --- */
+:root {
+  --primary: #ff544a;
+  --bg-dark: #131313;
+  --bg-deeper: #0a0a0a;
+  --text-main: #ffffff;
+  --text-muted: rgba(229, 226, 225, 0.5);
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* --- Section Layout --- */
+.sponsors-section {
+  background: linear-gradient(to bottom, var(--bg-dark), var(--bg-deeper));
+  padding: 80px 0;
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+.sponsors-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Header Section --- */
+.sponsors-header-accent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.sponsors-header-line {
+  width: 4px;
+  height: 28px;
+  background-color: var(--primary);
+  box-shadow: 0 0 15px rgba(255, 84, 73, 0.5);
+}
+
+.sponsors-header-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.sponsors-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.sponsors-title-accent {
+  color: var(--primary);
+  font-style: italic;
+  text-shadow: 0 0 30px rgba(255, 84, 73, 0.2);
+}
+
+.sponsors-desc {
+  color: var(--text-muted);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  max-width: 550px;
+  margin-bottom: 50px;
+}
+
+/* --- Grid Configuration --- */
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+
+/* --- Individual Sponsor Card --- */
+.sponsor-logo-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  padding: 15%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  text-decoration: none;
+  /* If using <a> tag */
+}
+
+/* Hover State: Physical lift, glow, and slightly brighter background */
+.sponsor-logo-box:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 84, 73, 0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(255, 84, 73, 0.1);
+}
+
+.sponsor-tier-dot {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* --- Image & Branding --- */
+.sponsor-img-container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor-img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  /* NO FILTERS: Images show in full color immediately */
+  filter: none;
+  opacity: 1;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sponsor-logo-box:hover .sponsor-img {
+  transform: scale(1.1);
+}
+
+.sponsor-fallback {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--primary);
+  opacity: 0.8;
+}
+
+/* --- Typography (Names) --- */
+.sponsor-name {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: var(--transition-smooth);
+}
+
+.sponsor-logo-box:hover .sponsor-name {
+  color: var(--primary);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 480px) {
+  .sponsors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-logo-box {
+    aspect-ratio: 16 / 9;
+    /* Wider profile for single-column mobile */
+    padding: 10%;
+  }
+}

@@ -1,0 +1,54 @@
+/* ===== YEAR SELECTOR ===== */
+.year-selector {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding-bottom: 4px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.year-selector::-webkit-scrollbar {
+  display: none;
+}
+
+.year-selector__btn {
+  flex-shrink: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 10px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0px;
+  background: rgba(28, 27, 27, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: rgba(229, 226, 225, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.year-selector__btn:hover {
+  color: #E5E2E1;
+  border-color: rgba(255, 84, 74, 0.3);
+  background: rgba(255, 84, 74, 0.08);
+}
+
+.year-selector__btn--active {
+  color: #FF544A;
+  border-color: #FF544A;
+  background: rgba(255, 84, 74, 0.12);
+  box-shadow: 0 0 20px rgba(255, 84, 74, 0.15),
+              inset 0 0 20px rgba(255, 84, 74, 0.05);
+}
+
+.year-selector__btn--active:hover {
+  color: #FF544A;
+  border-color: #FF544A;
+}

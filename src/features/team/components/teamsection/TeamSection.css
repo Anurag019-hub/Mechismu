@@ -1,0 +1,73 @@
+/* ===== TEAM SECTION ===== */
+.team-section {
+  margin-bottom: 64px;
+}
+
+.team-section__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  opacity: 0;
+}
+
+.team-section__accent {
+  width: 4px;
+  height: 28px;
+  background: #FF544A;
+  border-radius: 2px;
+  box-shadow: 0 0 12px rgba(255, 84, 74, 0.4);
+  flex-shrink: 0;
+}
+
+.team-section__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #E5E2E1;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0;
+  line-height: 1;
+}
+
+.team-section__count {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(229, 226, 225, 0.25);
+  letter-spacing: 0.1em;
+  margin-left: auto;
+}
+
+.team-section__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .team-section__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .team-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .team-section__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .team-section__title {
+    font-size: 1.1rem;
+  }
+  .team-section {
+    margin-bottom: 48px;
+  }
+}

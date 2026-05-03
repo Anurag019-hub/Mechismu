@@ -1,0 +1,183 @@
+.cars-section {
+  background: linear-gradient(to bottom, #131313, #0a0a0a);
+}
+
+.cars-header-accent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.cars-header-line {
+  width: 4px;
+  height: 28px;
+  background-color: var(--primary);
+  box-shadow: 0 0 12px rgba(255, 84, 73, 0.45);
+}
+
+.cars-header-label {
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(229, 226, 225, 0.25);
+}
+
+.cars-title {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.cars-title-accent {
+  color: var(--primary);
+  font-style: italic;
+  text-shadow: 0 0 20px rgba(255, 84, 73, 0.4), 0 0 50px rgba(255, 84, 73, 0.2);
+}
+
+.cars-desc {
+  color: rgba(229, 226, 225, 0.4);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  max-width: 550px;
+  margin-bottom: 48px;
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .cars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Car Card — equal height via flex, contain prevents reflow leaking */
+.car-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  contain: content;
+  transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+
+.car-card:hover {
+  border-color: rgba(255, 84, 73, 0.25);
+  box-shadow: 0 0 40px rgba(255, 84, 73, 0.1);
+}
+
+/* Image container — explicit aspect-ratio with overflow:hidden isolates the scaled image */
+.car-image-container {
+  position: relative;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  background-color: #0a0a0a;
+}
+
+/* Image — will-change + contain isolates the transform from parent layout */
+.car-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.5);
+  transform-origin: center center;
+  will-change: transform;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.car-card:hover .car-image {
+  transform: scale(1.05);
+}
+
+.car-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.9), transparent);
+}
+
+.car-year-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  background: rgba(255, 84, 73, 0.12);
+  border: 1px solid rgba(255, 84, 73, 0.25);
+  backdrop-filter: blur(4px);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+}
+
+.car-info {
+  padding: 12px 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.car-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: auto;
+}
+
+.car-stat-item {
+  text-align: center;
+}
+
+.car-stat-val {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.car-stat-label {
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(229, 226, 225, 0.25);
+  margin-top: 2px;
+}
+
+.car-card-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.car-card:hover .car-card-accent {
+  width: 100%;
+}

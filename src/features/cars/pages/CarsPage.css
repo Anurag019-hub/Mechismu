@@ -1,0 +1,489 @@
+/* ===== CARS PAGE MATCHING KINETIC MONOLITH THEME ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+.cars-page {
+  position: relative;
+  min-height: 100vh;
+  background: #131313;
+  color: #E5E2E1;
+  overflow: hidden;
+  padding-bottom: 80px;
+}
+
+/* Atmospheric Background */
+.cars-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cars-bg__carbon {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 4px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 4px);
+  opacity: 0.6;
+}
+
+.cars-bg__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 84, 73, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 84, 73, 0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 70% 50% at 50% 35%, black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 35%, black 0%, transparent 100%);
+}
+
+.cars-bg__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
+}
+
+.cars-bg__glow--1 {
+  width: 550px;
+  height: 550px;
+  top: -180px;
+  right: -120px;
+  background: radial-gradient(circle, rgba(255, 84, 73, 0.14) 0%, transparent 70%);
+  animation: carsGlow1 9s ease-in-out infinite alternate;
+}
+
+.cars-bg__glow--2 {
+  width: 450px;
+  height: 450px;
+  bottom: 10%;
+  left: -180px;
+  background: radial-gradient(circle, rgba(177, 18, 23, 0.1) 0%, transparent 70%);
+  animation: carsGlow2 11s ease-in-out infinite alternate;
+}
+
+@keyframes carsGlow1 {
+  0% { opacity: 0.25; transform: translate(0,0) scale(1); }
+  100% { opacity: 0.4; transform: translate(-25px, 15px) scale(1.08); }
+}
+
+@keyframes carsGlow2 {
+  0% { opacity: 0.15; transform: translate(0,0) scale(1); }
+  100% { opacity: 0.25; transform: translate(20px,-20px) scale(1.12); }
+}
+
+/* Common Container */
+.cars-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+
+
+/* ═════════════════════════════
+   CAR SELECTOR
+   ═════════════════════════════ */
+.car-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.car-selector__track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.car-selector__track::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.car-selector__item {
+  display: flex;
+  flex-direction: column;
+  background: rgba(28, 27, 27, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 20px;
+  min-width: 180px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.car-selector__item:hover {
+  background: rgba(40, 40, 40, 0.7);
+  border-color: rgba(255, 84, 73, 0.4);
+}
+
+.car-selector__item--active {
+  background: rgba(255, 84, 73, 0.1);
+  border-color: #ff5449;
+  box-shadow: 0 0 15px rgba(255, 84, 73, 0.2);
+}
+
+.car-selector__year {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ff5449;
+  margin-bottom: 4px;
+}
+
+.car-selector__name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #E5E2E1;
+  letter-spacing: 0.05em;
+}
+
+/* ═════════════════════════════
+   CAR HERO
+   ═════════════════════════════ */
+.car-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.car-hero__tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(255, 84, 73, 0.8);
+  letter-spacing: 0.3em;
+  margin-bottom: 15px;
+}
+
+.car-hero__name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  color: #E5E2E1;
+  letter-spacing: 0.05em;
+  margin: 0;
+  text-shadow: 0 0 40px rgba(255, 84, 73, 0.2);
+}
+
+.car-hero__image-wrapper {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  margin-top: 30px;
+}
+
+.car-hero__image {
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  position: relative;
+}
+
+
+.car-hero__glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(255, 84, 73, 0.15) 0%, transparent 60%);
+  filter: blur(40px);
+  z-index: 1;
+}
+
+/* ═════════════════════════════
+   CAR STATS
+   ═════════════════════════════ */
+.car-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-bottom: 60px;
+}
+
+.car-stats__item {
+  background: rgba(28, 27, 27, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.car-stats__item:hover {
+  border-color: rgba(255, 84, 73, 0.3);
+  box-shadow: 0 0 20px rgba(255, 84, 73, 0.1);
+  transform: translateY(-2px);
+}
+
+.car-stats__value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff5449;
+  margin-bottom: 5px;
+}
+
+.car-stats__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: rgba(229, 226, 225, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* ═════════════════════════════
+   SECTION HEADERS
+   ═════════════════════════════ */
+.car-section {
+  margin-bottom: 60px;
+}
+.car-section__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.car-section__accent {
+  width: 4px;
+  height: 28px;
+  background: #ff5449;
+  box-shadow: 0 0 12px rgba(255, 84, 73, 0.45);
+}
+
+.car-section__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #E5E2E1;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+/* ═════════════════════════════
+   OVERVIEW & DOMAINS
+   ═════════════════════════════ */
+.car-overview {
+  background: rgba(28, 27, 27, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(229, 226, 225, 0.8);
+  margin-bottom: 40px;
+}
+
+.car-domains {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.car-domains__card {
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.car-domains__card:hover {
+  border-color: rgba(255, 84, 73, 0.3);
+  box-shadow: 0 0 20px rgba(255, 84, 73, 0.08);
+}
+
+.car-domains__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ff5449;
+  margin-bottom: 12px;
+  letter-spacing: 0.1em;
+}
+
+.car-domains__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(229, 226, 225, 0.6);
+  line-height: 1.6;
+}
+
+/* ═════════════════════════════
+   SPECS
+   ═════════════════════════════ */
+.car-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.car-specs__group {
+  background: rgba(28, 27, 27, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 25px;
+}
+
+.car-specs__group-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #E5E2E1;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 84, 73, 0.3);
+  padding-bottom: 10px;
+}
+
+.car-specs__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.car-specs__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(229, 226, 225, 0.5);
+}
+
+.car-specs__value {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #E5E2E1;
+  font-weight: 500;
+  text-align: right;
+  max-width: 60%;
+}
+
+/* ═════════════════════════════
+   GALLERY
+   ═════════════════════════════ */
+.car-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.car-gallery__item {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.car-gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+.car-gallery__item:hover .car-gallery__image {
+  transform: scale(1.05);
+}
+
+.car-gallery__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 84, 73, 0.3);
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #1c1b1b, #0a0a0a);
+}
+
+/* ═════════════════════════════
+   TIMELINE
+   ═════════════════════════════ */
+.car-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.car-timeline__item {
+  display: flex;
+  align-items: center;
+  background: rgba(28, 27, 27, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 15px 20px;
+  transition: border-color 0.3s ease;
+}
+
+.car-timeline__item:hover {
+  border-left: 2px solid #ff5449;
+  background: rgba(40, 39, 39, 0.6);
+}
+
+.car-timeline__date {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ff5449;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.car-timeline__event {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(229, 226, 225, 0.8);
+}
+
+/* ═════════════════════════════
+   RESPONSIVENESS
+   ═════════════════════════════ */
+@media (max-width: 1024px) {
+  .car-domains { grid-template-columns: repeat(2, 1fr); }
+  .car-specs { grid-template-columns: 1fr; }
+  .car-gallery { grid-template-columns: repeat(2, 1fr); }
+  .car-stats { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .cars-container { padding: 0 20px; }
+  .car-domains { grid-template-columns: 1fr; }
+  .car-stats { grid-template-columns: repeat(2, 1fr); }
+  .car-gallery { grid-template-columns: 1fr; }
+  
+  .car-timeline__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .car-stats { grid-template-columns: 1fr; }
+}

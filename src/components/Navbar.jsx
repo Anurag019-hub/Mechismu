@@ -1,59 +1,97 @@
-import './navbar.css'
-import logo from '../assets/images/logo.png'
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+/**
+ * File: Navbar.jsx
+ * Purpose: Main navigation bar
+ * Notes:
+ * - Handles routing links and active states
+ * - Includes responsive mobile glass menu
+ */
 
+// ===== IMPORTS =====
+// React
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
+// Internal
+import logo from '../assets/images/logo.webp';
+import './navbar.css';
+
+// ===== COMPONENT =====
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  function toggleMenu(){
-    setIsMenuOpen(!isMenuOpen)
-  }
+  // ===== STATE =====
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // ===== CONFIG =====
+
+  const links = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/cars", label: "Cars" },
+    { path: "/team", label: "Team" },
+    { path: "/wins", label: "Wins" },
+    { path: "/sponsors", label: "Sponsors" },
+    { path: "/contact", label: "Contact" }
+  ];
+
+  // ===== RENDER =====
   return (
     <>
-      <div className="top-bar"></div>
+      <nav className="nav-glass">
+        <div className="nav-inner">
 
-      <nav id="navbar">
-        <Link to="/" className="nav-logo">
-          <img src={logo} alt="MECHISMU Logo"/>
-        </Link>
+          {/* LEFT */}
+          <div className="logo-wrap">
+            <img src={logo} alt="logo" />
+          </div>
 
-        <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/About">About</Link></li>
-          <li><Link to="/Cars">Cars</Link></li>
-          <li><Link to="/Team">Team</Link></li>
-          <li><Link to="/Achievements">Achievements</Link></li>
-          <li><Link to="/Sponsors">Sponsors</Link></li>
-          <li><Link to="/Contact">Contact</Link></li>
-        </ul>
+          {/* RIGHT */}
+          <div className="nav-right">
+            <div className="nav-links">
+              {links.map((item, i) => (
+                <NavLink
+                  key={i}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    isActive ? "nav-item active" : "nav-item"
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </div>
 
-        <Link to="/Sponsors" className="nav-cta">
-          Sponsor Us
-        </Link>
-
-        <button onClick={toggleMenu} className= {`hamburger ${isMenuOpen ? 'open' : ''}`}  id="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </button>
+            <button
+              className={`hamburger ${isMenuOpen ? 'open' : ''}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
       </nav>
 
-      <div id="mobile-menu" className = {`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
-        <Link to="/" className="mob-link">Home</Link>
-        <Link to="/About" className="mob-link">About</Link>
-        <Link to="/Cars" className="mob-link">Cars</Link>
-        <Link to="/Team" className="mob-link">Team</Link>
-        <Link to="/Achievements" className="mob-link">Achievements</Link>
-        <Link to="/Sponsors" className="mob-link">Sponsors</Link>
-        <Link to="/Contact" className="mob-link">Contact</Link>
-        <Link
-          to="/Sponsors"
-          className="nav-cta"
-          style={{ marginTop: 24 }}
+      {/* MOBILE */}
+      <div className={`mobile-glass ${isMenuOpen ? 'open' : ''}`}>
+
+        <button
+          className="close-btn"
+          onClick={() => setIsMenuOpen(false)}
         >
-          Sponsor Us
-        </Link>
+          ✕
+        </button>
+
+        {links.map((item, i) => (
+          <NavLink
+            key={i}
+            to={item.path}
+            className="mob-item"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {item.label}
+          </NavLink>
+        ))}
       </div>
     </>
   )
 }
 
-export default Navbar;
+export default Navbar
