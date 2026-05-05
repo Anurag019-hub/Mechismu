@@ -15,7 +15,7 @@
         "Fault Detection",
         "Battery Safety"
       ],
-      "image": "/images/projects/bms-development.webp",
+      "image": "/images/projects/BMS.avif",
       "imageAlt": "In-house Battery Management System circuit and testing interface",
       "sections": [
         {
@@ -45,10 +45,9 @@
       "tags": [
         "PMSM",
         "FOC",
-        "SVPWM",
         "Motor Control"
       ],
-      "image": "/images/projects/motor-controller-development.webp",
+      "image": "/images/projects/MC.png",
       "imageAlt": "High-efficiency motor controller PCB and diagnostic interface",
       "sections": [
         {
@@ -81,7 +80,7 @@
         "HIL-Testing",
         "Vehicle Intelligence"
       ],
-      "image": "/images/projects/vcu-development.webp",
+      "image": "/images/projects/vcu.avif",
       "imageAlt": "Vehicle Control Unit showing centralized communication and safety interlocks",
       "sections": [
         {
@@ -151,7 +150,7 @@
         "Modular Design",
         "E-Race Car"
       ],
-      "image": "/images/members/mrex-03-insights.webp",
+      "image": "/images/projects/mrex03.jpg",
       "imageAlt": "MREX-03 vehicle chassis and modular component layout",
       "sections": [
         {
