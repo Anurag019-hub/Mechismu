@@ -139,6 +139,39 @@
       ]
     },
     {
+      "id": "passive-aero-system",
+      "title": "Passive Aerodynamic System",
+      "category": "Aerodynamics",
+      "status": "In progress",
+      "year": "2026",
+      "tags": [
+        "Passive Aero",
+        "Flow Control",
+        "Cornering Stability",
+        "Downforce"
+      ],
+      "image": "/images/projects/aero.png",
+      "imageAlt": "Passive aerodynamic elements including front wheel diffuser and rear wing",
+      "sections": [
+        {
+          "heading": "Overview",
+          "text": "Development of a passive aerodynamic system designed to enhance vehicle stability and cornering performance without the use of active control mechanisms."
+        },
+        {
+          "heading": "Key Components",
+          "text": "The system integrates a front wheel diffuser for managing turbulent airflow around rotating wheels and a rear wing for generating consistent downforce. These components work together to improve airflow attachment and reduce instability."
+        },
+        {
+          "heading": "Design Approach",
+          "text": "Focused on passive flow control techniques to guide air efficiently across the vehicle body. Special attention was given to minimizing aerodynamic losses caused by wheel wake and optimizing pressure distribution across the rear section."
+        },
+        {
+          "heading": "Performance Impact",
+          "text": "The system aims to improve cornering grip by increasing downforce and stabilizing airflow, resulting in better handling characteristics and higher confidence during high-speed turns."
+        }
+      ]
+    },
+    {
       "id": "mrex-03-insights",
       "title": "MREX-03 Key Insights",
       "category": "Vehicle Integration",
