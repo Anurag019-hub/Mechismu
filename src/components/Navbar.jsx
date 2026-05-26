@@ -41,7 +41,7 @@ const Navbar = memo(function Navbar() {
 
           {/* LEFT */}
           <div className="logo-wrap">
-            <img src={logo} alt="Mechismu Racing logo" width={58} height={48} />
+            <img src={logo} alt="Mechismu Racing logo" />
           </div>
 
           {/* RIGHT */}
