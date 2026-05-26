@@ -55,7 +55,7 @@ const LEADERS = [
   },
 ];
 
-function LeaderCard({ leader }) {
+const LeaderCard = React.memo(function LeaderCard({ leader }) {
   const [imgLoaded, setImgLoaded] = React.useState(false);
   const [imgError, setImgError] = React.useState(false);
 
@@ -80,7 +80,10 @@ function LeaderCard({ leader }) {
           <img
             src={leader.image}
             alt={leader.name}
+            width={300}
+            height={400}
             loading="lazy"
+            decoding="async"
             className={`team-image ${imgLoaded ? 'loaded' : ''}`}
             onLoad={() => setImgLoaded(true)}
             onError={() => setImgError(true)}
@@ -122,7 +125,7 @@ function LeaderCard({ leader }) {
       <div className="team-card-accent" />
     </div>
   );
-}
+});
 
 export default function TeamPreview() {
   return (

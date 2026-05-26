@@ -1,6 +1,6 @@
 /* ===== PAGE LOADER — TYPOGRAPHY FIRST ===== */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@600&display=swap');
+/* Fonts loaded via index.html preload — no @import needed */
 
 .page-loader {
   position: fixed;

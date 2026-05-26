@@ -31,6 +31,7 @@
   background: radial-gradient(circle at center, rgba(255,77,77,0.12), transparent 65%);
   z-index: 1;
   pointer-events: none;
+  contain: strict;
 }
 
 .hero-glow-pulse {
@@ -40,6 +41,7 @@
   z-index: 1;
   pointer-events: none;
   animation: heroRedPulse 4s ease-in-out infinite;
+  contain: strict;
 }
 
 .hero-content {

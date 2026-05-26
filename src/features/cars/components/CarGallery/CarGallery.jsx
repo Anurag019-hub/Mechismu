@@ -32,8 +32,11 @@ function GalleryItem({ src, alt }) {
         <img 
           src={src} 
           alt={alt} 
+          width={640}
+          height={360}
           className="car-gallery__image"
           loading="lazy"
+          decoding="async"
           onLoad={() => setImgLoaded(true)}
           onError={() => setImgError(true)}
           style={{ opacity: imgLoaded ? 1 : 0 }}

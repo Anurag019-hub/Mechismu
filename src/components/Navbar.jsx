@@ -8,7 +8,7 @@
 
 // ===== IMPORTS =====
 // React
-import React, { useState } from 'react';
+import { useState, memo } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // Internal
@@ -16,7 +16,7 @@ import logo from '../assets/images/logo.webp';
 import './navbar.css';
 
 // ===== COMPONENT =====
-function Navbar() {
+const Navbar = memo(function Navbar() {
   // ===== STATE =====
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -41,7 +41,7 @@ function Navbar() {
 
           {/* LEFT */}
           <div className="logo-wrap">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="Mechismu Racing logo" width={48} height={48} />
           </div>
 
           {/* RIGHT */}
@@ -93,6 +93,6 @@ function Navbar() {
       </div>
     </>
   )
-}
+})
 
 export default Navbar

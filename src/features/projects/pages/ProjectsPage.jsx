@@ -98,7 +98,7 @@ const ProjectsPage = memo(function ProjectsPage() {
             {projectsData.projects.map((project) => (
               <article key={project.id} className="proj-card">
                 <div className="proj-card__media">
-                  <img src={project.image} alt={project.imageAlt || project.title} loading="lazy" />
+                  <img src={project.image} alt={project.imageAlt || project.title} width={640} height={360} loading="lazy" decoding="async" />
                   <div className="proj-card__overlay" />
                   <div className="proj-card__pill">{project.category || 'Project'}</div>
                 </div>

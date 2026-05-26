@@ -1,24 +1,28 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import SectionWrapper from '@/components/home/common/SectionWrapper';
 import CTAButton from '@/components/home/common/CTAButton';
 import '@/components/home/Achievements/achievements.css';
 
 function useCounter(to, duration = 2, startFrom = 0) {
   const ref = useRef(null);
-  const [count, setCount] = useState(startFrom);
+  const animatedRef = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || animatedRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
+          animatedRef.current = true;
           let startTime;
           const step = (timestamp) => {
             if (!startTime) startTime = timestamp;
             const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-            setCount(Math.floor(startFrom + (to - startFrom) * progress));
+            const value = Math.floor(startFrom + (to - startFrom) * progress);
+            // Direct DOM mutation — zero React re-renders during animation
+            const numNode = el.querySelector('.stat-number-value');
+            if (numNode) numNode.textContent = value;
             if (progress < 1) {
               requestAnimationFrame(step);
             }
@@ -34,7 +38,7 @@ function useCounter(to, duration = 2, startFrom = 0) {
     return () => observer.disconnect();
   }, [to, duration, startFrom]);
 
-  return { ref, count };
+  return { ref, initialCount: startFrom };
 }
 
 const STATS = [
@@ -113,20 +117,20 @@ const STATS = [
   },
 ];
 
-function StatCard({ stat }) {
-  const { ref, count } = useCounter(stat.number, stat.duration, stat.number > 10 ? Math.floor(stat.number * 0.6) : 0);
+const StatCard = React.memo(function StatCard({ stat }) {
+  const { ref, initialCount } = useCounter(stat.number, stat.duration, stat.number > 10 ? Math.floor(stat.number * 0.6) : 0);
 
   return (
     <div className="stat-card fade-up" ref={ref}>
       <div className="stat-icon">{stat.icon}</div>
       <div className="stat-number-wrapper">
-        {count}
+        <span className="stat-number-value">{initialCount}</span>
         <span className="stat-number-suffix">{stat.suffix}</span>
       </div>
       <p className="stat-label">{stat.label}</p>
     </div>
   );
-}
+});
 
 export default function Achievements() {
   return (

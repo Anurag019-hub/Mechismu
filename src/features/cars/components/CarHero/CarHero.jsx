@@ -21,6 +21,9 @@ const CarHero = ({ car }) => {
             <img 
               src={car.images.hero} 
               alt={car.name} 
+              width={800}
+              height={450}
+              decoding="async"
               className="car-hero__image"
               onLoad={() => setImgLoaded(true)}
               onError={() => setImgError(true)}

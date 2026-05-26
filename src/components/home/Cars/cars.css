@@ -91,7 +91,7 @@
   background-color: #0a0a0a;
 }
 
-/* Image — will-change + contain isolates the transform from parent layout */
+/* Image — contain isolates the transform from parent layout */
 .car-image {
   display: block;
   width: 100%;
@@ -99,7 +99,6 @@
   object-fit: cover;
   transform: scale(1.5);
   transform-origin: center center;
-  will-change: transform;
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 

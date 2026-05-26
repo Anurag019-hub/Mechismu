@@ -201,6 +201,10 @@ const ContactPage = memo(function ContactPage() {
                 <img
                   src={Img}
                   alt="Engineering Bay"
+                  width={640}
+                  height={480}
+                  loading="lazy"
+                  decoding="async"
                   className="ctp-info-img__src"
                 />
               </div>

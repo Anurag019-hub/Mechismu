@@ -18,6 +18,14 @@ export default defineConfig({
   build: {
     // Raise the warning threshold (chunks will be smaller after splitting)
     chunkSizeWarningLimit: 600,
+    // Enable CSS code splitting — each chunk gets its own CSS
+    cssCodeSplit: true,
+    // Use esbuild for fast CSS minification
+    cssMinify: 'esbuild',
+    // Inline small assets (< 4KB) as data URIs to reduce HTTP requests
+    assetsInlineLimit: 4096,
+    // Target modern browsers for smaller output
+    target: 'es2020',
     rollupOptions: {
       output: {
         manualChunks: {

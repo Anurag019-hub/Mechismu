@@ -12,6 +12,7 @@
   filter: blur(80px);
   pointer-events: none;
   z-index: 0;
+  contain: strict;
 }
 
 .achievements-header-accent {

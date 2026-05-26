@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import SectionWrapper from '@/components/home/common/SectionWrapper';
 import CTAButton from '@/components/home/common/CTAButton';
@@ -6,7 +6,7 @@ import '@/components/home/Cars/cars.css';
 
 import { cars as CARS_DATA } from '@/data/cars';
 
-function CarCard({ car, onClick }) {
+const CarCard = React.memo(function CarCard({ car, onClick }) {
   return (
     // fade-up on the wrapper div, NOT on the card itself
     // height:100% ensures it stretches to fill the grid cell
@@ -17,7 +17,9 @@ function CarCard({ car, onClick }) {
             <img
               src={car.image}
               alt={car.name}
-              loading="eager"
+              width={640}
+              height={320}
+              loading="lazy"
               decoding="async"
               className="car-image"
               onError={(e) => { e.target.style.display = 'none'; }}
@@ -57,7 +59,7 @@ function CarCard({ car, onClick }) {
       </div>
     </div>
   );
-}
+});
 
 export default function CarsPreview() {
   const navigate = useNavigate();

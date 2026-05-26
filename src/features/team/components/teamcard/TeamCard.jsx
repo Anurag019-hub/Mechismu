@@ -60,7 +60,10 @@ const TeamCard = memo(({ member, activeYear, sectionKey }) => {
               className={`team-card__image ${imgLoaded ? 'team-card__image--loaded' : ''}`}
               src={member.image}
               alt={member.name}
+              width={300}
+              height={400}
               loading="lazy"
+              decoding="async"
               onLoad={() => setImgLoaded(true)}
               onError={(e) => {
                 e.target.style.display = 'none';

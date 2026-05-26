@@ -8,7 +8,7 @@ export default function ScrollToTop() {
         window.scrollTo({
             top: 0,
             left: 0,
-            behavior: "smooth" // use "smooth" if you want animation
+            behavior: "instant" // instant for route changes — smooth causes jank during navigation
         });
     }, [pathname]);
 

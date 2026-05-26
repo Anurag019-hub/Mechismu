@@ -1,10 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import '@/components/home/common/common.css';
 
 export default function SectionWrapper({ children, className = '' }) {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -14,15 +17,13 @@ export default function SectionWrapper({ children, className = '' }) {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    const elements = wrapperRef.current.querySelectorAll('.fade-up');
+    const elements = wrapper.querySelectorAll('.fade-up');
     elements.forEach((el) => observer.observe(el));
 
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (

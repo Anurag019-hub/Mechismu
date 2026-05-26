@@ -1,3 +1,4 @@
+import React from 'react';
 import SectionWrapper from '@/components/home/common/SectionWrapper';
 import CTAButton from '@/components/home/common/CTAButton';
 import '@/components/home/Sponsors/sponsors.css';
@@ -5,7 +6,7 @@ import '@/components/home/Sponsors/sponsors.css';
 // Import the centralized data and config
 import { sponsors, tierColors } from '@/data/sponsors';
 
-function SponsorLogo({ sponsor }) {
+const SponsorLogo = React.memo(function SponsorLogo({ sponsor }) {
   // Defensive check for initials
   const initials = sponsor.name ? sponsor.name.slice(0, 2).toUpperCase() : '??';
 
@@ -21,7 +22,10 @@ function SponsorLogo({ sponsor }) {
         <img
           src={sponsor.logo}
           alt={sponsor.name}
+          width={200}
+          height={200}
           loading="lazy"
+          decoding="async"
           className="sponsor-img"
           onError={(e) => {
             e.target.style.display = 'none';
@@ -37,7 +41,7 @@ function SponsorLogo({ sponsor }) {
       <span className="sponsor-name">{sponsor.name}</span>
     </div>
   );
-}
+});
 
 export default function SponsorsPreview() {
   // Deduplicate by name (case-insensitive), keeping the first occurrence

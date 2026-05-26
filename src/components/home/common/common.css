@@ -25,11 +25,11 @@
   box-shadow: 0 0 20px rgba(255,84,74,0.4);
 }
 
-/* Animations */
+/* Animations — only transition GPU-composited properties */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.6s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-up.active {
@@ -57,9 +57,10 @@ a {
   color: inherit;
 }
 
-/* Section Wrapper */
+/* Section Wrapper — containment for paint isolation */
 .section-wrapper {
   width: 100%;
+  contain: layout style paint;
 }
 
 .section-content {
