@@ -15,7 +15,6 @@ export default defineConfig({
     generateSitemap({
       hostname: 'https://mechismu.nvcti.in',
       dynamicRoutes: [
-        '/',
         '/contact',
         '/about',
         '/team',
