@@ -1,10 +1,22 @@
 /**
  * File: pages/Home.jsx
- * Purpose: Home page route — delegates to modular home components
  */
 
-import Home from '../components/home/Home';
+import { Helmet } from 'react-helmet-async'
+import Home from '../components/home/Home'
 
 export default function HomePage() {
-  return <Home />;
+  return (
+    <>
+      <Helmet>
+        <title>Team Mechismu | Formula Student EV Team</title>
+        <meta
+          name="description"
+          content="Official website of Team Mechismu showcasing our Formula Student electric race cars, projects, team members, achievements, and sponsors."
+        />
+      </Helmet>
+
+      <Home />
+    </>
+  )
 }

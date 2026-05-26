@@ -1,4 +1,5 @@
 import React, { useEffect, Suspense } from 'react';
+import { Helmet } from 'react-helmet-async';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
@@ -9,8 +10,7 @@ import PageLoader from "../../components/ui/PageLoader/PageLoader.jsx";
 // Register GSAP Plugins
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
-// ===== LAZY-LOADED SECTIONS =====
-// Using dynamic imports to optimize initial bundle size
+// Lazy-loaded sections
 const Intro = React.lazy(() => import('../../components/Intro/Intro.jsx'));
 const Philosophy = React.lazy(() => import('../../components/Philosophy/Philosophy.jsx'));
 const Timeline = React.lazy(() => import('../../components/Timeline/Timeline.jsx'));
@@ -18,38 +18,37 @@ const Domains = React.lazy(() => import('../../components/Domains/Domains.jsx'))
 const Achievements = React.lazy(() => import('../../components/Achievements/Achievements.jsx'));
 const Funding = React.lazy(() => import('../../components/Funding/Funding.jsx'));
 
-/**
- * About Page Component
- * Handles layout for the About section and global GSAP scroll refreshes.
- */
 export default function About() {
-
   useEffect(() => {
-    // gsap.context handles scoping and makes cleanup simple
     const ctx = gsap.context(() => {
-
-      /**
-       * ScrollTrigger Refresh Logic
-       * Because sections are lazy-loaded, their height might change after 
-       * the initial page load. This ensures GSAP markers and triggers 
-       * are calculated correctly.
-       */
       const timer = setTimeout(() => {
         ScrollTrigger.refresh();
-      }, 800); // 800ms gives the lazy components a bit more time to mount
+      }, 800);
 
       return () => clearTimeout(timer);
     });
 
-    // Cleanup: Revert all GSAP animations when the component unmounts
     return () => ctx.revert();
   }, []);
 
   return (
     <div className="about-page-container">
-      {/* Suspense catches the "promise" of the lazy components 
-        and displays your PageLoader until they are ready.
-      */}
+      <Helmet>
+        <title>About Us | Team Mechismu</title>
+        <meta
+          name="description"
+          content="Learn about Team Mechismu, our vision, philosophy, domains, achievements, and journey in Formula Student electric vehicle development."
+        />
+
+        <meta property="og:title" content="About Us | Team Mechismu" />
+        <meta
+          property="og:description"
+          content="Learn about Team Mechismu, our journey, philosophy, and achievements."
+        />
+        <meta property="og:url" content="https://mechismu.nvcti.in/about" />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       <Suspense fallback={<PageLoader />}>
         <main>
           <Intro />
