@@ -1,0 +1,169 @@
+:root {
+  --faculty-card-bg: rgba(28, 27, 27, 0.65);
+  --faculty-border: rgba(255, 255, 255, 0.06);
+}
+
+.faculty-section {
+  background-color: #0a0a0a;
+}
+
+.faculty-incharge {
+  width: 100%;
+}
+
+.faculty-header-accent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.faculty-header-line {
+  width: 4px;
+  height: 28px;
+  background-color: var(--primary);
+  box-shadow: 0 0 12px rgba(255, 84, 73, 0.45);
+}
+
+.faculty-header-label {
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(229, 226, 225, 0.25);
+}
+
+.faculty-title {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.faculty-title-accent {
+  color: var(--primary);
+  font-style: italic;
+  text-shadow: 0 0 20px rgba(255, 84, 73, 0.35), 0 0 50px rgba(255, 84, 73, 0.18);
+}
+
+.faculty-desc {
+  color: rgba(229, 226, 225, 0.4);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 44px;
+}
+
+.faculty-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .faculty-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.faculty-card {
+  position: relative;
+  background: var(--faculty-card-bg);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--faculty-border);
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faculty-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 84, 73, 0.22);
+  box-shadow: 0 0 35px rgba(255, 84, 73, 0.09);
+}
+
+.faculty-image-wrap {
+  position: relative;
+  /* use a portrait aspect ratio */
+  aspect-ratio: 3 / 4;
+  /* limit max width so portraits don't become too large */
+  max-width: 360px;
+  margin: 0 auto;
+  background: #0e0e0e;
+  overflow: hidden;
+}
+
+.faculty-image-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  color: rgba(255, 0, 0, 0.12);
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.faculty-image {
+  /* ensure the image fills the portrait container */
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 0.35s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faculty-image.loaded {
+  opacity: 0.9;
+  transform: scale(1);
+}
+
+.faculty-card:hover .faculty-image.loaded {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.faculty-image-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.92),
+    rgba(10, 10, 10, 0.25) 55%,
+    rgba(10, 10, 10, 0) 100%
+  );
+}
+
+.faculty-badge {
+  position: absolute;
+  z-index: 4;
+  top: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  background: rgba(255, 134, 123, 0.05);
+  border: 1px solid rgba(255, 84, 73, 0.7);
+  backdrop-filter: blur(30px);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+/* Team page: keep spacing consistent with team container */
+.faculty-incharge--team {
+  margin: 56px 0 28px;
+}
+
+@media (max-width: 768px) {
+  .faculty-incharge--team {
+    margin: 44px 0 20px;
+  }
+}
+

@@ -66,6 +66,7 @@ const LeaderCard = React.memo(function LeaderCard({ leader }) {
   const showImage = leader.image && !imgError;
 
   return (
+    
     <div className="team-card fade-up">
       <div className="team-image-wrapper">
         {/* Placeholder (initials) */}
@@ -129,6 +130,7 @@ const LeaderCard = React.memo(function LeaderCard({ leader }) {
 
 export default function TeamPreview() {
   return (
+  
     <SectionWrapper className="team-section">
       <div className="team-header-accent fade-up">
         <div className="team-header-line" />
