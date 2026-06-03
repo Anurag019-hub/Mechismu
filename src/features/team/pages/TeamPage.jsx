@@ -11,6 +11,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { YearSelector, FilterBar, TeamSection } from '@/features/team/components';
 import { useTeamFilter } from '@/features/team/hooks/useTeamFilter';
+import FacultyIncharge from '@/components/FacultyIncharge/FacultyIncharge.jsx';
+
 import '@/features/team/pages/TeamPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -148,6 +150,7 @@ const TeamPage = () => {
             onSearchChange={setSearchQuery}
           />
         </div>
+          <FacultyIncharge variant="home" />
 
         <main className="team-content" ref={contentRef}>
           {isLoading ? (

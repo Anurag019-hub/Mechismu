@@ -27,7 +27,7 @@ export default function Footer() {
           <Link to="/" className="navlogo">
             {/* <div className="logo-icon">M</div> */}
             <img src={
-              Logo} alt="MECHISMU Logo" />
+              Logo} alt="MECHISMU Logo" width={55} height={55} />
             <span className="logo-text">MECHISMU <span>RACING</span></span>
           </Link>
           <p className="footer-tagline">RACING IS RELIGION</p>
