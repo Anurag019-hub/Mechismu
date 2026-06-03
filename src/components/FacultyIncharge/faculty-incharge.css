@@ -1,8 +1,3 @@
-:root {
-  --faculty-card-bg: rgba(28, 27, 27, 0.65);
-  --faculty-border: rgba(255, 255, 255, 0.06);
-}
-
 .faculty-section {
   background-color: #0a0a0a;
 }
@@ -54,106 +49,171 @@
   margin-bottom: 44px;
 }
 
-.faculty-grid {
+/* Home: same column layout as team preview cards */
+.faculty-incharge--home .faculty-grid {
   display: grid;
-  gap: 18px;
+  gap: 20px;
   grid-template-columns: 1fr;
 }
 
+@media (min-width: 640px) {
+  .faculty-incharge--home .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (min-width: 768px) {
-  .faculty-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .faculty-incharge--home .faculty-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .faculty-incharge--home .faculty-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .faculty-incharge--home .faculty-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Team page: same grid as team member sections */
+.faculty-incharge--team .faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .faculty-incharge--team .faculty-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .faculty-incharge--team .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .faculty-incharge--team .faculty-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 }
 
 .faculty-card {
   position: relative;
-  background: var(--faculty-card-bg);
-  backdrop-filter: blur(18px);
-  border: 1px solid var(--faculty-border);
+  background: rgba(28, 27, 27, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
   overflow: hidden;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
 }
 
 .faculty-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 84, 73, 0.22);
-  box-shadow: 0 0 35px rgba(255, 84, 73, 0.09);
+  transform: scale(1.02);
+  border-color: rgba(255, 84, 74, 0.25);
+  box-shadow: 0 0 30px rgba(255, 84, 74, 0.15),
+    0 0 60px rgba(255, 84, 74, 0.06);
 }
 
 .faculty-image-wrap {
   position: relative;
-  /* use a portrait aspect ratio */
-  aspect-ratio: 3 / 4;
-  /* limit max width so portraits don't become too large */
-  max-width: 360px;
-  margin: 0 auto;
-  background: #0e0e0e;
+  width: 100%;
   overflow: hidden;
+  background: #0a0a0a;
+}
+
+.faculty-incharge--home .faculty-image-wrap {
+  aspect-ratio: 3 / 4;
+}
+
+.faculty-incharge--team .faculty-image-wrap {
+  aspect-ratio: 4 / 5;
 }
 
 .faculty-image-placeholder {
   position: absolute;
   inset: 0;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1c1b1b 0%, #0a0a0a 100%);
   z-index: 1;
-  color: rgba(255, 0, 0, 0.12);
-  font-size: 2.1rem;
+}
+
+.faculty-image-placeholder span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.4rem;
   font-weight: 700;
+  color: rgba(255, 84, 74, 0.35);
   letter-spacing: 0.15em;
 }
 
 .faculty-image {
-  /* ensure the image fills the portrait container */
-  width: auto;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   position: relative;
   z-index: 2;
   opacity: 0;
-  transform: scale(1.02);
-  transition: opacity 0.35s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.35s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .faculty-image.loaded {
-  opacity: 0.9;
-  transform: scale(1);
+  opacity: 1;
 }
 
 .faculty-card:hover .faculty-image.loaded {
-  opacity: 1;
-  transform: scale(1.03);
+  transform: scale(1.06);
 }
 
 .faculty-image-overlay {
   position: absolute;
   inset: 0;
   z-index: 3;
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.92),
-    rgba(10, 10, 10, 0.25) 55%,
-    rgba(10, 10, 10, 0) 100%
-  );
+  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.85) 100%);
+  pointer-events: none;
 }
 
-.faculty-badge {
-  position: absolute;
-  z-index: 4;
-  top: 12px;
-  left: 12px;
-  padding: 4px 10px;
-  background: rgba(255, 134, 123, 0.05);
-  border: 1px solid rgba(255, 84, 73, 0.7);
-  backdrop-filter: blur(30px);
-  font-size: 0.5rem;
+.faculty-card__content {
+  padding: 16px 18px 18px;
+}
+
+.faculty-card__name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
-  color: var(--primary);
+  color: #e5e2e1;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+.faculty-card__role-pill {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.67rem;
+  font-weight: 600;
+  color: #ff544a;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: rgba(255, 84, 74, 0.1);
+  border: 1px solid rgba(255, 84, 74, 0.22);
+  border-radius: 2px;
+  padding: 2px 7px;
+  line-height: 1.5;
 }
 
 /* Team page: keep spacing consistent with team container */
