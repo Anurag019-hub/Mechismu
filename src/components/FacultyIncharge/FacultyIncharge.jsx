@@ -4,12 +4,12 @@ import '@/components/FacultyIncharge/faculty-incharge.css';
 
 const FACULTY = [
   {
-    name: 'Faculty Incharge',
+    name: 'Vedantham Lakshmi Srinivas',
     role: 'Incharge',
     image: '/images/faculty/prof-srinivas.jpg',
   },
   {
-    name: 'Faculty Incharge',
+    name: 'Anirban Ghoshal',
     role: 'Incharge',
     image: '/images/faculty/prof-anirban.jpg',
   },
@@ -20,22 +20,25 @@ function FacultyCard({ person }) {
   const [imgError, setImgError] = React.useState(false);
 
   const showImage = person.image && !imgError;
+  const initials = person.name
+    ? person.name.split(' ').map((n) => n[0]).join('').toUpperCase().slice(0, 2)
+    : 'FI';
 
   return (
     <div className="faculty-card fade-up">
       <div className="faculty-image-wrap">
-        {!imgLoaded && (
+        {(!imgLoaded || !showImage) && (
           <div className="faculty-image-placeholder">
-            <span>FI</span>
+            <span>{initials}</span>
           </div>
         )}
 
         {showImage && (
           <img
             src={person.image}
-            alt={person.role}
-            width={640}
-            height={420}
+            alt={person.name}
+            width={300}
+            height={400}
             loading="lazy"
             decoding="async"
             className={`faculty-image ${imgLoaded ? 'loaded' : ''}`}
@@ -45,7 +48,11 @@ function FacultyCard({ person }) {
         )}
 
         <div className="faculty-image-overlay" />
-        <div className="faculty-badge">{person.role}</div>
+      </div>
+
+      <div className="faculty-card__content">
+        <h3 className="faculty-card__name">{person.name}</h3>
+        <span className="faculty-card__role-pill">{person.role}</span>
       </div>
     </div>
   );
@@ -73,7 +80,7 @@ function FacultyInchargeInner({ variant = 'home' }) {
 
         <div className="faculty-grid">
           {FACULTY.map((p) => (
-            <FacultyCard key={p.role} person={p} />
+            <FacultyCard key={p.image} person={p} />
           ))}
         </div>
       </div>
