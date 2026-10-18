@@ -1,6 +1,6 @@
 import React, { memo, useRef, useState, useMemo, useEffect } from 'react';
 import '@/features/team/components/teamcard/TeamCard.css';
-
+import { urlFor } from '../../../../sanity/image';
 const TeamCard = memo(({ member, activeYear, sectionKey }) => {
   const cardRef = useRef(null);
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -58,7 +58,7 @@ const TeamCard = memo(({ member, activeYear, sectionKey }) => {
 
             <img
               className={`team-card__image ${imgLoaded ? 'team-card__image--loaded' : ''}`}
-              src={member.image}
+              src={urlFor(member.image).url()}
               alt={member.name}
               width={300}
               height={400}
