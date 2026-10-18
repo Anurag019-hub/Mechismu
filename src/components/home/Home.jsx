@@ -3,6 +3,7 @@ import "./home.css";
 
 // ===== HOME SECTIONS =====
 import HeroSection from "./Hero/HeroSection.jsx";
+import Countdown from "./Countdown/Countdown.jsx";
 import AboutPreview from "./About/AboutPreview.jsx";
 import CarsPreview from "./Cars/CarsPreview.jsx";
 import TeamPreview from "./Team/TeamPreview.jsx";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <Countdown />
       <AboutPreview />
       <CarsPreview />
       <FacultyIncharge variant="home" />

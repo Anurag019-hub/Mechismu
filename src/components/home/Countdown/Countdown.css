@@ -1,0 +1,129 @@
+.countdown-section {
+  background: linear-gradient(to bottom, #131313, #0a0a0a);
+}
+
+.cd-event-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255, 84, 73, 0.04);
+  border: 1px solid rgba(255, 84, 73, 0.12);
+  margin-bottom: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cd-event-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px rgba(255, 84, 73, 0.45);
+  flex-shrink: 0;
+  animation: cd-pulse 2s ease-in-out infinite;
+}
+
+@keyframes cd-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(255, 84, 73, 0.45); }
+  50%       { box-shadow: 0 0 16px rgba(255, 84, 73, 0.7), 0 0 32px rgba(255, 84, 73, 0.2); }
+}
+
+.cd-event-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.cd-event-date {
+  margin-left: auto;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: rgba(229, 226, 225, 0.4);
+}
+
+.cd-grid {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cd-unit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  padding: 28px 12px 20px;
+  overflow: hidden;
+  transition: border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow   0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cd-unit:hover {
+  border-color: rgba(255, 84, 73, 0.25);
+  box-shadow: 0 0 40px rgba(255, 84, 73, 0.1);
+}
+
+.cd-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: #e5e2e1;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.cd-unit:hover .cd-num {
+  color: var(--primary);
+  text-shadow: 0 0 20px rgba(255, 84, 73, 0.4);
+}
+
+.cd-label {
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(229, 226, 225, 0.25);
+}
+
+.cd-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cd-unit:hover .cd-accent { width: 100%; }
+
+.cd-sep {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--primary);
+  opacity: 0.5;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+  animation: cd-blink 1s step-start infinite;
+}
+
+@keyframes cd-blink {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0.15; }
+}
+
+@media (max-width: 600px) {
+  .cd-grid { gap: 6px; }
+  .cd-event-date { display: none; }
+}
