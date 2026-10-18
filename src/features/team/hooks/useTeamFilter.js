@@ -1,5 +1,5 @@
-import { useState, useMemo, useCallback, useEffect} from 'react';
-import { sanityClient } from '../../../sanity/client';
+import { useState, useMemo, useCallback } from 'react';
+import teamDataRaw from '../data/team.json';
 
 const SECTION_CONFIG = [
   { key: 'leadership', label: 'Leadership' },
@@ -18,36 +18,8 @@ export const useTeamFilter = (initialYear = 2026) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [teamData, setTeamData] = useState([]);
 
-  useEffect(() => {
-  const fetchMembers = async () => {
-    try {
-      setIsLoading(true);
-      const data = await sanityClient.fetch(`
-        *[_type == "member"] {
-          _id,
-          id,
-          name,
-          year,
-          image,
-          email,
-          linkedin,
-          instagram,
-          history
-        }
-      `);
-
-      setTeamData(data);
-    } catch (error) {
-      console.error('Failed to fetch members from Sanity:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  fetchMembers();
-}, []);
+  const teamData = useMemo(() => teamDataRaw, []);
 
   const filteredSections = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
